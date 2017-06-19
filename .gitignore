@@ -3,3 +3,8 @@ home-assistant.log
 deps
 secrets.yaml
 .uuid
+config.yml
+access.log
+events.log
+state.json
+
