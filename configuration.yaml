@@ -34,3 +34,6 @@ tts:
 
 group: !include groups.yaml
 automation: !include automations.yaml
+
+media_player:
+  - platform: plex
