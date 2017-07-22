@@ -35,25 +35,41 @@ automation: !include automations.yaml
 media_player:
   - platform: plex
 
-mqtt:
-  broker: localhost
+#mqtt:
+#  broker: localhost
 
-light:
-  - platform: mqtt
-    name: "Kitchen"
-    state_topic: "smartthings/kitchen/light/status"
-    command_topic: "smartthings/kitchen/light/switch"
-    brightness_state_topic: 'smartthings/kitchen/light/brightness'
-    brightness_command_topic: 'smartthings/kitchen/light/brightness/set'
-    qos: 0
-    payload_on: "ON"
-    payload_off: "OFF"
-    optimistic: false
-    retain: true
+#light:
+#  - platform: mqtt
+#    name: "Kitchen"
+#    state_topic: "smartthings/kitchen/light/status"
+#    command_topic: "smartthings/kitchen/light/switch"
+#    brightness_state_topic: 'smartthings/kitchen/light/brightness'
+#    brightness_command_topic: 'smartthings/kitchen/light/brightness/set'
+#    qos: 0
+#    payload_on: "ON"
+#    payload_off: "OFF"
+#    optimistic: false
+#    retain: true
 
 sensor:
   - platform: rest
-    name: Temperature
+    name: Living Room Temperature
     resource: http://localhost/
     value_template: '{{ value_json.temperature }}'
     unit_of_measurement: "°F"
+  - platform: rest
+    name: Downstairs Temperature
+    resource: http://10.0.0.35/
+    value_template: '{{ value_json.temperature }}'
+    unit_of_measurement: "°F"
+  - platform: rest
+    name: Upstairs Temperature
+    resource: http://10.0.0.30/
+    value_template: '{{ value_json.temperature }}'
+    unit_of_measurement: "°F"
+
+camera:
+  - platform: mjpeg
+    mjpeg_url: http://10.0.0.38:84/cam_get_new.php
+    still_image_url: http://10.0.0.38:84/cam_get.php
+    name: Outside
