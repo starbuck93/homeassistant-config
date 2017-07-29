@@ -58,15 +58,26 @@ sensor:
     value_template: '{{ value_json.temperature }}'
     unit_of_measurement: "°F"
   - platform: rest
-    name: Downstairs Temperature
+    name: Output
     resource: http://10.0.0.35/
     value_template: '{{ value_json.temperature }}'
     unit_of_measurement: "°F"
   - platform: rest
-    name: Upstairs Temperature
+    name: Intake
     resource: http://10.0.0.30/
     value_template: '{{ value_json.temperature }}'
     unit_of_measurement: "°F"
+  - platform: rest
+    name: Bedroom
+    resource: http://10.0.0.51/
+    value_template: '{{ value_json.temperature }}'
+    unit_of_measurement: "°F"
+  - platform: rest
+    name: Outside
+    resource: http://10.0.0.40/
+    value_template: '{{ value_json.temperature }}'
+    unit_of_measurement: "°F"
+
 
 camera:
   - platform: mjpeg
