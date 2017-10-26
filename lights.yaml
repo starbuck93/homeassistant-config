@@ -1,0 +1,10 @@
+- platform: mqtt
+  name: "Stairs Light"
+  state_topic: "smartthings/Stairs Light/switch"
+  command_topic: "smartthings/Stairs Light/switch/set"
+  state_value_template: "{{ value_json.state }}"
+  brightness_value_template: "{{ value_json.brightness }}"
+  payload_on: "ON"
+  payload_off: "OFF"
+  optimistic: false
+  qos: 0

@@ -8,6 +8,8 @@ homeassistant:
 
 frontend:
 
+map:
+
 config:
 
 http:
@@ -35,21 +37,15 @@ automation: !include automations.yaml
 media_player:
   - platform: plex
 
-#mqtt:
-#  broker: localhost
+mqtt:
+  broker: localhost
+  username: pi
+  password: raspberry
+  discovery: true
+  discovery_prefix: smartthings
 
-#light:
-#  - platform: mqtt
-#    name: "Kitchen"
-#    state_topic: "smartthings/kitchen/light/status"
-#    command_topic: "smartthings/kitchen/light/switch"
-#    brightness_state_topic: 'smartthings/kitchen/light/brightness'
-#    brightness_command_topic: 'smartthings/kitchen/light/brightness/set'
-#    qos: 0
-#    payload_on: "ON"
-#    payload_off: "OFF"
-#    optimistic: false
-#    retain: true
+light:
+  !include lights.yaml
 
 sensor:
   - platform: rest
@@ -57,21 +53,21 @@ sensor:
     resource: http://localhost/
     value_template: '{{ value_json.temperature }}'
     unit_of_measurement: "°F"
-  - platform: rest
-    name: Output
-    resource: http://10.0.0.35/
-    value_template: '{{ value_json.temperature }}'
-    unit_of_measurement: "°F"
-  - platform: rest
-    name: Intake
-    resource: http://10.0.0.30/
-    value_template: '{{ value_json.temperature }}'
-    unit_of_measurement: "°F"
-  - platform: rest
-    name: Bedroom
-    resource: http://10.0.0.51/
-    value_template: '{{ value_json.temperature }}'
-    unit_of_measurement: "°F"
+#  - platform: rest
+#    name: Output
+#    resource: http://10.0.0.35/
+#    value_template: '{{ value_json.temperature }}'
+#    unit_of_measurement: "°F"
+#  - platform: rest
+#    name: Intake
+#    resource: http://10.0.0.30/
+#    value_template: '{{ value_json.temperature }}'
+#    unit_of_measurement: "°F"
+#  - platform: rest
+#    name: Bedroom
+#    resource: http://10.0.0.51/
+#    value_template: '{{ value_json.temperature }}'
+#    unit_of_measurement: "°F"
   - platform: rest
     name: Outside
     resource: http://10.0.0.40/
@@ -80,7 +76,6 @@ sensor:
 
 
 camera:
-  - platform: mjpeg
-    mjpeg_url: http://10.0.0.38:84/cam_get_new.php
-    still_image_url: http://10.0.0.38:84/cam_get.php
+  - platform: generic
+    still_image_url: http://10.0.0.3/bryan-timelapse/latest.jpg
     name: Outside
