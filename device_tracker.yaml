@@ -4,7 +4,7 @@
   password: !secret asus_password
 
 - platform: mqtt
-    devices:
+  devices:
     adam: 'location/Mr. Starbuck'
     laura: 'location/Mrs. Starbuck'
 

@@ -7,4 +7,4 @@ config.yml
 access.log
 events.log
 state.json
-
+known_devices.yaml
