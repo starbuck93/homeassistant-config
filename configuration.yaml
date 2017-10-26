@@ -34,9 +34,6 @@ tts:
 group: !include groups.yaml
 automation: !include automations.yaml
 
-media_player:
-  - platform: plex
-
 mqtt:
   broker: localhost
   username: pi
@@ -48,32 +45,10 @@ light:
   !include lights.yaml
 
 sensor:
-  - platform: rest
-    name: Living Room Temperature
-    resource: http://localhost/
-    value_template: '{{ value_json.temperature }}'
-    unit_of_measurement: "°F"
-#  - platform: rest
-#    name: Output
-#    resource: http://10.0.0.35/
-#    value_template: '{{ value_json.temperature }}'
-#    unit_of_measurement: "°F"
-#  - platform: rest
-#    name: Intake
-#    resource: http://10.0.0.30/
-#    value_template: '{{ value_json.temperature }}'
-#    unit_of_measurement: "°F"
-#  - platform: rest
-#    name: Bedroom
-#    resource: http://10.0.0.51/
-#    value_template: '{{ value_json.temperature }}'
-#    unit_of_measurement: "°F"
-  - platform: rest
-    name: Outside
-    resource: http://10.0.0.40/
-    value_template: '{{ value_json.temperature }}'
-    unit_of_measurement: "°F"
+  !include sensors.yaml
 
+device_tracker:
+  !include device_tracker.yaml
 
 camera:
   - platform: generic

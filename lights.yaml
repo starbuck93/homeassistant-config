@@ -1,10 +1,195 @@
 - platform: mqtt
-  name: "Stairs Light"
-  state_topic: "smartthings/Stairs Light/switch"
-  command_topic: "smartthings/Stairs Light/switch/set"
-  state_value_template: "{{ value_json.state }}"
-  brightness_value_template: "{{ value_json.brightness }}"
-  payload_on: "ON"
-  payload_off: "OFF"
+  name: "Adams Bed Lamp"
+  state_topic: "smartthings/Adams Bed Lamp/switch"
+  command_topic: "smartthings/Adams Bed Lamp/switch"
+  brightness_state_topic: 'smartthings/Adams Bed Lamp/brightness'
+  brightness_command_topic: 'smartthings/Adams Bed Lamp/brightness/set'
+  payload_on: "on"
+  payload_off: "off"
   optimistic: false
   qos: 0
+
+- platform: mqtt
+  name: "Brown Lamp"
+  state_topic: "smartthings/Brown Lamp/switch"
+  command_topic: "smartthings/Brown Lamp/switch"
+  brightness_state_topic: 'smartthings/Brown Lamp/brightness'
+  brightness_command_topic: 'smartthings/Brown Lamp/brightness/set'
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Cooking Room Light 1"
+  state_topic: "smartthings/Cooking Room Light 1/switch"
+  command_topic: "smartthings/Cooking Room Light 1/switch"
+  brightness_state_topic: 'smartthings/Cooking Room Light 1/brightness'
+  brightness_command_topic: 'smartthings/Cooking Room Light 1/brightness/set'
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Cooking Room Light 2"
+  state_topic: "smartthings/Cooking Room Light 2/switch"
+  command_topic: "smartthings/Cooking Room Light 2/switch"
+  brightness_state_topic: 'smartthings/Cooking Room Light 2/brightness'
+  brightness_command_topic: 'smartthings/Cooking Room Light 2/brightness/set'
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Cooking Room Light 4"
+  state_topic: "smartthings/Cooking Room Light 4/switch"
+  command_topic: "smartthings/Cooking Room Light 4/switch"
+  brightness_state_topic: 'smartthings/Cooking Room Light 4/brightness'
+  brightness_command_topic: 'smartthings/Cooking Room Light 4/brightness/set'
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Downstairs Bathroom 1"
+  state_topic: "smartthings/Downstairs Bathroom 1/switch"
+  command_topic: "smartthings/Downstairs Bathroom 1/switch"
+  brightness_state_topic: 'smartthings/Downstairs Bathroom 1/brightness'
+  brightness_command_topic: 'smartthings/Downstairs Bathroom 1/brightness/set'
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Downstairs Bathroom 2"
+  state_topic: "smartthings/Downstairs Bathroom 2/switch"
+  command_topic: "smartthings/Downstairs Bathroom 2/switch"
+  brightness_state_topic: 'smartthings/Downstairs Bathroom 2/brightness'
+  brightness_command_topic: 'smartthings/Downstairs Bathroom 2/brightness/set'
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Hallway Light 1"
+  state_topic: "smartthings/Hallway Light 1/switch"
+  command_topic: "smartthings/Hallway Light 1/switch"
+  brightness_state_topic: 'smartthings/Hallway Light 1/brightness'
+  brightness_command_topic: 'smartthings/Hallway Light 1/brightness/set'
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Hallway Light 2"
+  state_topic: "smartthings/Hallway Light 2/switch"
+  command_topic: "smartthings/Hallway Light 2/switch"
+  brightness_state_topic: 'smartthings/Hallway Light 2/brightness'
+  brightness_command_topic: 'smartthings/Hallway Light 2/brightness/set'
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Square Lamp"
+  state_topic: "smartthings/Square Lamp/switch"
+  command_topic: "smartthings/Square Lamp/switch"
+  brightness_state_topic: 'smartthings/Square Lamp/brightness'
+  brightness_command_topic: 'smartthings/Square Lamp/brightness/set'
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Stairs Light"
+  state_topic: "smartthings/Stairs Light/switch"
+  command_topic: "smartthings/Stairs Light/switch"
+  brightness_state_topic: 'smartthings/Stairs Light/brightness'
+  brightness_command_topic: 'smartthings/Stairs Light/brightness/set'
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Ceiling Fan"
+  state_topic: "smartthings/Ceiling Fan/switch"
+  command_topic: "smartthings/Ceiling Fan/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Ceiling Light"
+  state_topic: "smartthings/Ceiling Light/switch"
+  command_topic: "smartthings/Ceiling Light/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Cooking Room LEDs"
+  state_topic: "smartthings/Cooking Room LEDs/switch"
+  command_topic: "smartthings/Cooking Room LEDs/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Desk Lamp"
+  state_topic: "smartthings/Desk Lamp/switch"
+  command_topic: "smartthings/Desk Lamp/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Laura Bed Lamp"
+  state_topic: "smartthings/Laura Bed Lamp/switch"
+  command_topic: "smartthings/Laura Bed Lamp/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "PupCam"
+  state_topic: "smartthings/PupCam/switch"
+  command_topic: "smartthings/PupCam/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Upstairs TV"
+  state_topic: "smartthings/Upstairs TV/switch"
+  command_topic: "smartthings/Upstairs TV/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Tall Light"
+  state_topic: "smartthings/Tall Light/switch"
+  command_topic: "smartthings/Tall Light/switch"
+  brightness_state_topic: 'smartthings/Tall Light/brightness'
+  brightness_command_topic: 'smartthings/Tall Light/brightness/set'
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+

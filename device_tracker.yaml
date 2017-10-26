@@ -1,0 +1,10 @@
+- platform: asuswrt
+  host: 10.0.0.1
+  username: admin
+  password: !secret asus_password
+
+- platform: mqtt
+    devices:
+    adam: 'location/Mr. Starbuck'
+    laura: 'location/Mrs. Starbuck'
+

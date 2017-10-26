@@ -1,0 +1,51 @@
+- platform: rest
+  name: Living Room Temperature
+  resource: http://localhost/
+  value_template: '{{ value_json.temperature }}'
+  unit_of_measurement: "°F"
+
+- platform: mqtt
+  name: "Front Door Temperature"
+  state_topic: "smartthings/Front Door/temperature"
+  unit_of_measurement: '°F'
+
+- platform: mqtt
+  name: "Kitchen Temperature"
+  state_topic: "smartthings/Motion Sensor/temperature"
+  unit_of_measurement: '°F'
+
+- platform: mqtt
+  name: "Back Door Temperature"
+  state_topic: "smartthings/Back Door/temperature"
+  unit_of_measurement: '°F'
+
+- platform: mqtt
+  name: "Outdoor Temperature"
+  state_topic: "smartthings/Outdoor Temperature/temperature"
+  unit_of_measurement: '°F'
+
+- platform: mqtt
+  name: "Outdoor Humidity"
+  state_topic: "smartthings/Outdoor Temperature/humidity"
+  unit_of_measurement: '%'
+
+- platform: mqtt
+  name: "Back Door"
+  state_topic: "smartthings/Back Door/contact"
+  device_class: opening
+
+- platform: mqtt
+  name: "Front Door"
+  state_topic: "smartthings/Front Door/contact"
+  device_class: opening
+
+- platform: mqtt
+  name: "Motion Sensor"
+  state_topic: "smartthings/Motion Sensor/motion"
+  device_class: motion
+
+- platform: rest
+  name: Outside
+  resource: http://10.0.0.40/
+  value_template: '{{ value_json.temperature }}'
+  unit_of_measurement: "°F"
