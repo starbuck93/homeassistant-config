@@ -32,7 +32,7 @@ tts:
   platform: google
 
 group: !include groups.yaml
-automation: !include automations.yaml
+#automation: !include automations.yaml
 
 mqtt:
   broker: localhost
@@ -40,6 +40,13 @@ mqtt:
   password: raspberry
   discovery: true
   discovery_prefix: smartthings
+  
+mqtt 2:
+  broker: m11.cloudmqtt.com
+  port: !secrets cm-port
+  username: !secrets cm-username
+  password: !secrets cm-password
+  
 
 light:
   !include lights.yaml
@@ -54,3 +61,8 @@ camera:
   - platform: generic
     still_image_url: http://10.0.0.3/bryan-timelapse/latest.jpg
     name: Outside
+  - platform: generic
+    still_image_url: !secret pupcamurl
+    name: PupCam
+
+
