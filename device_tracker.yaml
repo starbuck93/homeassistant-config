@@ -3,7 +3,6 @@
   username: admin
   password: !secret asus_password
 
-- platform: mqtt
-  devices:
-    Adam: 'owntracks/otbguukm/adam'
+- platform: owntracks
+
 

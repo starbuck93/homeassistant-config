@@ -1,0 +1,78 @@
+default_view:
+  view: yes
+  icon: mdi:home 
+  entities:
+    - group.living_room
+    - group.kitchen
+    - group.master_bed
+    - group.office
+    - group.stairs
+    - group.cameras
+    - group.sensors
+kitchen:
+  name: Kitchen
+  entities:
+    - media_player.starbuck_home
+    - group.kitchen_lights
+    - switch.cooking_room_leds
+    - sensor.back_door
+    - sensor.motion_sensor
+living_room:
+  name: Living Room
+  entities:
+    - media_player.starbuck_main
+    - light.brown_lamp
+    - light.tall_light
+    - sensor.living_room_temperature
+    - sensor.front_door
+master_bed:
+  name: Bedroom
+  entities:
+    - media_player.bedroom
+    - switch.upstairs_tv
+    - light.adams_bed_lamp
+    - switch.laura_bed_lamp
+    - switch.ceiling_light
+    - switch.ceiling_fan
+    - switch.pupcam
+office:
+  name: Office
+  entities:
+    - switch.desk_lamp
+    - light.square_lamp
+stairs:
+  name: Stairs
+  entities:
+    - group.hallway_lights
+    - light.stairs_light
+cameras:
+  name: Cameras
+  entities:
+    - camera.outside
+    - camera.pupcam
+awesome_people:
+  name: Awesome People
+  view: no
+  entities:
+    - device_tracker.f0c850fbcdd7
+    - device_tracker.iphone
+kitchen_lights:
+  name: Kitchen Ceiling Lights
+  view: no
+  entities:
+    - light.cooking_room_light_1
+    - light.cooking_room_light_2
+    - light.cooking_room_light_3
+    - light.cooking_room_light_4
+hallway_lights:
+  name: Upstairs Hallway
+  view: no
+  entities:
+    - light.hallway_light_1
+    - light.hallway_light_2
+sensors:
+  name: Sensors
+  entities:
+    - sensor.outdoor_humidity
+    - sensor.outside
+    - sun.sun
