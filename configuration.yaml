@@ -1,7 +1,7 @@
 homeassistant:
   name: Home
-  latitude: 30.567
-  longitude: -96.2837
+  latitude: !secret latitude
+  longitude: !secret longitude
   elevation: 91
   unit_system: imperial
   time_zone: America/Chicago
@@ -51,6 +51,9 @@ mqtt 2:
 light:
   !include lights.yaml
 
+switch:
+  !include switches.yaml
+
 sensor:
   !include sensors.yaml
 
@@ -65,4 +68,5 @@ camera:
     still_image_url: !secret pupcamurl
     name: PupCam
 
-
+zone:
+  !include zones.yaml

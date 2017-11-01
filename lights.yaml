@@ -131,63 +131,9 @@
   qos: 0
 
 - platform: mqtt
-  name: "Ceiling Fan"
-  state_topic: "smartthings/Ceiling Fan/switch"
-  command_topic: "smartthings/Ceiling Fan/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-
-- platform: mqtt
-  name: "Ceiling Light"
-  state_topic: "smartthings/Ceiling Light/switch"
-  command_topic: "smartthings/Ceiling Light/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-
-- platform: mqtt
-  name: "Cooking Room LEDs"
-  state_topic: "smartthings/Cooking Room LEDs/switch"
-  command_topic: "smartthings/Cooking Room LEDs/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-
-- platform: mqtt
   name: "Desk Lamp"
   state_topic: "smartthings/Desk Lamp/switch"
   command_topic: "smartthings/Desk Lamp/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-
-- platform: mqtt
-  name: "Laura Bed Lamp"
-  state_topic: "smartthings/Laura Bed Lamp/switch"
-  command_topic: "smartthings/Laura Bed Lamp/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-
-- platform: mqtt
-  name: "PupCam"
-  state_topic: "smartthings/PupCam/switch"
-  command_topic: "smartthings/PupCam/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-
-- platform: mqtt
-  name: "Upstairs TV"
-  state_topic: "smartthings/Upstairs TV/switch"
-  command_topic: "smartthings/Upstairs TV/switch"
   payload_on: "on"
   payload_off: "off"
   optimistic: false

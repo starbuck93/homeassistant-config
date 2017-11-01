@@ -5,6 +5,5 @@
 
 - platform: mqtt
   devices:
-    adam: 'location/Mr. Starbuck'
-    laura: 'location/Mrs. Starbuck'
+    Adam: 'owntracks/otbguukm/adam'
 

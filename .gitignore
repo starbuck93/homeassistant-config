@@ -8,3 +8,4 @@ access.log
 events.log
 state.json
 known_devices.yaml
+zones.yaml
