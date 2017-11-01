@@ -43,6 +43,17 @@
   qos: 0
 
 - platform: mqtt
+  name: "Cooking Room Light 3"
+  state_topic: "smartthings/Cooking Room Light 3/switch"
+  command_topic: "smartthings/Cooking Room Light 3/switch"
+  brightness_state_topic: 'smartthings/Cooking Room Light 3/brightness'
+  brightness_command_topic: 'smartthings/Cooking Room Light 3/brightness/set'
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
   name: "Cooking Room Light 4"
   state_topic: "smartthings/Cooking Room Light 4/switch"
   command_topic: "smartthings/Cooking Room Light 4/switch"
