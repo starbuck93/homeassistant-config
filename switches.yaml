@@ -1,0 +1,81 @@
+- platform: mqtt
+  name: "Ceiling Fan"
+  state_topic: "smartthings/Ceiling Fan/switch"
+  command_topic: "smartthings/Ceiling Fan/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Ceiling Light"
+  state_topic: "smartthings/Ceiling Light/switch"
+  command_topic: "smartthings/Ceiling Light/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Cooking Room LEDs"
+  state_topic: "smartthings/Cooking Room LEDs/switch"
+  command_topic: "smartthings/Cooking Room LEDs/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Laura Bed Lamp"
+  state_topic: "smartthings/Laura Bed Lamp/switch"
+  command_topic: "smartthings/Laura Bed Lamp/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "PupCam"
+  state_topic: "smartthings/PupCam/switch"
+  command_topic: "smartthings/PupCam/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Upstairs TV"
+  state_topic: "smartthings/Upstairs TV/switch"
+  command_topic: "smartthings/Upstairs TV/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "VD Routine Door Opens"
+  state_topic: "smartthings/VD Routine Door Opens/switch"
+  command_topic: "smartthings/VD Routine Door Opens/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "VD Routine Empty Home"
+  state_topic: "smartthings/VD Routine Empty Home/switch"
+  command_topic: "smartthings/VD Routine Empty Home/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "VD Routine Im Home"
+  state_topic: "smartthings/VD Routine Im Home/switch"
+  command_topic: "smartthings/VD Routine Im Home/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+

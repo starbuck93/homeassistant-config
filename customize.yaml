@@ -1,0 +1,30 @@
+switch.vd_routine_door_opens:
+  hidden: true
+switch.vd_routine_empty_home:
+  hidden: true
+switch.vd_routine_im_home:
+  hidden: true
+sensor.outdoor_temperature:
+  hidden: true
+switch.wemo_switch_1:
+  hidden: true
+switch.wemo_switch_2:
+  hidden: true
+switch.wemo_switch_3:
+  hidden: true
+switch.wemo_switch_4:
+  hidden: true
+switch.wemo_switch_5:
+  hidden: true
+switch.chandelier:
+  hidden: true
+switch.adams_fan:
+  hidden: true
+automation.adam_arriving_home:
+  hidden: true
+automation.laura_arriving_home:
+  hidden: true
+automation.living_room_chromecast_pausedstopped:
+  hidden: true
+automation.living_room_chromecast_playing:
+  hidden: true
