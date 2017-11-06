@@ -34,21 +34,18 @@ tts:
   platform: google
 
 group: !include groups.yaml
-#automation: !include automations.yaml
 
-mqtt:
+automation: !include automations.yaml
+
+scene: !include scenes.yaml
+
+mqtt: #using cloudmqtt.com with a one-way bridge from there https://community.home-assistant.io/t/mqtt-working-mosquitto-cloudmqtt-bridge/1830/52 https://github.com/bastshoes/hass_config
   broker: localhost
   username: pi
   password: raspberry
   discovery: true
   discovery_prefix: smartthings
 
-# need to bridge cloudmqtt to local mqtt server https://community.home-assistant.io/t/two-mqtt-bokers-in-same-configuration/1766/3
-# mqtt 2:
-#   broker: m11.cloudmqtt.com
-#   port: !secret cm-port
-#   username: !secret cm-username
-#   password: !secret cm-password
   
 
 light:

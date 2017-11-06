@@ -1,12 +1,39 @@
-- alias: ST Presence Detection
+- alias: 'Adam Arriving Home'
   trigger:
-    platform: mqtt
-    topic: 'smartthings/+/presence/state'
+    platform: state
+    entity_id: device_tracker.otbguukm_adam
+    from: 'not_home'
+    to: 'home'
   action:
-    - service: mqtt.publish
-      data_template:
-        topic: >
-          location/{{ trigger.topic.split('/')[1] }}
-        payload: >
-          {% if trigger.payload == "present" %}home{% else %}not_home{% endif %}
+    service: switch.turn_on
+    entity_id: switch.vd_routine_im_home
 
+- alias: 'Laura Arriving Home'
+  trigger:
+    platform: state
+    entity_id: device_tracker.iphone
+    from: 'not_home'
+    to: 'home'
+  action:
+    service: switch.turn_on
+    entity_id: switch.vd_routine_im_home
+
+- alias: 'Living Room Chromecast Playing' #
+  trigger:
+    platform: state
+    entity_id: media_player.starbuck_main
+    from: 'idle'
+    to: 'playing'
+  action:
+    service: scene.turn_on
+    entity_id: scene.chromecast_playing
+
+- alias: 'Living Room Chromecast Paused/Stopped' #
+  trigger:
+    platform: state
+    entity_id: media_player.starbuck_main
+    from: 'playing'
+    to: 'idle'
+  action:
+    service: scene.turn_on
+    entity_id: scene.chromecast_stopped

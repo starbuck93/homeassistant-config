@@ -7,12 +7,12 @@ default_view:
     - group.master_bed
     - group.office
     - group.stairs
+    - group.media_players
     - group.cameras
     - group.sensors
 kitchen:
   name: Kitchen
   entities:
-    - media_player.starbuck_home
     - group.kitchen_lights
     - switch.cooking_room_leds
     - sensor.back_door
@@ -20,7 +20,6 @@ kitchen:
 living_room:
   name: Living Room
   entities:
-    - media_player.starbuck_main
     - light.brown_lamp
     - light.tall_light
     - sensor.living_room_temperature
@@ -28,7 +27,6 @@ living_room:
 master_bed:
   name: Bedroom
   entities:
-    - media_player.bedroom
     - switch.upstairs_tv
     - light.adams_bed_lamp
     - switch.laura_bed_lamp
@@ -54,7 +52,7 @@ awesome_people:
   name: Awesome People
   view: no
   entities:
-    - device_tracker.f0c850fbcdd7
+    - device_tracker.otbguukm_adam
     - device_tracker.iphone
 kitchen_lights:
   name: Kitchen Ceiling Lights
@@ -76,3 +74,9 @@ sensors:
     - sensor.outdoor_humidity
     - sensor.outside
     - sun.sun
+media_players:
+  name: Chromecasts
+  entities:
+    - media_player.starbuck_main
+    - media_player.starbuck_home
+    - media_player.bedroom
