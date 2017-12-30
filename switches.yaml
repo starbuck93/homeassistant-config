@@ -79,3 +79,11 @@
   optimistic: false
   qos: 0
 
+- platform: mqtt
+  name: "Desk Lamp"
+  state_topic: "smartthings/Desk Lamp/switch"
+  command_topic: "smartthings/Desk Lamp/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0

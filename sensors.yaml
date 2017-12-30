@@ -50,6 +50,27 @@
   value_template: '{{ value_json.temperature }}'
   unit_of_measurement: "°F"
 
+- platform: rest
+  name: Bedroom Temp
+  resource: http://10.0.0.51/
+  value_template: '{{ value_json.temperature }}'
+  unit_of_measurement: "°F"
+
 - platform: mqtt
   name: "Harmony Status"
   state_topic: "smartthings/Harmony Hub/currentActivity"
+
+- platform: mqtt
+  name: "ST Adam Presence"
+  state_topic: "smartthings/Mr. Starbuck/presence"
+
+- platform: mqtt
+  name: "ST Laura Presence"
+  state_topic: "smartthings/Mrs. Starbuck/presence"
+
+- platform: mqtt
+  state_topic: "owntracks/otbguukm/adam"
+  name: "Nexus 6P Battery"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.batt }}'
+

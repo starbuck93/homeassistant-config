@@ -28,3 +28,9 @@ automation.living_room_chromecast_pausedstopped:
   hidden: true
 automation.living_room_chromecast_playing:
   hidden: true
+sensor.st_adam_presence:
+  icon: mdi:home-variant
+sensor.st_laura_presence:
+  icon: mdi:home-heart
+media_player.starbuck_home:
+  icon: mdi:google-home

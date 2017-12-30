@@ -14,6 +14,8 @@ map:
 
 config:
 
+shopping_list:
+
 http:
   api_password: !secret http_password
 
@@ -62,11 +64,28 @@ device_tracker:
 
 camera:
   - platform: generic
-    still_image_url: http://10.0.0.3/bryan-timelapse/latest.jpg
-    name: Outside
+    still_image_url: http://10.0.0.38/cam_pic.php
+    name: Street
   - platform: generic
     still_image_url: !secret pupcamurl
     name: PupCam
 
 zone:
   !include zones.yaml
+
+
+# google_assistant:
+#   project_id: someproject-2d0b8
+#   client_id: !secret google_clientid
+#   access_token: !secret google_accesstoken
+#   exposed_domains:
+#     - switch
+#     - light
+#     - group
+
+climate:
+  - platform: generic_thermostat
+    name: Bedroom
+    heater: switch.upstairs_tv #yes I know
+    target_sensor: sensor.bedroom_temp
+

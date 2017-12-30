@@ -1,9 +1,15 @@
 - alias: 'Adam Arriving Home'
   trigger:
     platform: state
-    entity_id: device_tracker.otbguukm_adam
+    entity_id: device_tracker.f0c850fbcdd7
     from: 'not_home'
     to: 'home'
+  condition:
+    condition: state
+    entity_id: sensor.st_adam_presence
+    state: 'not present'
+    # for:
+    #   minutes: 5
   action:
     service: switch.turn_on
     entity_id: switch.vd_routine_im_home
@@ -14,6 +20,10 @@
     entity_id: device_tracker.iphone
     from: 'not_home'
     to: 'home'
+  condition:
+    condition: state
+    entity_id: sensor.st_laura_presence
+    state: 'not present'
   action:
     service: switch.turn_on
     entity_id: switch.vd_routine_im_home
@@ -37,3 +47,5 @@
   action:
     service: scene.turn_on
     entity_id: scene.chromecast_stopped
+
+
