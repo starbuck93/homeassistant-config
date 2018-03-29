@@ -1,15 +1,23 @@
-# default_view:
-#   view: yes
-#   icon: mdi:home 
-#   entities:
-#     - group.living_room
-#     - group.kitchen
-#     - group.master_bed
-#     - group.office
-#     - group.stairs
-#     - group.media_players
-#     - group.cameras
-#     - group.sensors
+default_view:
+  view: yes
+  icon: mdi:home 
+  entities:
+    - group.awesome_people
+    - group.living_room
+    - group.kitchen
+    - group.master_bed
+    - group.office
+    - group.stairs
+    - group.media_players
+    - group.cameras
+    - group.sensors
+awesome_people:
+  name: Awesome People
+  entities:
+    - device_tracker.f0c850fbcdd7
+    - sensor.st_adam_presence
+    - device_tracker.iphone
+    - sensor.st_laura_presence
 kitchen:
   name: Kitchen
   entities:
@@ -34,10 +42,12 @@ master_bed:
     - switch.ceiling_fan
     - switch.pupcam
     - sensor.bedroom_temp
+    - climate.bedroom 
 office:
   name: Office
   entities:
     - switch.desk_lamp
+    - switch.desk_lamp_2
     - light.square_lamp
 stairs:
   name: Stairs
@@ -47,16 +57,8 @@ stairs:
 cameras:
   name: Cameras
   entities:
-    - camera.street
+    # - camera.street
     - camera.pupcam
-awesome_people:
-  name: Awesome People
-  view: no
-  entities:
-    - device_tracker.f0c850fbcdd7
-    - sensor.st_adam_presence
-    - device_tracker.iphone
-    - sensor.st_laura_presence
 kitchen_lights:
   name: Kitchen Ceiling Lights
   view: no

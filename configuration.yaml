@@ -9,6 +9,7 @@ homeassistant:
     !include customize.yaml
 
 frontend:
+  themes: !include themes.yaml
 
 map:
 
@@ -48,7 +49,8 @@ mqtt: #using cloudmqtt.com with a one-way bridge from there https://community.ho
   discovery: true
   discovery_prefix: smartthings
 
-  
+influxdb:
+  host: 127.0.0.1  
 
 light:
   !include lights.yaml
@@ -83,9 +85,9 @@ zone:
 #     - light
 #     - group
 
-climate:
-  - platform: generic_thermostat
-    name: Bedroom
-    heater: switch.upstairs_tv #yes I know
-    target_sensor: sensor.bedroom_temp
+#climate:
+#  - platform: generic_thermostat
+#    name: Bedroom
+#    heater: switch.upstairs_tv #yes I know
+#    target_sensor: sensor.bedroom_temp
 

@@ -32,5 +32,23 @@ sensor.st_adam_presence:
   icon: mdi:home-variant
 sensor.st_laura_presence:
   icon: mdi:home-heart
-media_player.starbuck_home:
-  icon: mdi:google-home
+media_player.all_speakers:
+  hidden: true
+media_player.all_speakers_2:
+  hidden: true
+media_player.bedroom :
+  friendly_name: Upstairs Chromecast
+media_player.bedroom_mini:
+  hidden: true
+media_player.office_mini :
+  hidden: true
+media_player.soundbar:
+  hidden: true
+media_player.starbuck_home :
+  hidden: true
+media_player.starbuck_main :
+  friendly_name: Downstairs Chromecast
+media_player.upstairs_speaker:
+  hidden: true
+remote.harmony_hub:
+  hidden: true

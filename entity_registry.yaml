@@ -1,0 +1,21 @@
+switch.adams_fan:
+  platform: wemo
+  unique_id: 221512K1300750
+switch.wemo_switch_3:
+  platform: wemo
+  unique_id: 231615K12007CA
+switch.desk_lamp_2:
+  platform: wemo
+  unique_id: 221535K0100F19
+switch.wemo_switch_1:
+  platform: wemo
+  unique_id: 221626K010296E
+switch.chandelier:
+  platform: wemo
+  unique_id: 221515K1300287
+switch.wemo_switch_2:
+  platform: wemo
+  unique_id: 231549K1200316
+switch.christmas_tree:
+  platform: wemo
+  unique_id: 221626K0102AE8

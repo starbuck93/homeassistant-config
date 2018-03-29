@@ -1,8 +1,12 @@
-- platform: asuswrt
-  host: 10.0.0.1
-  username: admin
-  password: !secret asus_password
+#- platform: asuswrt
+#  host: 10.0.0.1
+#  username: admin
+#  password: !secret asus_password
+#  protocol: telnet
 
 - platform: owntracks
 
-
+- platform: snmp
+  host: 10.0.0.1
+  community: public
+  baseoid: 1.3.6.1.2.1.4.22.1.2
