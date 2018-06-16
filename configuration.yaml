@@ -49,9 +49,6 @@ mqtt: #using cloudmqtt.com with a one-way bridge from there https://community.ho
   discovery: true
   discovery_prefix: smartthings
 
-influxdb:
-  host: 127.0.0.1  
-
 light:
   !include lights.yaml
 
@@ -65,25 +62,17 @@ device_tracker:
   !include device_tracker.yaml
 
 camera:
+  - platform: mjpeg
+    mjpeg_url: !secret streetcamurl
+    still_image_url: !secret streetcamurlstill
+    name: StreetCam
   - platform: generic
-    still_image_url: http://10.0.0.38/cam_pic.php
-    name: Street
-  - platform: generic
-    still_image_url: !secret pupcamurl
-    name: PupCam
+    mjpeg_url: !secret ankercamurl
+    still_image_url: !secret ankercamstill
+    name: AnkerCam
 
 zone:
   !include zones.yaml
-
-
-# google_assistant:
-#   project_id: someproject-2d0b8
-#   client_id: !secret google_clientid
-#   access_token: !secret google_accesstoken
-#   exposed_domains:
-#     - switch
-#     - light
-#     - group
 
 #climate:
 #  - platform: generic_thermostat

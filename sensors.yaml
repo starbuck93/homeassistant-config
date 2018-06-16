@@ -52,7 +52,7 @@
 
 - platform: rest
   name: Bedroom Temp
-  resource: http://10.0.0.51/
+  resource: http://10.0.0.63/
   value_template: '{{ value_json.temperature }}'
   unit_of_measurement: "°F"
 
@@ -67,10 +67,4 @@
 - platform: mqtt
   name: "ST Laura Presence"
   state_topic: "smartthings/Mrs. Starbuck/presence"
-
-- platform: mqtt
-  state_topic: "owntracks/otbguukm/adam"
-  name: "Nexus 6P Battery"
-  unit_of_measurement: "%"
-  value_template: '{{ value_json.batt }}'
 

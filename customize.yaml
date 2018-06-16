@@ -52,3 +52,9 @@ media_player.upstairs_speaker:
   hidden: true
 remote.harmony_hub:
   hidden: true
+
+device_tracker.404e369280ff:
+  friendly_name: Adam
+
+device_tracker.404e368f3c4e:
+  friendly_name: Laura

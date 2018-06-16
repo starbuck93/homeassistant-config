@@ -1,22 +1,22 @@
-default_view:
-  view: yes
-  icon: mdi:home 
-  entities:
-    - group.awesome_people
-    - group.living_room
-    - group.kitchen
-    - group.master_bed
-    - group.office
-    - group.stairs
-    - group.media_players
-    - group.cameras
-    - group.sensors
+# default_view:
+#   view: yes
+#   icon: mdi:home 
+#   entities:
+#     - group.awesome_people
+#     - group.living_room
+#     - group.kitchen
+#     - group.master_bed
+#     - group.office
+#     - group.stairs
+#     - group.media_players
+#     - group.cameras
+#     - group.sensors
 awesome_people:
   name: Awesome People
   entities:
-    - device_tracker.f0c850fbcdd7
+    - device_tracker.404e369280ff
     - sensor.st_adam_presence
-    - device_tracker.iphone
+    - device_tracker.404e368f3c4e
     - sensor.st_laura_presence
 kitchen:
   name: Kitchen
@@ -25,13 +25,18 @@ kitchen:
     - switch.cooking_room_leds
     - sensor.back_door
     - sensor.motion_sensor
+    - sensor.kitchen_temperature
+    - sensor.back_door_temperature  
 living_room:
   name: Living Room
   entities:
     - light.brown_lamp
     - light.tall_light
     - sensor.living_room_temperature
+    - sensor.front_door_temperature 
     - sensor.front_door
+    - remote.harmony_hub
+    - sensor.harmony_status 
 master_bed:
   name: Bedroom
   entities:
@@ -42,7 +47,8 @@ master_bed:
     - switch.ceiling_fan
     - switch.pupcam
     - sensor.bedroom_temp
-    - climate.bedroom 
+    - media_player.upstairs_speaker
+    - remote.harmony_hub_2
 office:
   name: Office
   entities:
@@ -57,8 +63,8 @@ stairs:
 cameras:
   name: Cameras
   entities:
-    # - camera.street
-    - camera.pupcam
+    - camera.streetcam
+    - camera.ankercam
 kitchen_lights:
   name: Kitchen Ceiling Lights
   view: no
@@ -82,6 +88,6 @@ sensors:
 media_players:
   name: Chromecasts
   entities:
-    - media_player.starbuck_main
+    - media_player.living_room_tv
     - media_player.starbuck_home
     - media_player.bedroom
