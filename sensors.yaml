@@ -32,27 +32,33 @@
 - platform: mqtt
   name: "Back Door"
   state_topic: "smartthings/Back Door/contact"
-  device_class: opening
+  #device_class: #might need to change these to binary sensors
 
 - platform: mqtt
   name: "Front Door"
   state_topic: "smartthings/Front Door/contact"
-  device_class: opening
+  #device_class: #might need to change these to binary sensors
 
 - platform: mqtt
   name: "Motion Sensor"
   state_topic: "smartthings/Motion Sensor/motion"
-  device_class: motion
+  #device_class: #might need to change these to binary sensors
 
-- platform: rest
-  name: Outside
-  resource: http://10.0.0.40/
-  value_template: '{{ value_json.temperature }}'
-  unit_of_measurement: "°F"
+# - platform: rest
+#   name: Outside
+#   resource: http://10.0.0.40/
+#   value_template: '{{ value_json.temperature }}'
+#   unit_of_measurement: "°F"
 
 - platform: rest
   name: Bedroom Temp
   resource: http://10.0.0.63/
+  value_template: '{{ value_json.temperature }}'
+  unit_of_measurement: "°F"
+
+- platform: rest
+  name: Cold AC Air
+  resource: http://10.0.0.67/
   value_template: '{{ value_json.temperature }}'
   unit_of_measurement: "°F"
 
@@ -67,4 +73,11 @@
 - platform: mqtt
   name: "ST Laura Presence"
   state_topic: "smartthings/Mrs. Starbuck/presence"
+
+- platform: octoprint
+  name: OctoPrint
+  monitored_conditions:
+    - Current State
+    - Temperatures
+    - Job Percentage
 

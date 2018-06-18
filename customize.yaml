@@ -4,57 +4,7 @@ switch.vd_routine_empty_home:
   hidden: true
 switch.vd_routine_im_home:
   hidden: true
-sensor.outdoor_temperature:
-  hidden: true
-switch.wemo_switch_1:
-  hidden: true
-switch.wemo_switch_2:
-  hidden: true
-switch.wemo_switch_3:
-  hidden: true
-switch.wemo_switch_4:
-  hidden: true
-switch.wemo_switch_5:
-  hidden: true
-switch.chandelier:
-  hidden: true
-switch.adams_fan:
-  hidden: true
-automation.adam_arriving_home:
-  hidden: true
-automation.laura_arriving_home:
-  hidden: true
-automation.living_room_chromecast_pausedstopped:
-  hidden: true
-automation.living_room_chromecast_playing:
-  hidden: true
-sensor.st_adam_presence:
-  icon: mdi:home-variant
-sensor.st_laura_presence:
-  icon: mdi:home-heart
-media_player.all_speakers:
-  hidden: true
-media_player.all_speakers_2:
-  hidden: true
-media_player.bedroom :
-  friendly_name: Upstairs Chromecast
-media_player.bedroom_mini:
-  hidden: true
-media_player.office_mini :
-  hidden: true
-media_player.soundbar:
-  hidden: true
-media_player.starbuck_home :
-  hidden: true
-media_player.starbuck_main :
-  friendly_name: Downstairs Chromecast
-media_player.upstairs_speaker:
-  hidden: true
-remote.harmony_hub:
-  hidden: true
-
 device_tracker.404e369280ff:
   friendly_name: Adam
-
 device_tracker.404e368f3c4e:
   friendly_name: Laura

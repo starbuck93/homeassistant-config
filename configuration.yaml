@@ -80,3 +80,8 @@ zone:
 #    heater: switch.upstairs_tv #yes I know
 #    target_sensor: sensor.bedroom_temp
 
+octoprint:
+  host: 10.0.0.227
+  api_key: !secret octoprint_key
+  bed: true
+  number_of_tools: 1
