@@ -58,6 +58,9 @@ switch:
 sensor:
   !include sensors.yaml
 
+binary_sensor:
+  !include binary_sensors.yaml
+
 device_tracker:
   !include device_tracker.yaml
 
@@ -85,3 +88,32 @@ octoprint:
   api_key: !secret octoprint_key
   bed: true
   number_of_tools: 1
+
+
+weather:
+  - platform: darksky
+    api_key: !secret darksky_apikey
+
+history_graph:
+  gr1:
+    name: Temperatures
+    entities:
+      - sensor.back_door_temperature
+      - sensor.bedroom_temp
+      - sensor.cold_ac_air
+      - sensor.living_room_temperature
+      - sensor.outdoor_temperature
+    hours_to_show: 24
+    refresh: 60
+
+cast:
+  # media_player:
+  # - host: 10.0.0.100 #Soundbar
+  # - host: 10.0.0.101 #BedroomMini
+  # - host: 10.0.0.102 #StarbuckHome
+  # - host: 10.0.0.103 #Office Mini
+  # - host: 10.0.0.104 #ChromecastBR
+  # - host: 10.0.0.105 #Chromecast-Audio
+  # - host: 10.0.0.107 #ChromecastUltra
+
+apcupsd:

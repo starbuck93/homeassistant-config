@@ -9,3 +9,4 @@ events.log
 state.json
 known_devices.yaml
 zones.yaml
+.google_maps_location_sharing.cookies

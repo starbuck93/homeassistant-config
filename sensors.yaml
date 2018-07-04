@@ -62,6 +62,12 @@
   value_template: '{{ value_json.temperature }}'
   unit_of_measurement: "°F"
 
+- platform: rest
+  name: TempPi4
+  resource: http://10.0.0.62/
+  value_template: '{{ value_json.temperature }}'
+  unit_of_measurement: "°F"
+
 - platform: mqtt
   name: "Harmony Status"
   state_topic: "smartthings/Harmony Hub/currentActivity"
@@ -81,3 +87,25 @@
     - Temperatures
     - Job Percentage
 
+# - platform: apcupsd
+#   resources:
+#     - bcharge
+#     - linev
+#     - loadpct
+#     - nominv
+#     - nompower
+#     - numxfers
+#     - outputv
+#     - status
+#     - timeleft
+#     - tonbatt
+
+- platform: uptime
+
+- platform: history_stats
+  name: AC On Today
+  entity_id: binary_sensor.ac_boolean
+  state: True
+  type: time
+  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+  end: '{{ now() }}'

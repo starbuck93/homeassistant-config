@@ -14,14 +14,14 @@
 awesome_people:
   name: Awesome People
   entities:
-    - device_tracker.404e369280ff
+    - device_tracker.google_maps_101082361685415510767
     - sensor.st_adam_presence
     - device_tracker.404e368f3c4e
     - sensor.st_laura_presence
 kitchen:
   name: Kitchen
   entities:
-    - group.kitchen_lights
+    - light.kitchen_lights
     - switch.cooking_room_leds
     - sensor.back_door
     - sensor.motion_sensor
@@ -33,7 +33,7 @@ living_room:
     - light.brown_lamp
     - light.tall_light
     - sensor.living_room_temperature
-    - sensor.front_door_temperature 
+    - sensor.front_door_temperature
     - sensor.front_door
     - remote.harmony_hub
     - sensor.harmony_status 
@@ -65,14 +65,14 @@ cameras:
   entities:
     - camera.streetcam
     - camera.ankercam
-kitchen_lights:
-  name: Kitchen Ceiling Lights
-  view: no
-  entities:
-    - light.cooking_room_light_1
-    - light.cooking_room_light_2
-    - light.cooking_room_light_3
-    - light.cooking_room_light_4
+# kitchen_lights:
+#   name: Kitchen Ceiling Lights
+#   view: no
+#   entities:
+#     - light.cooking_room_light_1
+#     - light.cooking_room_light_2
+#     - light.cooking_room_light_3
+#     - light.cooking_room_light_4
 hallway_lights:
   name: Upstairs Hallway
   view: no

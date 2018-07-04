@@ -8,3 +8,6 @@ device_tracker.404e369280ff:
   friendly_name: Adam
 device_tracker.404e368f3c4e:
   friendly_name: Laura
+binary_sensor.ac_boolean:
+  device_class: cold
+  friendly_name: Is the AC Running

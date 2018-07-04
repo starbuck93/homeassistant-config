@@ -141,3 +141,10 @@
   optimistic: false
   qos: 0
 
+- platform: group
+  name: Kitchen Lights
+  entities:
+    - light.cooking_room_light_1
+    - light.cooking_room_light_2
+    - light.cooking_room_light_3
+    - light.cooking_room_light_4
