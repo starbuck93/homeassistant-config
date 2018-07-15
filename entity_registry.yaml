@@ -73,3 +73,8 @@ media_player.starbuck_main:
   name:
   platform: cast
   unique_id: 378104da-8dd0-9137-e86a-f01636faa68e
+switch.wemo_switch_5:
+  config_entry_id:
+  name:
+  platform: wemo
+  unique_id: 221640K0101B1C

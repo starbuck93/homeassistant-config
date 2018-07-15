@@ -131,11 +131,22 @@
   qos: 0
 
 - platform: mqtt
-  name: "Tall Light"
-  state_topic: "smartthings/Tall Light/switch"
-  command_topic: "smartthings/Tall Light/switch"
-  brightness_state_topic: 'smartthings/Tall Light/brightness'
-  brightness_command_topic: 'smartthings/Tall Light/brightness/set'
+  name: "Hanging Light"
+  state_topic: "smartthings/Hanging Light/switch"
+  command_topic: "smartthings/Hanging Light/switch"
+  brightness_state_topic: 'smartthings/Hanging Light/brightness'
+  brightness_command_topic: 'smartthings/Hanging Light/brightness/set'
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Extra Bedroom Light"
+  state_topic: "smartthings/Extra Bedroom Light/switch"
+  command_topic: "smartthings/Extra Bedroom Light/switch"
+  brightness_state_topic: 'smartthings/Extra Bedroom Light/brightness'
+  brightness_command_topic: 'smartthings/Extra Bedroom Light/brightness/set'
   payload_on: "on"
   payload_off: "off"
   optimistic: false

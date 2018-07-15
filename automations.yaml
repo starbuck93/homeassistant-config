@@ -1,51 +1,76 @@
-- alias: 'Adam Arriving Home'
+- alias: 'Arriving Home'
   trigger:
     platform: state
-    entity_id: device_tracker.f0c850fbcdd7
+    entity_id: group.all_devices
     from: 'not_home'
     to: 'home'
   condition:
-    condition: state
-    entity_id: sensor.st_adam_presence
-    state: 'not present'
-    # for:
-    #   minutes: 5
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: 'switch.night_mode_active'
+        state: 'off'
+      - condition: state
+        entity_id: 'switch.away_mode_active'
+        state: 'on'
   action:
-    service: switch.turn_on
-    entity_id: switch.vd_routine_im_home
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.vd_routine_im_home
+          - switch.home_mode_active
+    - service: switch.turn_off
+      data:
+        entity_id: switch.away_mode_active
 
-- alias: 'Laura Arriving Home'
+- alias: 'Leaving'
   trigger:
     platform: state
-    entity_id: device_tracker.iphone
-    from: 'not_home'
-    to: 'home'
+    entity_id: group.all_devices
+    from: 'home'
+    to: 'not_home'
   condition:
-    condition: state
-    entity_id: sensor.st_laura_presence
-    state: 'not present'
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: 'switch.night_mode_active'
+        state: 'off'
+      - condition: state
+        entity_id: 'switch.away_mode_active'
+        state: 'off'
   action:
-    service: switch.turn_on
-    entity_id: switch.vd_routine_im_home
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.vd_routine_empty_home
+          - switch.away_mode_active
+    - service: switch.turn_off
+      data:
+        entity_id: switch.home_mode_active
 
-- alias: 'Living Room Chromecast Playing' #
+- alias: 'Back Door Opens'
   trigger:
     platform: state
-    entity_id: media_player.starbuck_main
-    from: 'idle'
-    to: 'playing'
+    entity_id: sensor.back_door
+    from: 'closed'
+    to: 'open'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: 'switch.night_mode_active'
+        state: 'off'
+      - condition: state
+        entity_id: 'switch.away_mode_active'
+        state: 'on'
   action:
-    service: scene.turn_on
-    entity_id: scene.chromecast_playing
+    - service: switch.turn_on
+      data:
+        entity_id: switch.VD_Routine_Door_Opens
+    - service: persistent_notification.create
+      data:
+        message: Back door intrusion detected at {{ now() }}
+        title: Intrusion Detected
 
-- alias: 'Living Room Chromecast Paused/Stopped' #
-  trigger:
-    platform: state
-    entity_id: media_player.starbuck_main
-    from: 'playing'
-    to: 'idle'
-  action:
-    service: scene.turn_on
-    entity_id: scene.chromecast_stopped
 
 

@@ -1,84 +1,115 @@
-- platform: rest
-  name: Living Room Temperature
-  resource: http://localhost/
-  value_template: '{{ value_json.temperature }}'
-  unit_of_measurement: "°F"
+- platform: mqtt
+  name: "Back Door Temperature"
+  state_topic: "smartthings/Back Door/temperature"
+  unit_of_measurement: '°F'
+  device_class: 'temperature' 
 
 - platform: mqtt
   name: "Front Door Temperature"
   state_topic: "smartthings/Front Door/temperature"
   unit_of_measurement: '°F'
+  device_class: 'temperature' 
 
 - platform: mqtt
   name: "Kitchen Temperature"
   state_topic: "smartthings/Motion Sensor/temperature"
   unit_of_measurement: '°F'
+  device_class: 'temperature' 
 
 - platform: mqtt
-  name: "Back Door Temperature"
-  state_topic: "smartthings/Back Door/temperature"
+  name: "Upstairs Temperature"
+  state_topic: "smartthings/Upstairs Motion Sensor/temperature"
   unit_of_measurement: '°F'
+  device_class: 'temperature' 
+
+- platform: mqtt
+  name: "Water Leak Temperature"
+  state_topic: "smartthings/Water Leak Sensor/temperature"
+  unit_of_measurement: '°F'
+  device_class: 'temperature' 
+
+- platform: mqtt
+  name: "Office Temperature"
+  state_topic: "smartthings/Office Bedroom Door/temperature"
+  unit_of_measurement: '°F'
+  device_class: 'temperature' 
+
+- platform: mqtt
+  name: "Back Door Battery"
+  state_topic: "smartthings/Back Door/Battery"
+  unit_of_measurement: '%'
+  device_class: 'battery'
+
+- platform: mqtt
+  name: "Front Door Battery"
+  state_topic: "smartthings/Front Door/Battery"
+  unit_of_measurement: '%'
+  device_class: 'battery'
+
+- platform: mqtt
+  name: "Kitchen Battery"
+  state_topic: "smartthings/Motion Sensor/Battery"
+  unit_of_measurement: '%'
+  device_class: 'battery'
+
+- platform: mqtt
+  name: "Upstairs Battery"
+  state_topic: "smartthings/Upstairs Motion Sensor/Battery"
+  unit_of_measurement: '%'
+  device_class: 'battery'
+
+- platform: mqtt
+  name: "Water Leak Battery"
+  state_topic: "smartthings/Water Leak Sensor/Battery"
+  unit_of_measurement: '%'
+  device_class: 'battery'
+
+- platform: mqtt
+  name: "Office Battery"
+  state_topic: "smartthings/Office Bedroom Door/Battery"
+  unit_of_measurement: '%'
+  device_class: 'battery'
 
 - platform: mqtt
   name: "Outdoor Temperature"
   state_topic: "smartthings/Outdoor Temperature/temperature"
   unit_of_measurement: '°F'
+  device_class: 'temperature' 
 
 - platform: mqtt
   name: "Outdoor Humidity"
   state_topic: "smartthings/Outdoor Temperature/humidity"
   unit_of_measurement: '%'
+  device_class: 'humidity'
 
-- platform: mqtt
-  name: "Back Door"
-  state_topic: "smartthings/Back Door/contact"
-  #device_class: #might need to change these to binary sensors
-
-- platform: mqtt
-  name: "Front Door"
-  state_topic: "smartthings/Front Door/contact"
-  #device_class: #might need to change these to binary sensors
-
-- platform: mqtt
-  name: "Motion Sensor"
-  state_topic: "smartthings/Motion Sensor/motion"
-  #device_class: #might need to change these to binary sensors
-
-# - platform: rest
-#   name: Outside
-#   resource: http://10.0.0.40/
-#   value_template: '{{ value_json.temperature }}'
-#   unit_of_measurement: "°F"
+- platform: rest
+  name: Living Room Temperature
+  resource: http://localhost/
+  value_template: '{{ value_json.temperature }}'
+  unit_of_measurement: "°F"
+  device_class: 'temperature' 
 
 - platform: rest
   name: Bedroom Temp
   resource: http://10.0.0.63/
   value_template: '{{ value_json.temperature }}'
   unit_of_measurement: "°F"
+  device_class: 'temperature' 
 
 - platform: rest
   name: Cold AC Air
   resource: http://10.0.0.67/
   value_template: '{{ value_json.temperature }}'
   unit_of_measurement: "°F"
-
-- platform: rest
-  name: TempPi4
-  resource: http://10.0.0.62/
-  value_template: '{{ value_json.temperature }}'
-  unit_of_measurement: "°F"
+  device_class: 'temperature' 
 
 - platform: mqtt
   name: "Harmony Status"
   state_topic: "smartthings/Harmony Hub/currentActivity"
 
 - platform: mqtt
-  name: "ST Adam Presence"
-  state_topic: "smartthings/Mr. Starbuck/presence"
-
-- platform: mqtt
-  name: "ST Laura Presence"
-  state_topic: "smartthings/Mrs. Starbuck/presence"
+  name: "Harmony2 Status"
+  state_topic: "smartthings/Harmony Hub 2/currentActivity"
 
 - platform: octoprint
   name: OctoPrint
@@ -86,19 +117,6 @@
     - Current State
     - Temperatures
     - Job Percentage
-
-# - platform: apcupsd
-#   resources:
-#     - bcharge
-#     - linev
-#     - loadpct
-#     - nominv
-#     - nompower
-#     - numxfers
-#     - outputv
-#     - status
-#     - timeleft
-#     - tonbatt
 
 - platform: uptime
 
@@ -109,3 +127,42 @@
   type: time
   start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
   end: '{{ now() }}'
+
+
+- platform: mqtt
+  name: "Back Door"
+  state_topic: "smartthings/Back Door/contact"
+  icon: mdi:door 
+  # device_class: 'door' 
+
+- platform: mqtt
+  name: "Front Door"
+  state_topic: "smartthings/Front Door/contact"
+  icon: mdi:door 
+  # device_class: 'door' 
+
+- platform: mqtt
+  name: "Downstairs Motion Sensor"
+  state_topic: "smartthings/Motion Sensor/motion"
+  icon: mdi:walk
+  # device_class: 'motion' 
+
+- platform: mqtt
+  name: "Upstairs Motion Sensor"
+  state_topic: "smartthings/Upstairs Motion Sensor/motion"
+  icon: mdi:walk
+  # device_class: 'motion' 
+
+- platform: mqtt
+  name: "Water Leak Sensor"
+  state_topic: "smartthings/Water Leak Sensor/water"
+  icon: mdi:water-off
+  # device_class: 'moisture' 
+
+- platform: mqtt
+  name: "Office Temperature"
+  state_topic: "smartthings/Office Bedroom Door/contact"
+  icon: mdi:door 
+  # device_class: 'door' 
+
+

@@ -11,3 +11,15 @@ device_tracker.404e368f3c4e:
 binary_sensor.ac_boolean:
   device_class: cold
   friendly_name: Is the AC Running
+sensor.uptime:
+  hidden: true
+sensor.temppi4:
+  hidden: true
+device_tracker.ac3743a3c88c:
+  hidden: true
+device_tracker.9cebe82b4de2:
+  hidden: true
+sensor.st_adam_presence:
+  hidden: true
+sensor.st_laura_presence:
+  hidden: true

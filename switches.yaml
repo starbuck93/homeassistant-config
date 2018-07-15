@@ -17,33 +17,6 @@
   qos: 0
 
 - platform: mqtt
-  name: "Cooking Room LEDs"
-  state_topic: "smartthings/Cooking Room LEDs/switch"
-  command_topic: "smartthings/Cooking Room LEDs/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-
-- platform: mqtt
-  name: "Laura Bed Lamp"
-  state_topic: "smartthings/Laura Bed Lamp/switch"
-  command_topic: "smartthings/Laura Bed Lamp/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-
-- platform: mqtt
-  name: "PupCam"
-  state_topic: "smartthings/PupCam/switch"
-  command_topic: "smartthings/PupCam/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-
-- platform: mqtt
   name: "Upstairs TV"
   state_topic: "smartthings/Upstairs TV/switch"
   command_topic: "smartthings/Upstairs TV/switch"
@@ -79,11 +52,68 @@
   optimistic: false
   qos: 0
 
-# - platform: mqtt
-#   name: "Desk Lamp" # this is duplicated by the wemo platform
-#   state_topic: "smartthings/Desk Lamp/switch"
-#   command_topic: "smartthings/Desk Lamp/switch"
-#   payload_on: "on"
-#   payload_off: "off"
-#   optimistic: false
-#   qos: 0
+- platform: mqtt
+  name: "night_mode_active"
+  state_topic: "smartthings/night_mode_active/switch"
+  command_topic: "smartthings/night_mode_active/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "away_mode_active"
+  state_topic: "smartthings/away_mode_active/switch"
+  command_topic: "smartthings/away_mode_active/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "home_mode_active"
+  state_topic: "smartthings/home_mode_active/switch"
+  command_topic: "smartthings/home_mode_active/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Downstairs Chromecast"
+  state_topic: "smartthings/Downstairs Chromecast/switch"
+  command_topic: "smartthings/Downstairs Chromecast/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+
+- platform: mqtt
+  name: "Downstairs TV"
+  state_topic: "smartthings/Downstairs TV/switch"
+  command_topic: "smartthings/Downstairs TV/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Play Xbox 360"
+  state_topic: "smartthings/Play Xbox 360/switch"
+  command_topic: "smartthings/Play Xbox 360/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+- platform: mqtt
+  name: "Play Xbox One"
+  state_topic: "smartthings/Play Xbox One/switch"
+  command_topic: "smartthings/Play Xbox One/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+
+

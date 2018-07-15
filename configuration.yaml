@@ -31,6 +31,9 @@ history:
 
 logbook:
 
+recorder: 
+  purge_keep_days: 7
+
 sun:
 
 tts:
@@ -73,6 +76,11 @@ camera:
     mjpeg_url: !secret ankercamurl
     still_image_url: !secret ankercamstill
     name: AnkerCam
+  - platform: generic
+    mjpeg_url: !secret octoprintcamurl
+    still_image_url: !secret octoprintcamurl
+    name: OctoPrintCam
+
 
 zone:
   !include zones.yaml
@@ -100,10 +108,16 @@ history_graph:
     entities:
       - sensor.back_door_temperature
       - sensor.bedroom_temp
-      - sensor.cold_ac_air
       - sensor.living_room_temperature
       - sensor.outdoor_temperature
     hours_to_show: 24
+    refresh: 60
+  gr2:
+    name: Air Conditioning
+    entities:
+      - sensor.cold_ac_air
+      - binary_sensor.ac_boolean
+    hours_to_show: 12
     refresh: 60
 
 cast:

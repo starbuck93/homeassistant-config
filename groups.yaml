@@ -15,9 +15,10 @@ awesome_people:
   name: Awesome People
   entities:
     - device_tracker.google_maps_101082361685415510767
-    - sensor.st_adam_presence
-    - device_tracker.404e368f3c4e
-    - sensor.st_laura_presence
+    - device_tracker.404e369280ff #Adam Pixel 2 Wifi
+    # - sensor.st_adam_presence
+    - device_tracker.404e368f3c4e #Laura Pixel 2 Wifi
+    # - sensor.st_laura_presence
 kitchen:
   name: Kitchen
   entities:
@@ -91,3 +92,32 @@ media_players:
     - media_player.living_room_tv
     - media_player.starbuck_home
     - media_player.bedroom
+octoprint:
+  name: OctoPrint
+  entities:
+    - sensor.octoprint_actual_bed_temp
+    - sensor.octoprint_actual_tool0_temp
+    - sensor.octoprint_current_state
+    - sensor.octoprint_job_percentage
+    - sensor.octoprint_target_bed_temp
+    - sensor.octoprint_target_tool0_temp
+coldacair:
+  name: Air Conditioning
+  entities:
+    - history_graph.air_conditioning
+    - binary_sensor.ac_boolean
+    - sensor.ac_on_today
+    - sensor.cold_ac_air
+    - sensor.outdoor_temperature
+
+uptimerobot:
+  name: UptimeRobot
+  entities:
+    - binary_sensor.ctop
+    - binary_sensor.deluge
+    - binary_sensor.ombi
+    - binary_sensor.plexpy
+    - binary_sensor.radarr
+    - binary_sensor.shield_router
+    - binary_sensor.sonarr
+    - binary_sensor.starbuckstech
