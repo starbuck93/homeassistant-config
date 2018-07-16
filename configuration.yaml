@@ -28,6 +28,11 @@ discovery:
 conversation:
 
 history:
+#  exclude:
+#    domains:
+#      - automation
+#    entities:
+#      - sensor.date
 
 logbook:
 

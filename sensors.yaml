@@ -166,3 +166,9 @@
   # device_class: 'door' 
 
 
+- platform: template
+  sensors:
+    mode:
+      friendly_name: "Mode"
+      value_template: "{% if is_state('switch.home_mode_active', 'on') %} home {% elif is_state('switch.away_mode_active', 'on') %} away {% elif is_state('switch.night_mode_active', 'on') %} night {% endif %}"
+      icon_template: "{% if is_state('switch.home_mode_active', 'on') %} mdi:home-heart {% elif is_state('switch.away_mode_active', 'on') %} mdi:home-outline {% elif is_state('switch.night_mode_active', 'on') %} mdi:power-sleep {% endif %}"
