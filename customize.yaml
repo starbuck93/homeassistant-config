@@ -6,6 +6,7 @@ switch.vd_routine_im_home:
   hidden: true
 device_tracker.404e369280ff:
   friendly_name: Adam
+  hidden: true
 device_tracker.404e368f3c4e:
   friendly_name: Laura
 binary_sensor.ac_boolean:
@@ -22,4 +23,35 @@ device_tracker.9cebe82b4de2:
 sensor.st_adam_presence:
   hidden: true
 sensor.st_laura_presence:
+  hidden: true
+switch.wemo_switch_1:
+  icon: mdi:lamp
+light.adams_bed_lamp:
+  icon: mdi:desk-lamp
+light.brown_lamp:
+  icon: mdi:lamp
+switch.desk_lamp_2:
+  icon: mdi:desk-lamp
+light.square_lamp:
+  icon: mdi:floor-lamp
+switch.wemo_switch_3:
+  icon: mdi:printer-3d
+switch.vd_routine_goodnight:
+  icon: mdi:weather-night
+  friendly_name: Activate Goodnight
+switch.wemo_switch_5:
+  icon: mdi:bottle-wine
+switch.chandelier:
+  icon: mdi:fan
+switch.adams_fan:
+  icon: mdi:ceiling-light
+switch.christmas_tree:
+  icon: mdi:led-on
+switch.wemo_switch_2:
+  icon: mdi:led-on
+switch.away_mode_active:
+  hidden: true
+switch.home_mode_active:
+  hidden: true
+switch.night_mode_active:
   hidden: true

@@ -15,7 +15,7 @@ switch.desk_lamp_2:
   unique_id: 221535K0100F19
 switch.wemo_switch_1:
   config_entry_id:
-  name:
+  name: Laura's Bed Lamp
   platform: wemo
   unique_id: 221626K010296E
 switch.chandelier:
@@ -25,7 +25,7 @@ switch.chandelier:
   unique_id: 221515K1300287
 switch.wemo_switch_2:
   config_entry_id:
-  name:
+  name: Kitchen LED Strip
   platform: wemo
   unique_id: 231549K1200316
 switch.christmas_tree:
@@ -75,6 +75,6 @@ media_player.starbuck_main:
   unique_id: 378104da-8dd0-9137-e86a-f01636faa68e
 switch.wemo_switch_5:
   config_entry_id:
-  name:
+  name: Glass Lamp
   platform: wemo
   unique_id: 221640K0101B1C

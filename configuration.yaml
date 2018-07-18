@@ -136,3 +136,5 @@ cast:
   # - host: 10.0.0.107 #ChromecastUltra
 
 apcupsd:
+
+# script: !include scripts.yaml

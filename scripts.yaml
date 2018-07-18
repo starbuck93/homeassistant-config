@@ -1,0 +1,6 @@
+activate_goodnight:
+  sequence:
+    - alias: Activate Goodnight
+      service: switch.turn_on
+      data:
+        entity_id: switch.vd_routine_goodnight

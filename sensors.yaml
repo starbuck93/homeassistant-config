@@ -160,7 +160,7 @@
   # device_class: 'moisture' 
 
 - platform: mqtt
-  name: "Office Temperature"
+  name: "Office Door"
   state_topic: "smartthings/Office Bedroom Door/contact"
   icon: mdi:door 
   # device_class: 'door' 

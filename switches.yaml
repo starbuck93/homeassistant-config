@@ -1,20 +1,22 @@
-- platform: mqtt
-  name: "Ceiling Fan"
-  state_topic: "smartthings/Ceiling Fan/switch"
-  command_topic: "smartthings/Ceiling Fan/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
+# - platform: mqtt
+#   name: "Ceiling Fan"
+#   state_topic: "smartthings/Ceiling Fan/switch"
+#   command_topic: "smartthings/Ceiling Fan/switch"
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
+#   icon: mdi:fan
 
-- platform: mqtt
-  name: "Ceiling Light"
-  state_topic: "smartthings/Ceiling Light/switch"
-  command_topic: "smartthings/Ceiling Light/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
+# - platform: mqtt
+#   name: "Ceiling Light"
+#   state_topic: "smartthings/Ceiling Light/switch"
+#   command_topic: "smartthings/Ceiling Light/switch"
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
+#   icon: mdi:ceiling-light
 
 - platform: mqtt
   name: "Upstairs TV"
@@ -24,6 +26,7 @@
   payload_off: "off"
   optimistic: false
   qos: 0
+  icon: mdi:cast-connected
 
 - platform: mqtt
   name: "VD Routine Door Opens"
@@ -47,6 +50,14 @@
   name: "VD Routine Im Home"
   state_topic: "smartthings/VD Routine Im Home/switch"
   command_topic: "smartthings/VD Routine Im Home/switch"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+- platform: mqtt
+  name: "VD Routine Goodnight"
+  state_topic: "smartthings/VD Routine Goodnight/switch"
+  command_topic: "smartthings/VD Routine Goodnight/switch"
   payload_on: "on"
   payload_off: "off"
   optimistic: false
@@ -87,7 +98,7 @@
   payload_off: "off"
   optimistic: false
   qos: 0
-
+  icon: mdi:cast-connected
 
 - platform: mqtt
   name: "Downstairs TV"
@@ -97,15 +108,16 @@
   payload_off: "off"
   optimistic: false
   qos: 0
+  icon: mdi:television-classic
 
-- platform: mqtt
-  name: "Play Xbox 360"
-  state_topic: "smartthings/Play Xbox 360/switch"
-  command_topic: "smartthings/Play Xbox 360/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
+# - platform: mqtt
+#   name: "Play Xbox 360"
+#   state_topic: "smartthings/Play Xbox 360/switch"
+#   command_topic: "smartthings/Play Xbox 360/switch"
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
 
 - platform: mqtt
   name: "Play Xbox One"
@@ -115,5 +127,6 @@
   payload_off: "off"
   optimistic: false
   qos: 0
+  icon: mdi:gamepad-variant
 
 

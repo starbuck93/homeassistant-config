@@ -1,97 +1,114 @@
-# default_view:
-#   view: no
-#   icon: mdi:home 
-#   entities:
-#     - group.awesome_people
-#     - group.living_room
-#     - group.kitchen
-#     - group.master_bed
-#     - group.office
-#     - group.stairs
-#     - group.media_players
-#     - group.cameras
-#     - group.sensors
+default_view:
+  view: yes
+  icon: mdi:home 
+  entities:
+    - group.awesome_people
+downstairs:
+  view: yes
+  entities:
+    - group.kitchen
+    - group.living_room
+upstairs:
+  view: yes
+  entities:
+    - group.master_bed
+    - group.office
+    - group.stairs
+sensors:
+  name: Sensors
+  view: yes
+  icon: mdi:graphql
+  entities:
+    - group.cameras
+    - sensor.outdoor_humidity
+    - sensor.outside
+    - sun.sun
+    - group.octoprint
+    - group.coldacair
+    - group.uptimerobot
+    - group.batteries
+
 awesome_people:
   name: Awesome People
   entities:
+    - sensor.mode
     - device_tracker.google_maps_101082361685415510767
-    - device_tracker.404e369280ff #Adam Pixel 2 Wifi
-    # - sensor.st_adam_presence
+    # - device_tracker.404e369280ff #Adam Pixel 2 Wifi
     - device_tracker.404e368f3c4e #Laura Pixel 2 Wifi
-    # - sensor.st_laura_presence
+    - switch.vd_routine_goodnight
 kitchen:
   name: Kitchen
   entities:
     - light.kitchen_lights
-    - switch.cooking_room_leds
+    - switch.wemo_switch_2
     - sensor.back_door
     - sensor.motion_sensor
     - sensor.kitchen_temperature
-    - sensor.back_door_temperature  
+    - sensor.back_door_temperature
+    - sensor.water_leak_sensor
+    - sensor.water_leak_temperature
 living_room:
   name: Living Room
   entities:
     - light.brown_lamp
-    - light.tall_light
+    - light.hanging_light
     - sensor.living_room_temperature
     - sensor.front_door_temperature
     - sensor.front_door
+    - sensor.downstairs_motion_sensor
     - remote.harmony_hub
-    - sensor.harmony_status 
+    - sensor.harmony_status
+    - switch.play_xbox_one
+    - switch.downstairs_tv
+    - switch.downstairs_chromecast
+    - media_player.living_room_tv
+    - media_player.starbuck_home
+    - media_player.soundbar
 master_bed:
   name: Bedroom
   entities:
-    - switch.upstairs_tv
     - light.adams_bed_lamp
-    - switch.laura_bed_lamp
-    - switch.ceiling_light
-    - switch.ceiling_fan
-    - switch.pupcam
+    - switch.wemo_switch_1
+    - switch.adams_fan #switch.ceiling_light
+    - switch.chandelier #switch.ceiling_fan
+    - light.extra_bedroom_light
+    - switch.christmas_tree
+    - switch.wemo_switch_5
+    - switch.upstairs_tv
     - sensor.bedroom_temp
     - media_player.upstairs_speaker
+    - media_player.bedroom
+    - media_player.bedroom_mini
     - remote.harmony_hub_2
+    - sensor.harmony2_status
 office:
   name: Office
   entities:
-    - switch.desk_lamp
     - switch.desk_lamp_2
     - light.square_lamp
+    - switch.wemo_switch_3
+    - media_player.office_mini
+    - sensor.office_temperature
+    - sensor.office_door
 stairs:
   name: Stairs
   entities:
     - group.hallway_lights
     - light.stairs_light
+    - sensor.upstairs_motion_sensor
+    - sensor.upstairs_temperature
 cameras:
   name: Cameras
   entities:
     - camera.streetcam
     - camera.ankercam
-# kitchen_lights:
-#   name: Kitchen Ceiling Lights
-#   view: no
-#   entities:
-#     - light.cooking_room_light_1
-#     - light.cooking_room_light_2
-#     - light.cooking_room_light_3
-#     - light.cooking_room_light_4
 hallway_lights:
   name: Upstairs Hallway
   view: no
   entities:
     - light.hallway_light_1
     - light.hallway_light_2
-sensors:
-  name: Sensors
-  entities:
-    - sensor.outdoor_humidity
-    - sensor.outside
-    - sun.sun
-media_players:
-  name: Chromecasts
-  entities:
-    - media_player.living_room_tv
-    - media_player.starbuck_home
-    - media_player.bedroom
+
 octoprint:
   name: OctoPrint
   entities:
@@ -121,3 +138,140 @@ uptimerobot:
     - binary_sensor.shield_router
     - binary_sensor.sonarr
     - binary_sensor.starbuckstech
+batteries:
+  name: Batteries
+  entities:
+    - sensor.back_door_battery
+    - sensor.front_door_battery
+    - sensor.kitchen_battery
+    - sensor.office_battery
+    - sensor.upstairs_battery
+    - sensor.water_leak_battery
+
+everything:
+  name: Debug
+  view: yes
+  entities:
+    - automation.arriving_home
+    - automation.back_door_opens
+    - automation.leaving
+    - binary_sensor.ctop
+    - binary_sensor.deluge
+    - binary_sensor.ombi
+    - binary_sensor.plexpy
+    - binary_sensor.radarr
+    - binary_sensor.shield_router 
+    - binary_sensor.sonarr
+    - binary_sensor.starbuckstech 
+    - camera.ankercam 
+    - camera.octoprintcam 
+    - camera.streetcam
+    - device_tracker.404e368f3c4e 
+    - device_tracker.404e369280ff 
+    - device_tracker.google_maps_101082361685415510767
+    # - group.all_automations 
+    # - group.all_devices 
+    # - group.all_lights
+    # - group.all_remotes 
+    # - group.all_switches
+    # - group.awesome_people
+    # - group.batteries 
+    # - group.cameras 
+    # - group.coldacair 
+    # - group.default_view
+    # - group.downstairs
+    # - group.hallway_lights
+    # - group.kitchen 
+    # - group.living_room 
+    # - group.master_bed
+    # - group.octoprint 
+    # - group.office
+    # - group.sensors 
+    # - group.stairs
+    # - group.upstairs
+    # - group.uptimerobot 
+    - history_graph.air_conditioning
+    - history_graph.temperatures
+    - light.adams_bed_lamp
+    - light.brown_lamp
+    - light.cooking_room_light_1
+    - light.cooking_room_light_2
+    - light.cooking_room_light_3
+    - light.cooking_room_light_4
+    - light.downstairs_bathroom_1 
+    - light.downstairs_bathroom_2 
+    - light.extra_bedroom_light 
+    - light.hallway_light_1 
+    - light.hallway_light_2 
+    - light.hanging_light 
+    - light.kitchen_lights
+    - light.square_lamp 
+    - light.stairs_light
+    - media_player.bedroom
+    - media_player.bedroom_mini 
+    - media_player.living_room_tv 
+    - media_player.office_mini
+    - media_player.soundbar 
+    - media_player.starbuck_home
+    - media_player.upstairs_speaker 
+    - remote.harmony_hub
+    - remote.harmony_hub_2
+    - scene.chromecast_playing
+    - scene.chromecast_stopped
+    - sensor.ac_on_today
+    - sensor.back_door
+    - sensor.back_door_battery
+    - sensor.back_door_temperature
+    - sensor.bedroom_temp
+    - sensor.cold_ac_air
+    - sensor.downstairs_motion_sensor
+    - sensor.front_door
+    - sensor.front_door_battery
+    - sensor.front_door_temperature
+    - sensor.harmony2_status
+    - sensor.harmony_status 
+    - sensor.kitchen_battery
+    - sensor.kitchen_temperature
+    - sensor.living_room_temperature
+    - sensor.mode
+    - sensor.octoprint_actual_bed_temp
+    - sensor.octoprint_actual_tool0_temp
+    - sensor.octoprint_current_state
+    - sensor.octoprint_job_percentage
+    - sensor.octoprint_target_bed_temp
+    - sensor.octoprint_target_tool0_temp
+    - sensor.office_battery
+    - sensor.office_door
+    - sensor.office_temperature
+    - sensor.outdoor_humidity
+    - sensor.outdoor_temperature
+    - sensor.upstairs_battery
+    - sensor.upstairs_motion_sensor
+    - sensor.upstairs_temperature
+    - sensor.uptime
+    - sensor.water_leak_battery
+    - sensor.water_leak_sensor
+    - sensor.water_leak_temperature
+    - sun.sun
+    - switch.adams_fan
+    - switch.away_mode_active
+    - switch.chandelier
+    - switch.christmas_tree
+    - switch.desk_lamp_2
+    - switch.downstairs_chromecast
+    - switch.downstairs_tv
+    - switch.home_mode_active
+    - switch.night_mode_active
+    - switch.play_xbox_one
+    - switch.upstairs_tv
+    - switch.vd_routine_door_opens
+    - switch.vd_routine_empty_home
+    - switch.vd_routine_goodnight
+    - switch.vd_routine_im_home
+    - switch.wemo_switch_1
+    - switch.wemo_switch_2
+    - switch.wemo_switch_3
+    - switch.wemo_switch_5
+    - weather.dark_sky
+    - zone.home
+    - zone.tamu
