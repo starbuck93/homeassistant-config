@@ -73,4 +73,13 @@
         title: Intrusion Detected
 
 
-
+- alias: 'Goodnight Switch'
+  trigger:
+    platform: state
+    entity_id: switch.vd_routine_goodnight
+    from: 'off'
+    to: 'on'
+  action:
+    - service: script.turn_on
+      data:
+        entity_id: script.goodnight_switch

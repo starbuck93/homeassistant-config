@@ -78,3 +78,8 @@ switch.wemo_switch_5:
   name: Glass Lamp
   platform: wemo
   unique_id: 221640K0101B1C
+switch.wemo_switch_6:
+  config_entry_id:
+  name:
+  platform: wemo
+  unique_id: 221741K0103B09

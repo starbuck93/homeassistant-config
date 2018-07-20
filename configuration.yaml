@@ -137,4 +137,4 @@ cast:
 
 apcupsd:
 
-# script: !include scripts.yaml
+script: !include scripts.yaml

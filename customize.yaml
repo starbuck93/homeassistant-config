@@ -55,3 +55,6 @@ switch.home_mode_active:
   hidden: true
 switch.night_mode_active:
   hidden: true
+script.goodnight_switch:
+  icon: mdi:weather-night
+  friendly_name: Activate Goodnight

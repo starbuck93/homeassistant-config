@@ -1,6 +1,19 @@
-activate_goodnight:
+goodnight_switch:
   sequence:
-    - alias: Activate Goodnight
-      service: switch.turn_on
-      data:
-        entity_id: switch.vd_routine_goodnight
+   - alias: Bedroom lights dim
+     service: light.turn_on
+     data:
+       entity_id: group.master_bed
+       brightness: 1
+   - delay:
+       seconds: 5
+   - alias: Goodnight Switch
+     service: switch.turn_on
+     data:
+       entity_id: switch.vd_routine_goodnight
+   - delay:
+       seconds: 5
+   - alias: Goodnight Switch
+     service: switch.turn_off
+     data:
+       entity_id: switch.vd_routine_goodnight
