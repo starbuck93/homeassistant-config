@@ -150,3 +150,6 @@ notify:
     platform: slack
     api_key: !secret slack-api-key
     default_channel: '#general'
+
+#slack_status:
+#  bearer_token: !secret bearer_token
