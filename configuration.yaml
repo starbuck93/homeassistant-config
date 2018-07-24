@@ -19,6 +19,10 @@ shopping_list:
 
 http:
   api_password: !secret http_password
+  ssl_certificate: /home/homeassistant/.homeassistant/.keys/home.starbuckstech.com.cer
+  ssl_key: /home/homeassistant/.homeassistant/.keys/home.starbuckstech.com.key
+  login_attempts_threshold: 3
+  #trusted_networks: '10.0.0.1/24'
 
 updater:
   include_used_components: true
@@ -138,3 +142,11 @@ cast:
 apcupsd:
 
 script: !include scripts.yaml
+
+python_script:
+
+notify:
+  - name: Slack
+    platform: slack
+    api_key: !secret slack-api-key
+    default_channel: '#general'

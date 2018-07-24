@@ -20,3 +20,11 @@
     group.kitchen_lights:
       state: on
       brightness: 255
+- name: Goodnight Brightness
+  entities:
+    light.adams_bed_lamp:
+      state: on
+      brightness_pct: 2
+    light.extra_bedroom_light:
+      state: on
+      brightness_pct: 2

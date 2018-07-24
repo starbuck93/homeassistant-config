@@ -83,3 +83,57 @@
     - service: script.turn_on
       data:
         entity_id: script.goodnight_switch
+
+- alias: Wake Up Light Slowly at 630AM #ends when Goodmorning triggers at 6:50AM
+  trigger:
+    platform: time
+    # Military time format.
+    at: '06:30:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.mode
+        state: 'night'
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+  action:
+    - service: python_script.fade_in_light
+      data:
+        entity_id: group.master_bed
+        delay_in_sec: 50
+        start_level_pct: 1
+        end_level_pct: 25
+        step_in_level_pct: 1
+
+
+# - alias: 'Adam Leaving or Arriving'
+#   trigger:
+#     - platform: state
+#       entity_id: device_tracker.404e369280ff
+#       from: 'not_home'
+#       to: 'home'
+#     - platform: state
+#       entity_id: device_tracker.404e369280ff
+#       from: 'home'
+#       to: 'not_home'
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: state
+#         entity_id: 'switch.night_mode_active'
+#         state: 'off'
+#       - condition: state
+#         entity_id: 'switch.away_mode_active'
+#         state: 'off'
+#   action:
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.hanging_light
+#         effect: lifx_effect_pulse
+

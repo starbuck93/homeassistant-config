@@ -87,6 +87,7 @@ office:
     - switch.desk_lamp_2
     - light.square_lamp
     - switch.wemo_switch_3
+    - switch.wemo_switch_6 # speakers
     - media_player.office_mini
     - sensor.office_temperature
     - sensor.office_door

@@ -58,3 +58,6 @@ switch.night_mode_active:
 script.goodnight_switch:
   icon: mdi:weather-night
   friendly_name: Activate Goodnight
+switch.wemo_switch_6:
+  friendly_name: Computer Speakers
+  icon: mdi:speaker

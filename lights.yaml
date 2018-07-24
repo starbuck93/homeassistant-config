@@ -1,3 +1,5 @@
+- platform: lifx
+
 - platform: mqtt
   name: "Adams Bed Lamp"
   state_topic: "smartthings/Adams Bed Lamp/switch"
@@ -8,7 +10,7 @@
   payload_off: "off"
   optimistic: false
   qos: 0
-  brightness_scale: 99
+  brightness_scale: 100
 
 - platform: mqtt
   name: "Brown Lamp"
@@ -20,7 +22,7 @@
   payload_off: "off"
   optimistic: false
   qos: 0
-  brightness_scale: 99
+  brightness_scale: 100
 
 
 - platform: mqtt
@@ -33,7 +35,7 @@
   payload_off: "off"
   optimistic: false
   qos: 0
-  brightness_scale: 99
+  brightness_scale: 100
 
 - platform: mqtt
   name: "Cooking Room Light 2"
@@ -45,7 +47,7 @@
   payload_off: "off"
   optimistic: false
   qos: 0
-  brightness_scale: 99
+  brightness_scale: 100
 
 - platform: mqtt
   name: "Cooking Room Light 3"
@@ -57,7 +59,7 @@
   payload_off: "off"
   optimistic: false
   qos: 0
-  brightness_scale: 99
+  brightness_scale: 100
 
 - platform: mqtt
   name: "Cooking Room Light 4"
@@ -69,7 +71,7 @@
   payload_off: "off"
   optimistic: false
   qos: 0
-  brightness_scale: 99
+  brightness_scale: 100
 
 - platform: mqtt
   name: "Downstairs Bathroom 1"
@@ -81,7 +83,7 @@
   payload_off: "off"
   optimistic: false
   qos: 0
-  brightness_scale: 99
+  brightness_scale: 100
 
 - platform: mqtt
   name: "Downstairs Bathroom 2"
@@ -93,7 +95,7 @@
   payload_off: "off"
   optimistic: false
   qos: 0
-  brightness_scale: 99
+  brightness_scale: 100
 
 - platform: mqtt
   name: "Hallway Light 1"
@@ -105,7 +107,7 @@
   payload_off: "off"
   optimistic: false
   qos: 0
-  brightness_scale: 99
+  brightness_scale: 100
 
 - platform: mqtt
   name: "Hallway Light 2"
@@ -117,7 +119,7 @@
   payload_off: "off"
   optimistic: false
   qos: 0
-  brightness_scale: 99
+  brightness_scale: 100
 
 - platform: mqtt
   name: "Square Lamp"
@@ -129,7 +131,7 @@
   payload_off: "off"
   optimistic: false
   qos: 0
-  brightness_scale: 99
+  brightness_scale: 100
 
 - platform: mqtt
   name: "Stairs Light"
@@ -141,19 +143,19 @@
   payload_off: "off"
   optimistic: false
   qos: 0
-  brightness_scale: 99
+  brightness_scale: 100
 
-- platform: mqtt
-  name: "Hanging Light"
-  state_topic: "smartthings/Hanging Light/switch"
-  command_topic: "smartthings/Hanging Light/switch"
-  brightness_state_topic: 'smartthings/Hanging Light/level'
-  brightness_command_topic: 'smartthings/Hanging Light/level'
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-  brightness_scale: 99
+# - platform: mqtt
+#   name: "Hanging Light"
+#   state_topic: "smartthings/Hanging Light/switch"
+#   command_topic: "smartthings/Hanging Light/switch"
+#   brightness_state_topic: 'smartthings/Hanging Light/level'
+#   brightness_command_topic: 'smartthings/Hanging Light/level'
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
+#   brightness_scale: 100
 
 - platform: mqtt
   name: "Extra Bedroom Light"
@@ -165,7 +167,7 @@
   payload_off: "off"
   optimistic: false
   qos: 0
-  brightness_scale: 99
+  brightness_scale: 100
 
 - platform: group
   name: Kitchen Lights

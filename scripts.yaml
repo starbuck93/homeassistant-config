@@ -1,12 +1,12 @@
 goodnight_switch:
   sequence:
    - alias: Bedroom lights dim
-     service: light.turn_on
+     service: scene.turn_on
      data:
-       entity_id: group.master_bed
-       brightness: 1
+       entity_id:
+        - scene.goodnight_brightness
    - delay:
-       seconds: 5
+       seconds: 1
    - alias: Goodnight Switch
      service: switch.turn_on
      data:
