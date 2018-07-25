@@ -332,26 +332,26 @@
     zone: zone.tamu
     event: leave
   condition:
-  condition: and
-  conditions:
-    - condition: time
-      after: '8:30:00'
-      before: '11:30:00'
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
-    - condition: time
-      after: '13:10:00'
-      before: '16:15:00'
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
+    condition: and
+    conditions:
+      - condition: time
+        after: '8:30:00'
+        before: '11:30:00'
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: time
+        after: '13:10:00'
+        before: '16:15:00'
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
   action:
     - service: notify.browser_adam_pixel
       data:
