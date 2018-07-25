@@ -274,16 +274,19 @@
   trigger: 
     platform: time
     at: '08:15:00'
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
   condition:
-    platform: state
-    entity_id: device_tracker.google_maps_101082361685415510767
-    state: 'home'
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.google_maps_101082361685415510767
+        state: 'home'
+      - condition: time
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
   action:
     - service: notify.browser_adam_pixel
       data:
