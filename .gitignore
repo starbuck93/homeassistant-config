@@ -10,3 +10,7 @@ state.json
 known_devices.yaml
 zones.yaml
 .google_maps_location_sharing.cookies
+.keys
+*.pem
+html5_push_registrations.conf
+googlebb161837034c3398.html
