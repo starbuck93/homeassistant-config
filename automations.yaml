@@ -158,16 +158,19 @@
     - service: rest_command.slack_status
       data:
         status: "MakerPlace"
-        emoji: ":plex:"
+        emoji: ":makerplace:"
     - service: notify.browser_adam_pixel
       data:
         title: 'Slack Status'
         message: 'Arrived at work'
         data:
+          tag: arrived_morning_weekday
+          renotify: 0
+          icon: /local/maker-mark-maroon-96x96.png
           actions:
             - action: "open"
               icon: /static/icons/favicon-192x192.png
-              title: "Open Home Assistant"
+              title: "Open HASS"
             # - action: "open"
             #   icon: /static/icons/favicon-192x192.png
             #   title: "Open Home Assistant"
@@ -221,7 +224,7 @@
 #     - service: rest_command.slack_status
 #       data:
 #         status: "MakerPlace"
-#         emoji: ":wave:"
+#         emoji: ":makerplace:"
 #     - service: notify.browser_adam_pixel
 #       data:
 #       message: Back from lunch
