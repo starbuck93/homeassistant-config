@@ -111,7 +111,7 @@
         end_level_pct: 25
         step_in_level_pct: 1
 
-# Automations
+# Automations for setting my Slack status
 # 1. Arriving to work in the morning
 # 2. Leaving for lunch
 # 3. Arriving back from lunch
@@ -160,100 +160,102 @@
         status: "MakerPlace"
         emoji: ":plex:"
     - service: notify.browser_adam_pixel
-      message: Arrived at work
       data:
-        actions:
-          - action: "open"
-            icon: /static/icons/favicon-192x192.png
-            title: "Open Home Assistant"
-          # - action: "open"
-          #   icon: /static/icons/favicon-192x192.png
-          #   title: "Open Home Assistant"
+        title: 'Slack Status'
+        message: 'Arrived at work'
+        data:
+          actions:
+            - action: "open"
+              icon: /static/icons/favicon-192x192.png
+              title: "Open Home Assistant"
+            # - action: "open"
+            #   icon: /static/icons/favicon-192x192.png
+            #   title: "Open Home Assistant"
 
-- alias: Leaving for lunch regular weekday
-  trigger:
-    platform: zone
-    entity_id: device_tracker.google_maps_101082361685415510767
-    zone: zone.tamu
-    event: leave
-  condition:
-    condition: time
-    after: '11:30:00'
-    before: '12:10:00'
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-  action:
-    - service: rest_command.slack_status
-      data:
-        status: "At Lunch"
-        emoji: ":sandwich:"
-    - service: notify.browser_adam_pixel
-      message: Left for lunch
-      data:
-        actions:
-          - action: "open"
-            icon: /static/icons/favicon-192x192.png
-            title: "Open Home Assistant"
+# - alias: Leaving for lunch regular weekday
+#   trigger:
+#     platform: zone
+#     entity_id: device_tracker.google_maps_101082361685415510767
+#     zone: zone.tamu
+#     event: leave
+#   condition:
+#     condition: time
+#     after: '11:30:00'
+#     before: '12:10:00'
+#     weekday:
+#       - mon
+#       - tue
+#       - wed
+#       - thu
+#       - fri
+#   action:
+#     - service: rest_command.slack_status
+#       data:
+#         status: "At Lunch"
+#         emoji: ":sandwich:"
+#     - service: notify.browser_adam_pixel
+#       data:
+#       message: Left for lunch
+#         actions:
+#           - action: "open"
+#             icon: /static/icons/favicon-192x192.png
+#             title: "Open Home Assistant"
 
-- alias: Arriving back from lunch regular weekday
-  trigger:
-    platform: zone
-    entity_id: device_tracker.google_maps_101082361685415510767
-    zone: zone.tamu
-    event: enter
-  condition:
-    condition: time
-    after: '12:40:00'
-    before: '13:10:00'
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-  action:
-    - service: rest_command.slack_status
-      data:
-        status: "MakerPlace"
-        emoji: ":wave:"
-    - service: notify.browser_adam_pixel
-      message: Back from lunch
-      data:
-        actions:
-          - action: "open"
-            icon: /static/icons/favicon-192x192.png
-            title: "Open Home Assistant"
+# - alias: Arriving back from lunch regular weekday
+#   trigger:
+#     platform: zone
+#     entity_id: device_tracker.google_maps_101082361685415510767
+#     zone: zone.tamu
+#     event: enter
+#   condition:
+#     condition: time
+#     after: '12:40:00'
+#     before: '13:10:00'
+#     weekday:
+#       - mon
+#       - tue
+#       - wed
+#       - thu
+#       - fri
+#   action:
+#     - service: rest_command.slack_status
+#       data:
+#         status: "MakerPlace"
+#         emoji: ":wave:"
+#     - service: notify.browser_adam_pixel
+#       data:
+#       message: Back from lunch
+#         actions:
+#           - action: "open"
+#             icon: /static/icons/favicon-192x192.png
+#             title: "Open Home Assistant"
 
-- alias: Leaving for the day regular weekday
-  trigger:
-    platform: zone
-    entity_id: device_tracker.google_maps_101082361685415510767
-    zone: zone.tamu
-    event: leave
-  condition:
-    condition: time
-    after: '16:15:00'
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-  action:
-    - service: rest_command.slack_status
-      data:
-        status: "Not at work"
-        emoji: ":clock5:"
-    - service: notify.browser_adam_pixel
-      message: Left work for the day
-      data:
-        actions:
-          - action: "open"
-            icon: /static/icons/favicon-192x192.png
-            title: "Open Home Assistant"
+# - alias: Leaving for the day regular weekday
+#   trigger:
+#     platform: zone
+#     entity_id: device_tracker.google_maps_101082361685415510767
+#     zone: zone.tamu
+#     event: leave
+#   condition:
+#     condition: time
+#     after: '16:15:00'
+#     weekday:
+#       - mon
+#       - tue
+#       - wed
+#       - thu
+#       - fri
+#   action:
+#     - service: rest_command.slack_status
+#       data:
+#         status: "Not at work"
+#         emoji: ":clock5:"
+#     - service: notify.browser_adam_pixel
+#       data:
+#       message: Left work for the day
+#         actions:
+#           - action: "open"
+#             icon: /static/icons/favicon-192x192.png
+#             title: "Open Home Assistant"
 
 
