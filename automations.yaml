@@ -271,12 +271,8 @@
 
 
 - alias: Still at home in the morning
-  trigger:
-    platform: state
-    entity_id: device_tracker.google_maps_101082361685415510767
-    state: 'home'
-  condition:
-    condition: time
+  trigger: 
+    platform: time
     at: '08:15:00'
     weekday:
       - mon
@@ -284,6 +280,10 @@
       - wed
       - thu
       - fri
+  condition:
+    platform: state
+    entity_id: device_tracker.google_maps_101082361685415510767
+    state: 'home'
   action:
     - service: notify.browser_adam_pixel
       data:
