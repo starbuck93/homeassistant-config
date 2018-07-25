@@ -150,6 +150,17 @@ notify:
     platform: slack
     api_key: !secret slack-api-key
     default_channel: '#general'
+  - name: browser
+    platform: html5
+    gcm_api_key: !secret gcm-server-key
+    gcm_sender_id: !secret gcm-sender-id
 
-#slack_status:
-#  bearer_token: !secret bearer_token
+rest_command:
+  slack_status:
+    url: https://slack.com/api/users.profile.set
+    method: POST
+    headers:
+      authorization: !secret rest_headers_secret
+    payload: '{"profile":{"status_text": "{{ status }}","status_emoji": "{{ emoji }}"}}'
+    content_type: 'application/json; charset=utf-8'
+
