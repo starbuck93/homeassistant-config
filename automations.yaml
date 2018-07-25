@@ -111,29 +111,149 @@
         end_level_pct: 25
         step_in_level_pct: 1
 
+# Automations
+# 1. Arriving to work in the morning
+# 2. Leaving for lunch
+# 3. Arriving back from lunch
+# 4. Leaving for the day
+# 
+# Exceptions/catches
+# 1. Arriving late in the morning, are you sick? are you just late?
+# 1a. If sick, then turn off other automations
+# 1b. If late, then activate "coming in late to work" automation
+# 2. Leaving randomly during the day
+# 2a. Are you coming back?
+# 3. Staying home for the day after lunch
+# 3a. If at home after lunch hour, are you sick? are you coming back later?
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
 
-# - alias: 'Adam Leaving or Arriving'
-#   trigger:
-#     - platform: state
-#       entity_id: device_tracker.404e369280ff
-#       from: 'not_home'
-#       to: 'home'
-#     - platform: state
-#       entity_id: device_tracker.404e369280ff
-#       from: 'home'
-#       to: 'not_home'
-#   condition:
-#     condition: and
-#     conditions:
-#       - condition: state
-#         entity_id: 'switch.night_mode_active'
-#         state: 'off'
-#       - condition: state
-#         entity_id: 'switch.away_mode_active'
-#         state: 'off'
-#   action:
-#     - service: light.turn_on
-#       data:
-#         entity_id: light.hanging_light
-#         effect: lifx_effect_pulse
+- alias: Arriving at work on a weekday
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_101082361685415510767
+    zone: zone.tamu
+    event: enter
+  condition:
+    condition: time
+    after: '07:45:00'
+    before: '08:10:00'
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    - service: rest_command.slack_status
+      data:
+        status: "MakerPlace"
+        emoji: ":plex:"
+    - service: notify.browser_adam_pixel
+      message: Arrived at work
+      data:
+        actions:
+          - action: "open"
+            icon: /static/icons/favicon-192x192.png
+            title: "Open Home Assistant"
+          # - action: "open"
+          #   icon: /static/icons/favicon-192x192.png
+          #   title: "Open Home Assistant"
+
+- alias: Leaving for lunch regular weekday
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_101082361685415510767
+    zone: zone.tamu
+    event: leave
+  condition:
+    condition: time
+    after: '11:30:00'
+    before: '12:10:00'
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    - service: rest_command.slack_status
+      data:
+        status: "At Lunch"
+        emoji: ":sandwich:"
+    - service: notify.browser_adam_pixel
+      message: Left for lunch
+      data:
+        actions:
+          - action: "open"
+            icon: /static/icons/favicon-192x192.png
+            title: "Open Home Assistant"
+
+- alias: Arriving back from lunch regular weekday
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_101082361685415510767
+    zone: zone.tamu
+    event: enter
+  condition:
+    condition: time
+    after: '12:40:00'
+    before: '13:10:00'
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    - service: rest_command.slack_status
+      data:
+        status: "MakerPlace"
+        emoji: ":wave:"
+    - service: notify.browser_adam_pixel
+      message: Back from lunch
+      data:
+        actions:
+          - action: "open"
+            icon: /static/icons/favicon-192x192.png
+            title: "Open Home Assistant"
+
+- alias: Leaving for the day regular weekday
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_101082361685415510767
+    zone: zone.tamu
+    event: leave
+  condition:
+    condition: time
+    after: '16:15:00'
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    - service: rest_command.slack_status
+      data:
+        status: "Not at work"
+        emoji: ":clock5:"
+    - service: notify.browser_adam_pixel
+      message: Left work for the day
+      data:
+        actions:
+          - action: "open"
+            icon: /static/icons/favicon-192x192.png
+            title: "Open Home Assistant"
+
 
