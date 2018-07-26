@@ -112,20 +112,20 @@
         step_in_level_pct: 1
 
 # Automations for setting my Slack status
-# [] 1. Arriving to work in the morning
-# [] 2. Leaving for lunch
-# [] 3. Arriving back from lunch
+# [x] 1. Arriving to work in the morning
+# [x] 2. Leaving for lunch
+# [x] 3. Arriving back from lunch
 # [x] 4. Leaving for the day
 # 
 # Exceptions/catches
 # [x] 1. Arriving late in the morning, are you sick? are you just late?
 # [x] 1a. If sick, 
-# [] 1aa. then turn off other automations
+# [x] 1aa. then turn off other automations
 # [x] 1b. If late, then activate "coming in late to work" automation
 # [x] 2. Leaving randomly during the day
 # [x] 2a. Are you coming back?
-# [] 3. Staying home for the day after lunch
-# [] 3a. If at home after lunch hour, are you sick? are you coming back later?
+# [x] 3. Staying home for the day after lunch
+# [x] 3a. If at home after lunch hour, are you sick? are you coming back later?
 # 
 # 
 # 
