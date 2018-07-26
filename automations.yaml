@@ -131,7 +131,7 @@
 # 
 # 
 
-- alias: Arriving at work on a weekday
+- alias: Slack status 1 #Arriving at work on a weekday
   trigger:
     platform: zone
     entity_id: device_tracker.google_maps_101082361685415510767
@@ -160,17 +160,10 @@
           tag: arrived_morning_weekday
           icon: /local/maker-mark-maroon-96x96.png
           badge: /local/maker-mark-maroon-96x96.png
-          # actions:
-          #   - action: "open"
-          #     icon: /static/icons/favicon-192x192.png
-          #     title: "Open HASS"
-            # - action: "open"
-            #   icon: /static/icons/favicon-192x192.png
-            #   title: "Open Home Assistant"
     - service: automation.turn_off
-      entity_id: automation.arriving_at_work_on_a_weekday #so we only run this once per day
+      entity_id: automation.slack_status_1 #so we only run this once per day
 
-- alias: Leaving for lunch regular weekday
+- alias: Slack status 2 #Leaving for lunch regular weekday
   trigger:
     platform: zone
     entity_id: device_tracker.google_maps_101082361685415510767
@@ -199,12 +192,10 @@
           tag: left_for_lunch_weekday
           icon: /local/maker-mark-maroon-96x96.png
           badge: /local/maker-mark-maroon-96x96.png
-          # actions:
-          #   - action: "open"
-          #     icon: /static/icons/favicon-192x192.png
-          #     title: "Open HASS"
+    - service: automation.turn_off
+      entity_id: automation.slack_status_2 #so we only run this once per day
 
-- alias: Arriving back from lunch regular weekday
+- alias: Slack status 3 #Arriving back from lunch regular weekday
   trigger:
     platform: zone
     entity_id: device_tracker.google_maps_101082361685415510767
@@ -233,12 +224,10 @@
           tag: arrived_from_lunch_weekday
           icon: /local/maker-mark-maroon-96x96.png
           badge: /local/maker-mark-maroon-96x96.png
-          # actions:
-          #   - action: "open"
-          #     icon: /static/icons/favicon-192x192.png
-          #     title: "Open HASS"
+    - service: automation.turn_off
+      entity_id: automation.slack_status_3 #so we only run this once per day
 
-- alias: Leaving for the day regular weekday
+- alias: Slack status 4 #Leaving for the day regular weekday
   trigger:
     platform: zone
     entity_id: device_tracker.google_maps_101082361685415510767
@@ -266,12 +255,10 @@
           tag: left_work_weekday
           icon: /local/maker-mark-maroon-96x96.png
           badge: /local/maker-mark-maroon-96x96.png
-          # actions:
-          #   - action: "open"
-          #     icon: /static/icons/favicon-192x192.png
-          #     title: "Open HASS"
+    - service: automation.turn_off
+      entity_id: automation.slack_status_4 #so we only run this once per day
 
-- alias: Still at home in the morning
+- alias: Slack edge 1 #Still at home in the morning
   trigger: 
     platform: time
     at: '08:15:00'
@@ -305,7 +292,7 @@
               icon: /static/icons/favicon-192x192.png
               title: "No, running late"
 
-- alias: Check in as out of the office #sick day
+- alias: Slack edge 2 #sick day
   trigger:
     platform: event
     event_type: html5_notification.clicked
@@ -316,8 +303,18 @@
       data:
         status: "Out of the office"
         emoji: ":unknown:"
+    - service: automation.turn_off
+      entity_id: automation.slack_status_1
+    - service: automation.turn_off
+      entity_id: automation.slack_status_2
+    - service: automation.turn_off
+      entity_id: automation.slack_status_3
+    - service: automation.turn_off
+      entity_id: automation.slack_status_4
+    - service: automation.turn_off
+      entity_id: automation.slack_edge_4
 
-- alias: Running late in the morning #
+- alias: Slack edge 3 #Running late in the morning
   trigger:
     platform: event
     event_type: html5_notification.clicked
@@ -329,7 +326,7 @@
         status: "Delayed"
         emoji: ":racing_car:"
 
-- alias: Leaving the TAMU zone during the day #not lunch
+- alias: Slack edge 4 #Leaving the TAMU zone during the day #not lunch
   trigger:
     platform: zone
     entity_id: device_tracker.google_maps_101082361685415510767
@@ -371,7 +368,7 @@
             - action: "leaving-during-the-day"
               title: "Leaving for the day"
 
-- alias: Status Running Errands
+- alias: Slack edge 5 #Status Running Errands
   trigger:
     platform: event
     event_type: html5_notification.clicked
@@ -383,7 +380,7 @@
         status: "Running errands"
         emoji: ":car:"
 
-- alias: Status leaving during the day
+- alias: Slack edge 6 #Status leaving during the day
   trigger:
     platform: event
     event_type: html5_notification.clicked
@@ -409,4 +406,11 @@
       - fri
   action: 
     - service: automation.turn_on
-      entity_id: automation.arriving_at_work_on_a_weekday
+      entity_id: automation.slack_status_1
+    - service: automation.turn_on
+      entity_id: automation.slack_status_2
+    - service: automation.turn_on
+      entity_id: automation.slack_status_3
+    - service: automation.turn_on
+      entity_id: automation.slack_status_4
+
