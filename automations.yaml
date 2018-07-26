@@ -167,6 +167,8 @@
             # - action: "open"
             #   icon: /static/icons/favicon-192x192.png
             #   title: "Open Home Assistant"
+    - service: automation.turn_off
+      entity_id: automation.arriving_at_work_on_a_weekday #so we only run this once per day
 
 - alias: Leaving for lunch regular weekday
   trigger:
@@ -268,7 +270,6 @@
           #   - action: "open"
           #     icon: /static/icons/favicon-192x192.png
           #     title: "Open HASS"
-
 
 - alias: Still at home in the morning
   trigger: 
@@ -394,3 +395,18 @@
         status: "Returning tomorrow"
         emoji: ":wave:"
 
+- alias: Turn Automations Back On weekday
+  trigger:
+    platform: time
+    at: '00:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action: 
+    - service: automation.turn_on
+      entity_id: automation.arriving_at_work_on_a_weekday
