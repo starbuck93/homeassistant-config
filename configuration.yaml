@@ -163,4 +163,11 @@ rest_command:
       authorization: !secret rest_headers_secret
     payload: '{"profile":{"status_text": "{{ status }}","status_emoji": "{{ emoji }}"}}'
     content_type: 'application/json; charset=utf-8'
+  slack_availability:
+    url: https://slack.com/api/chat.postMessage
+    method: POST
+    headers:
+      authorization: !secret rest_headers_secret
+    payload: '{"channel": "GBVREKVU4","text": "{{ message_text }}","as_user": "true","link_names": "true"}'
+    content_type: 'application/json; charset=utf-8'
 
