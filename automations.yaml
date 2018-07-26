@@ -286,10 +286,10 @@
           badge: /local/home-map-marker.png
           actions:
             - action: "staying-home-yes"
-              icon: /static/icons/favicon-192x192.png
+              # icon: /static/icons/favicon-192x192.png
               title: "Yes, staying home"
             - action: "going-in-late"
-              icon: /static/icons/favicon-192x192.png
+              # icon: /static/icons/favicon-192x192.png
               title: "No, running late"
 
 - alias: Slack edge 2 #sick day

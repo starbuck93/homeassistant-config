@@ -171,3 +171,9 @@ rest_command:
     payload: '{"channel": "GBVREKVU4","text": "{{ message_text }}","as_user": "true","link_names": "true"}'
     content_type: 'application/json; charset=utf-8'
 
+cloudflare:
+  email: !secret cloudflare_email
+  api_key: !secret cloudflare_key
+  zone: starbuckstech.com
+  records:
+    - home
