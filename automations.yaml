@@ -110,12 +110,16 @@
         end_level_pct: 25
         step_in_level_pct: 1
 
-- alias: Send picture when changing from home to away
+- alias: Send picture when all devices change state
   trigger:
     - platform: state
       entity_id: group.all_devices
       from: 'home'
       to: 'not_home'
+    - platform: state
+      entity_id: group.all_devices
+      from: 'not_home'
+      to: 'home'
   action:
     - service: notify.browser_adam_pixel
       data:
