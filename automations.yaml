@@ -72,7 +72,6 @@
         message: Back door intrusion detected at {{ now() }}
         title: Intrusion Detected
 
-
 - alias: 'Goodnight Switch'
   trigger:
     platform: state
@@ -110,6 +109,21 @@
         start_level_pct: 1
         end_level_pct: 25
         step_in_level_pct: 1
+
+- alias: Send picture when changing from home to away
+  trigger:
+    - platform: state
+      entity_id: group.all_devices
+      from: 'home'
+      to: 'not_home'
+  action:
+    - service: notify.browser_adam_pixel
+      data:
+        title: 'Look Outside'
+        message: 'Check it out'
+        data:
+          tag: send-picture-when-changing-from-home-to-away
+          image: !secret camera_api_url
 
 # Automations for setting my Slack status
 # [x] 1. Arriving to work in the morning
