@@ -4,8 +4,8 @@
 * [Leaving](#leaving)
 * [Back Door Opens](#back-door-opens)
 * [Goodnight Switch](#goodnight-switch)
-* [Wake Up Light Slowly at 630AM](#Wake-Up-Light-Slowly-at-630AM)
-* [Send picture when all devices change state](#Send-picture-when-all-devices-change-state)
+* [Wake Up Light Slowly at 630AM](#wake-up-light-slowly-at-630am)
+* [Send picture when all devices change state](#send-picture-when-all-devices-change-state)
 
 ### Arriving Home
 
