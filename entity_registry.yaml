@@ -34,37 +34,37 @@ switch.christmas_tree:
   platform: wemo
   unique_id: 221626K0102AE8
 media_player.living_room_tv:
-  config_entry_id:
+  config_entry_id: 82a60008f654452b86dc5b4aeaa10c65
   name:
   platform: cast
   unique_id: 5adf6f33-c86f-9843-a20c-7404904504bb
 media_player.soundbar:
-  config_entry_id:
+  config_entry_id: 82a60008f654452b86dc5b4aeaa10c65
   name:
   platform: cast
   unique_id: 48c147e4-485d-9202-61e8-f4c52b7583c0
 media_player.starbuck_home:
-  config_entry_id:
+  config_entry_id: 82a60008f654452b86dc5b4aeaa10c65
   name:
   platform: cast
   unique_id: 6cba109c-bb68-bf89-df78-db4620c15074
 media_player.upstairs_speaker:
-  config_entry_id:
+  config_entry_id: 82a60008f654452b86dc5b4aeaa10c65
   name:
   platform: cast
   unique_id: 4cff0819-26c6-c429-3090-13c741fd7359
 media_player.bedroom_mini:
-  config_entry_id:
+  config_entry_id: 82a60008f654452b86dc5b4aeaa10c65
   name:
   platform: cast
   unique_id: 7ed4ef2c-f49a-cea2-b9e8-6e74fc1492e4
 media_player.bedroom:
-  config_entry_id:
+  config_entry_id: 82a60008f654452b86dc5b4aeaa10c65
   name:
   platform: cast
   unique_id: 68b16c99-6f40-d278-062c-168a368d0ff5
 media_player.office_mini:
-  config_entry_id:
+  config_entry_id: 82a60008f654452b86dc5b4aeaa10c65
   name:
   platform: cast
   unique_id: 0baae820-14c2-72cc-93a6-8799048d1c22
