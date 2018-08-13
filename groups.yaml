@@ -103,6 +103,7 @@ cameras:
   entities:
     - camera.streetcam
     - camera.ankercam
+    - camera.kitchen
 hallway_lights:
   name: Upstairs Hallway
   view: no
