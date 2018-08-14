@@ -1,2 +1,2 @@
-- platform: uptimerobot
-  api_key: !secret uptimerobot-apikey
+# - platform: uptimerobot
+#   api_key: !secret uptimerobot-apikey
