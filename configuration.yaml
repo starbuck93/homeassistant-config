@@ -19,8 +19,8 @@ shopping_list:
 
 http:
   api_password: !secret http_password
-  ssl_certificate: /home/homeassistant/.homeassistant/.keys/home.starbuckstech.com.cer
-  ssl_key: /home/homeassistant/.homeassistant/.keys/home.starbuckstech.com.key
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
   login_attempts_threshold: 3
   #trusted_networks: '10.0.0.1/24'
 
@@ -89,6 +89,10 @@ camera:
     mjpeg_url: !secret octoprintcamurl
     still_image_url: !secret octoprintcamurl
     name: OctoPrintCam
+  - platform: mjpeg
+    mjpeg_url: http://10.0.0.69/html/cam_pic_new.php
+    still_image_url: http://10.0.0.69/html/cam_pic.php
+    name: Kitchen
 
 
 zone:

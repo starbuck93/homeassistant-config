@@ -61,3 +61,5 @@ script.goodnight_switch:
 switch.wemo_switch_6:
   friendly_name: Computer Speakers
   icon: mdi:speaker
+sensor.timelapsepi_cpu_temp:
+  unit_of_measurement: °F
