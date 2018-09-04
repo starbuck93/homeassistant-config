@@ -183,6 +183,6 @@
 - platform: rest
   name: TimelapsePi CPU Temp
   resource: http://10.0.0.66/html/cpu.php
-  value_template: '{{ value_json.cpu_temperature_C }}'
-  unit_of_measurement: "°C"
-  # device_class: 'temperature' 
+  value_template: '{{ value_json.cpu_temperature_F }}'
+  unit_of_measurement: "°F"
+  device_class: 'temperature' 

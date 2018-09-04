@@ -93,3 +93,8 @@ light.hanging_light:
   name:
   platform: lifx
   unique_id: d0:73:d5:28:61:a4
+switch.wax_warmer:
+  config_entry_id:
+  name:
+  platform: wemo
+  unique_id: 221640K010362D
