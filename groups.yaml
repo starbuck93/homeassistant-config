@@ -52,6 +52,7 @@ living_room:
   name: Living Room
   entities:
     - light.brown_lamp
+    - light.Living_Room_Ceiling_Fan
     - light.hanging_light
     - sensor.living_room_temperature
     - sensor.front_door_temperature

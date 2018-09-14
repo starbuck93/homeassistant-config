@@ -98,3 +98,28 @@ switch.wax_warmer:
   name:
   platform: wemo
   unique_id: 221640K010362D
+light.living_room_fan_2:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65539
+light.living_room_fan_4:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65541
+light.living_room_fan_1:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65538
+light.living_room_fan_3:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65540
+light.tradfri_group:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: group-7e1c115204400041-131074

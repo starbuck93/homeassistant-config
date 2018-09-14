@@ -14,3 +14,11 @@ zones.yaml
 *.pem
 html5_push_registrations.conf
 googlebb161837034c3398.html
+.tradfri_psk.conf
+home-assistant_v2.db*
+is_the_ac_running.py
+mosquitto-repo.gpg.key
+tts/
+www/
+custom_components/
+ip_bans.yaml

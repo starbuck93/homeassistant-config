@@ -176,3 +176,11 @@
     - light.cooking_room_light_2
     - light.cooking_room_light_3
     - light.cooking_room_light_4
+
+- platform: group
+  name: Living Room Ceiling Fan
+  entities:
+    - light.living_room_fan_1
+    - light.living_room_fan_2
+    - light.living_room_fan_3
+    - light.living_room_fan_4
