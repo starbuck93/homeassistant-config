@@ -22,3 +22,4 @@ tts/
 www/
 custom_components/
 ip_bans.yaml
+.cloud/
