@@ -1,28 +1,27 @@
 goodnight_switch:
   sequence:
-   - alias: Bedroom lights dim
-     service: scene.turn_on
-     data:
-       entity_id:
-        - scene.goodnight_brightness
-   - delay:
-       seconds: 1
-   - alias: Goodnight Switch
-     service: switch.turn_on
-     data:
-       entity_id: switch.vd_routine_goodnight
-   - delay:
-       seconds: 5
-   - alias: Goodnight Switch
-     service: switch.turn_off
-     data:
-       entity_id: switch.vd_routine_goodnight
-   - alias: HangingLight
-     service: light.turn_off
-     data:
-       entity_id: light.hanging_light
-   - alias: LivingRoom
-     service: light.turn_off
-     data:
-       entity_id: light.living_room_ceiling_fan
-
+  - alias: Bedroom lights dim
+    data:
+      entity_id:
+      - scene.goodnight_brightness
+    service: scene.turn_on
+  - delay:
+      seconds: 1
+  - alias: Goodnight Switch
+    data:
+      entity_id: switch.vd_routine_goodnight
+    service: switch.turn_on
+  - delay: '[object Object]'
+  - alias: Goodnight Switch
+    data:
+      entity_id: switch.vd_routine_goodnight
+    service: switch.turn_off
+  - alias: HangingLight
+    data:
+      entity_id: light.hanging_light
+    service: light.turn_off
+  - alias: LivingRoom
+    data:
+      entity_id: light.living_room_ceiling_fan
+    service: light.turn_off
+  alias: Activate Goodnight

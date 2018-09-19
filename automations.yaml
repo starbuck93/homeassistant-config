@@ -1,80 +1,75 @@
-- alias: Leaving
+- id: 3f3200c407194a77858a438854771435
+  alias: Leaving
   trigger:
-    platform: state
-    entity_id: group.all_devices
+  - entity_id: group.all_devices
     from: home
+    platform: state
     to: not_home
   condition:
-    condition: and
-    conditions:
-    - condition: state
-      entity_id: switch.night_mode_active
-      state: 'off'
-    - condition: state
-      entity_id: switch.away_mode_active
-      state: 'off'
+  - condition: state
+    entity_id: switch.night_mode_active
+    state: 'off'
+  - condition: state
+    entity_id: switch.away_mode_active
+    state: 'off'
   action:
-  - service: switch.turn_on
-    data:
+  - data:
       entity_id:
       - switch.vd_routine_empty_home
       - switch.away_mode_active
-  - service: switch.turn_off
-    data:
+    service: switch.turn_on
+  - data:
       entity_id: switch.home_mode_active
-  id: 3f3200c407194a77858a438854771435
-- alias: Back Door Opens
+    service: switch.turn_off
+- id: e4ddf14d5ddd462ea12239920684a54f
+  alias: Back Door Opens
   trigger:
-    platform: state
-    entity_id: sensor.back_door
+  - entity_id: sensor.back_door
     from: closed
+    platform: state
     to: open
   condition:
-    condition: and
-    conditions:
-    - condition: state
-      entity_id: switch.night_mode_active
-      state: 'off'
-    - condition: state
-      entity_id: switch.away_mode_active
-      state: 'on'
+  - condition: state
+    entity_id: switch.away_mode_active
+    state: 'on'
+  - condition: state
+    entity_id: switch.night_mode_active
+    state: 'off'
   action:
-  - service: switch.turn_on
-    data:
+  - data:
       entity_id: switch.VD_Routine_Door_Opens
-  - service: persistent_notification.create
-    data:
+    service: switch.turn_on
+  - data:
       message: Back door intrusion detected at {{ now() }}
       title: Intrusion Detected
-  id: e4ddf14d5ddd462ea12239920684a54f
-- alias: Goodnight Switch
+    service: persistent_notification.create
+- id: 91a45426c40f4c0dbe8dea8ec53f8363
+  alias: Goodnight Switch
   trigger:
-    platform: state
-    entity_id: switch.vd_routine_goodnight
+  - entity_id: switch.vd_routine_goodnight
     from: 'off'
+    platform: state
     to: 'on'
+  condition:
+  - condition: state
+    entity_id: switch.home_mode_active
+    state: 'on'
   action:
-  - service: script.turn_on
-    data:
+  - data:
       entity_id: script.goodnight_switch
-  id: 91a45426c40f4c0dbe8dea8ec53f8363
+    service: script.turn_on
 - alias: Wake Up Light Slowly at 630AM
   trigger:
     platform: time
     at: 06:30:00
   condition:
-    condition: and
-    conditions:
-    - condition: state
-      entity_id: sensor.mode
-      state: night
-    - condition: time
-      weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
   action:
   - service: python_script.fade_in_light
     data:
@@ -146,26 +141,26 @@
     after: '11:30:00'
     before: '12:10:00'
     weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
   action:
-    - service: rest_command.slack_status
+  - service: rest_command.slack_status
+    data:
+      status: At Lunch
+      emoji: ':sandwich:'
+  - service: notify.browser_adam_pixel
+    data:
+      title: Slack Status
+      message: Left for Lunch
       data:
-        status: "At Lunch"
-        emoji: ":sandwich:"
-    - service: notify.browser_adam_pixel
-      data:
-        title: 'Slack Status'
-        message: 'Left for Lunch'
-        data:
-          tag: left_for_lunch_weekday
-          icon: /local/maker-mark-maroon-96x96.png
-          badge: /local/maker-mark-maroon-96x96.png
-    - service: automation.turn_off
-      entity_id: automation.slack_status_2
+        tag: left_for_lunch_weekday
+        icon: /local/maker-mark-maroon-96x96.png
+        badge: /local/maker-mark-maroon-96x96.png
+  - service: automation.turn_off
+    entity_id: automation.slack_status_2
   id: 18d5930fd025477ca6a3f073824e41b5
 - alias: Slack status 3
   trigger:
@@ -230,38 +225,36 @@
   - service: automation.turn_off
     entity_id: automation.slack_status_4
   id: f1df6656a59341ebb6899f05131552ed
-- alias: Slack edge 1
+- id: 49b3692f9fc04ea5a6f3e55715a2603d
+  alias: Slack edge 1
   trigger:
+  - at: 08:15:00
     platform: time
-    at: 08:15:00
   condition:
-    condition: and
-    conditions:
-    - condition: state
-      entity_id: device_tracker.google_maps_101082361685415510767
-      state: home
-    - condition: time
-      weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  - condition: state
+    entity_id: device_tracker.google_maps_101082361685415510767
+    state: home
   action:
-  - service: notify.browser_adam_pixel
-    data:
-      title: Slack Status
-      message: Are you staying home today?
+  - data:
       data:
-        tag: staying-home-morning
-        icon: /local/home-map-marker.png
-        badge: /local/home-map-marker.png
         actions:
         - action: staying-home-yes
           title: Yes, staying home
         - action: going-in-late
           title: No, running late
-  id: 49b3692f9fc04ea5a6f3e55715a2603d
+        badge: /local/home-map-marker.png
+        icon: /local/home-map-marker.png
+        tag: staying-home-morning
+      message: Are you staying home today?
+      title: Slack Status
+    service: notify.browser_adam_pixel
 - alias: Slack edge 2
   trigger:
     platform: event
@@ -303,8 +296,6 @@
     zone: zone.tamu
     event: leave
   condition:
-    condition: and
-    conditions:
     - condition: time
       after: '8:30:00'
       before: '11:30:00'
@@ -408,7 +399,3 @@
   - data:
       entity_id: switch.away_mode_active
     service: switch.turn_off
-
-
-
-
