@@ -63,3 +63,50 @@ switch.wemo_switch_6:
   icon: mdi:speaker
 sensor.timelapsepi_cpu_temp:
   unit_of_measurement: °F
+history_graph.air_conditioning:
+  google_assistant: false
+group.all_automations:
+  google_assistant: false
+group.all_devices:
+  google_assistant: false
+group.all_lights:
+  google_assistant: false
+group.all_remotes:
+  google_assistant: false
+group.all_scripts:
+  google_assistant: false
+group.all_switches:
+  google_assistant: false
+group.awesome_people:
+  google_assistant: false
+group.batteries:
+  google_assistant: false
+group.cameras:
+  google_assistant: false
+group.coldacair:
+  google_assistant: false
+group.default_view:
+  google_assistant: false
+group.downstairs:
+  google_assistant: false
+group.hallway_lights:
+  google_assistant: false
+group.kitchen:
+  google_assistant: false
+group.living_room:
+  google_assistant: false
+group.master_bed:
+  google_assistant: false
+group.octoprint:
+  google_assistant: false
+group.office:
+  google_assistant: false
+group.rpi_temps:
+  google_assistant: false
+group.sensors:
+  google_assistant: false
+group.stairs:
+  google_assistant: false
+group.upstairs:
+  google_assistant: false
+

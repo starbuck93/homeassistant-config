@@ -11,6 +11,32 @@ homeassistant:
 frontend:
   themes: !include themes.yaml
 
+cloud:
+  google_actions:
+    filter:
+      exclude_entities:
+        - script.activate_goodnight
+        - switch.away_mode_active
+        - light.cooking_room_1
+        - light.cooking_room_2
+        - light.cooking_room_3
+        - light.cooking_room_4
+        - scene.goodnight_brightness
+        - light.hallway_light_1
+        - light.hallway_light_2
+        - switch.home_mode_active
+        - light.living_room_fan_1
+        - light.living_room_fan_2
+        - light.living_room_fan_3
+        - light.living_room_fan_4
+        - switch.night_mode_active
+        - switch.VD_routine_door_opens
+        - switch.VD_routine_empty_home
+        - switch.VD_routine_im_home
+      exclude_domains:
+        group
+
+
 map:
 
 config:

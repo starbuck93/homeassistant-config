@@ -17,3 +17,12 @@ goodnight_switch:
      service: switch.turn_off
      data:
        entity_id: switch.vd_routine_goodnight
+   - alias: HangingLight
+     service: light.turn_off
+     data:
+       entity_id: light.hanging_light
+   - alias: LivingRoom
+     service: light.turn_off
+     data:
+       entity_id: light.living_room_ceiling_fan
+

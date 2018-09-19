@@ -1,155 +1,109 @@
-- alias: 'Arriving Home'
+- alias: Leaving
   trigger:
     platform: state
     entity_id: group.all_devices
-    from: 'not_home'
-    to: 'home'
+    from: home
+    to: not_home
   condition:
     condition: and
     conditions:
-      - condition: state
-        entity_id: 'switch.night_mode_active'
-        state: 'off'
-      - condition: state
-        entity_id: 'switch.away_mode_active'
-        state: 'on'
+    - condition: state
+      entity_id: switch.night_mode_active
+      state: 'off'
+    - condition: state
+      entity_id: switch.away_mode_active
+      state: 'off'
   action:
-    - service: switch.turn_on
-      data:
-        entity_id:
-          - switch.vd_routine_im_home
-          - switch.home_mode_active
-    - service: switch.turn_off
-      data:
-        entity_id: switch.away_mode_active
-
-- alias: 'Leaving'
-  trigger:
-    platform: state
-    entity_id: group.all_devices
-    from: 'home'
-    to: 'not_home'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: 'switch.night_mode_active'
-        state: 'off'
-      - condition: state
-        entity_id: 'switch.away_mode_active'
-        state: 'off'
-  action:
-    - service: switch.turn_on
-      data:
-        entity_id:
-          - switch.vd_routine_empty_home
-          - switch.away_mode_active
-    - service: switch.turn_off
-      data:
-        entity_id: switch.home_mode_active
-
-- alias: 'Back Door Opens'
+  - service: switch.turn_on
+    data:
+      entity_id:
+      - switch.vd_routine_empty_home
+      - switch.away_mode_active
+  - service: switch.turn_off
+    data:
+      entity_id: switch.home_mode_active
+  id: 3f3200c407194a77858a438854771435
+- alias: Back Door Opens
   trigger:
     platform: state
     entity_id: sensor.back_door
-    from: 'closed'
-    to: 'open'
+    from: closed
+    to: open
   condition:
     condition: and
     conditions:
-      - condition: state
-        entity_id: 'switch.night_mode_active'
-        state: 'off'
-      - condition: state
-        entity_id: 'switch.away_mode_active'
-        state: 'on'
+    - condition: state
+      entity_id: switch.night_mode_active
+      state: 'off'
+    - condition: state
+      entity_id: switch.away_mode_active
+      state: 'on'
   action:
-    - service: switch.turn_on
-      data:
-        entity_id: switch.VD_Routine_Door_Opens
-    - service: persistent_notification.create
-      data:
-        message: Back door intrusion detected at {{ now() }}
-        title: Intrusion Detected
-
-- alias: 'Goodnight Switch'
+  - service: switch.turn_on
+    data:
+      entity_id: switch.VD_Routine_Door_Opens
+  - service: persistent_notification.create
+    data:
+      message: Back door intrusion detected at {{ now() }}
+      title: Intrusion Detected
+  id: e4ddf14d5ddd462ea12239920684a54f
+- alias: Goodnight Switch
   trigger:
     platform: state
     entity_id: switch.vd_routine_goodnight
     from: 'off'
     to: 'on'
   action:
-    - service: script.turn_on
-      data:
-        entity_id: script.goodnight_switch
-
-- alias: Wake Up Light Slowly at 630AM #ends when Goodmorning triggers at 6:50AM
+  - service: script.turn_on
+    data:
+      entity_id: script.goodnight_switch
+  id: 91a45426c40f4c0dbe8dea8ec53f8363
+- alias: Wake Up Light Slowly at 630AM
   trigger:
     platform: time
-    # Military time format.
-    at: '06:30:00'
+    at: 06:30:00
   condition:
     condition: and
     conditions:
-      - condition: state
-        entity_id: sensor.mode
-        state: 'night'
-      - condition: time
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
+    - condition: state
+      entity_id: sensor.mode
+      state: night
+    - condition: time
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
   action:
-    - service: python_script.fade_in_light
-      data:
-        entity_id: group.master_bed
-        delay_in_sec: 50
-        start_level_pct: 1
-        end_level_pct: 25
-        step_in_level_pct: 1
-
+  - service: python_script.fade_in_light
+    data:
+      entity_id: group.master_bed
+      delay_in_sec: 50
+      start_level_pct: 1
+      end_level_pct: 25
+      step_in_level_pct: 1
+  id: 4e0b8e2a66a141cbb08a6c2c1f88f70a
 - alias: Send picture when all devices change state
   trigger:
-    - platform: state
-      entity_id: group.all_devices
-      from: 'home'
-      to: 'not_home'
-    - platform: state
-      entity_id: group.all_devices
-      from: 'not_home'
-      to: 'home'
+  - platform: state
+    entity_id: group.all_devices
+    from: home
+    to: not_home
+  - platform: state
+    entity_id: group.all_devices
+    from: not_home
+    to: home
   action:
-    - service: notify.browser_adam_pixel
+  - service: notify.browser_adam_pixel
+    data:
+      title: Look Outside
+      message: Check it out
       data:
-        title: 'Look Outside'
-        message: 'Check it out'
-        data:
-          tag: send-picture-when-changing-from-home-to-away
-          image: !secret camera_api_url
-
-# Automations for setting my Slack status
-# [x] 1. Arriving to work in the morning
-# [x] 2. Leaving for lunch
-# [x] 3. Arriving back from lunch
-# [x] 4. Leaving for the day
-# 
-# Exceptions/catches
-# [x] 1. Arriving late in the morning, are you sick? are you just late?
-# [x] 1a. If sick, 
-# [x] 1aa. then turn off other automations
-# [x] 1b. If late, then activate "coming in late to work" automation
-# [x] 2. Leaving randomly during the day
-# [x] 2a. Are you coming back?
-# [x] 3. Staying home for the day after lunch
-# [x] 3a. If at home after lunch hour, are you sick? are you coming back later?
-# 
-# 
-# 
-# 
-
-- alias: Slack status 1 #Arriving at work on a weekday
+        tag: send-picture-when-changing-from-home-to-away
+        image: https://home.starbuckstech.com:8123/api/camera_proxy/camera.streetcam?api_password=StarbucksTech1
+  id: 74f41fb4858f4f7998eb4af7d19a7be2
+- alias: Slack status 1
   trigger:
     platform: zone
     entity_id: device_tracker.google_maps_101082361685415510767
@@ -157,31 +111,31 @@
     event: enter
   condition:
     condition: time
-    after: '07:45:00'
-    before: '08:10:00'
+    after: 07:45:00
+    before: 08:10:00
     weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
   action:
-    - service: rest_command.slack_status
+  - service: rest_command.slack_status
+    data:
+      status: MakerPlace
+      emoji: ':makerplace:'
+  - service: notify.browser_adam_pixel
+    data:
+      title: Slack Status
+      message: Arrived at work
       data:
-        status: "MakerPlace"
-        emoji: ":makerplace:"
-    - service: notify.browser_adam_pixel
-      data:
-        title: 'Slack Status'
-        message: 'Arrived at work'
-        data:
-          tag: arrived_morning_weekday
-          icon: /local/maker-mark-maroon-96x96.png
-          badge: /local/maker-mark-maroon-96x96.png
-    - service: automation.turn_off
-      entity_id: automation.slack_status_1 #so we only run this once per day
-
-- alias: Slack status 2 #Leaving for lunch regular weekday
+        tag: arrived_morning_weekday
+        icon: /local/maker-mark-maroon-96x96.png
+        badge: /local/maker-mark-maroon-96x96.png
+  - service: automation.turn_off
+    entity_id: automation.slack_status_1
+  id: 5b1e6152c1b94137bc8f780aafc1453d
+- alias: Slack status 2
   trigger:
     platform: zone
     entity_id: device_tracker.google_maps_101082361685415510767
@@ -211,9 +165,9 @@
           icon: /local/maker-mark-maroon-96x96.png
           badge: /local/maker-mark-maroon-96x96.png
     - service: automation.turn_off
-      entity_id: automation.slack_status_2 #so we only run this once per day
-
-- alias: Slack status 3 #Arriving back from lunch regular weekday
+      entity_id: automation.slack_status_2
+  id: 18d5930fd025477ca6a3f073824e41b5
+- alias: Slack status 3
   trigger:
     platform: zone
     entity_id: device_tracker.google_maps_101082361685415510767
@@ -224,28 +178,28 @@
     after: '12:40:00'
     before: '13:10:00'
     weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
   action:
-    - service: rest_command.slack_status
+  - service: rest_command.slack_status
+    data:
+      status: MakerPlace
+      emoji: ':makerplace:'
+  - service: notify.browser_adam_pixel
+    data:
+      title: Slack Status
+      message: Arrived From Lunch
       data:
-        status: "MakerPlace"
-        emoji: ":makerplace:"
-    - service: notify.browser_adam_pixel
-      data:
-        title: 'Slack Status'
-        message: 'Arrived From Lunch'
-        data:
-          tag: arrived_from_lunch_weekday
-          icon: /local/maker-mark-maroon-96x96.png
-          badge: /local/maker-mark-maroon-96x96.png
-    - service: automation.turn_off
-      entity_id: automation.slack_status_3 #so we only run this once per day
-
-- alias: Slack status 4 #Leaving for the day regular weekday
+        tag: arrived_from_lunch_weekday
+        icon: /local/maker-mark-maroon-96x96.png
+        badge: /local/maker-mark-maroon-96x96.png
+  - service: automation.turn_off
+    entity_id: automation.slack_status_3
+  id: aae478ee1c2e425c9ac27aea39d7abd7
+- alias: Slack status 4
   trigger:
     platform: zone
     entity_id: device_tracker.google_maps_101082361685415510767
@@ -255,96 +209,94 @@
     condition: time
     after: '16:15:00'
     weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: rest_command.slack_status
+    data:
+      status: Not at work
+      emoji: ':clock5:'
+  - service: notify.browser_adam_pixel
+    data:
+      title: Slack Status
+      message: Left Work
+      data:
+        tag: left_work_weekday
+        icon: /local/maker-mark-maroon-96x96.png
+        badge: /local/maker-mark-maroon-96x96.png
+  - service: automation.turn_off
+    entity_id: automation.slack_status_4
+  id: f1df6656a59341ebb6899f05131552ed
+- alias: Slack edge 1
+  trigger:
+    platform: time
+    at: 08:15:00
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: device_tracker.google_maps_101082361685415510767
+      state: home
+    - condition: time
+      weekday:
       - mon
       - tue
       - wed
       - thu
       - fri
   action:
-    - service: rest_command.slack_status
+  - service: notify.browser_adam_pixel
+    data:
+      title: Slack Status
+      message: Are you staying home today?
       data:
-        status: "Not at work"
-        emoji: ":clock5:"
-    - service: notify.browser_adam_pixel
-      data:
-        title: 'Slack Status'
-        message: 'Left Work'
-        data:
-          tag: left_work_weekday
-          icon: /local/maker-mark-maroon-96x96.png
-          badge: /local/maker-mark-maroon-96x96.png
-    - service: automation.turn_off
-      entity_id: automation.slack_status_4 #so we only run this once per day
-
-- alias: Slack edge 1 #Still at home in the morning
-  trigger: 
-    platform: time
-    at: '08:15:00'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: device_tracker.google_maps_101082361685415510767
-        state: 'home'
-      - condition: time
-        weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
-  action:
-    - service: notify.browser_adam_pixel
-      data:
-        title: 'Slack Status'
-        message: 'Are you staying home today?'
-        data:
-          tag: staying-home-morning
-          icon: /local/home-map-marker.png
-          badge: /local/home-map-marker.png
-          actions:
-            - action: "staying-home-yes"
-              # icon: /static/icons/favicon-192x192.png
-              title: "Yes, staying home"
-            - action: "going-in-late"
-              # icon: /static/icons/favicon-192x192.png
-              title: "No, running late"
-
-- alias: Slack edge 2 #sick day
+        tag: staying-home-morning
+        icon: /local/home-map-marker.png
+        badge: /local/home-map-marker.png
+        actions:
+        - action: staying-home-yes
+          title: Yes, staying home
+        - action: going-in-late
+          title: No, running late
+  id: 49b3692f9fc04ea5a6f3e55715a2603d
+- alias: Slack edge 2
   trigger:
     platform: event
     event_type: html5_notification.clicked
     event_data:
       action: staying-home-yes
   action:
-    - service: rest_command.slack_status
-      data:
-        status: "Out of the office"
-        emoji: ":unknown:"
-    - service: automation.turn_off
-      entity_id: automation.slack_status_1
-    - service: automation.turn_off
-      entity_id: automation.slack_status_2
-    - service: automation.turn_off
-      entity_id: automation.slack_status_3
-    - service: automation.turn_off
-      entity_id: automation.slack_status_4
-    - service: automation.turn_off
-      entity_id: automation.slack_edge_4
-
-- alias: Slack edge 3 #Running late in the morning
+  - service: rest_command.slack_status
+    data:
+      status: Out of the office
+      emoji: ':unknown:'
+  - service: automation.turn_off
+    entity_id: automation.slack_status_1
+  - service: automation.turn_off
+    entity_id: automation.slack_status_2
+  - service: automation.turn_off
+    entity_id: automation.slack_status_3
+  - service: automation.turn_off
+    entity_id: automation.slack_status_4
+  - service: automation.turn_off
+    entity_id: automation.slack_edge_4
+  id: 4f93cb8c9bd14387a2b0b8f3d7f93c1a
+- alias: Slack edge 3
   trigger:
     platform: event
     event_type: html5_notification.clicked
     event_data:
       action: going-in-late
   action:
-    - service: rest_command.slack_status
-      data:
-        status: "Delayed"
-        emoji: ":racing_car:"
-
-- alias: Slack edge 4 #Leaving the TAMU zone during the day #not lunch
+  - service: rest_command.slack_status
+    data:
+      status: Delayed
+      emoji: ':racing_car:'
+  id: 6e45f95c84cc44a8bcb79699bf957d99
+- alias: Slack edge 4
   trigger:
     platform: zone
     entity_id: device_tracker.google_maps_101082361685415510767
@@ -353,82 +305,110 @@
   condition:
     condition: and
     conditions:
-      - condition: time
-        after: '8:30:00'
-        before: '11:30:00'
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
-      - condition: time
-        after: '13:10:00'
-        before: '16:15:00'
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
+    - condition: time
+      after: '8:30:00'
+      before: '11:30:00'
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+    - condition: time
+      after: '13:10:00'
+      before: '16:15:00'
+      weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
   action:
-    - service: notify.browser_adam_pixel
+  - service: notify.browser_adam_pixel
+    data:
+      title: Slack Status
+      message: Running Errands
       data:
-        title: 'Slack Status'
-        message: 'Running Errands'
-        data:
-          tag: running-errands
-          icon: /local/car.png
-          badge: /local/car.png
-          actions:
-            - action: "only-running-errands"
-              title: "Will return"
-            - action: "leaving-during-the-day"
-              title: "Leaving for the day"
-
-- alias: Slack edge 5 #Status Running Errands
+        tag: running-errands
+        icon: /local/car.png
+        badge: /local/car.png
+        actions:
+        - action: only-running-errands
+          title: Will return
+        - action: leaving-during-the-day
+          title: Leaving for the day
+  id: 9fecbffc489145f08014c5f81a0318ed
+- alias: Slack edge 5
   trigger:
     platform: event
     event_type: html5_notification.clicked
     event_data:
       action: only-running-errands
   action:
-    - service: rest_command.slack_status
-      data:
-        status: "Running errands"
-        emoji: ":car:"
-
-- alias: Slack edge 6 #Status leaving during the day
+  - service: rest_command.slack_status
+    data:
+      status: Running errands
+      emoji: ':car:'
+  id: 8e988199a09e4a9294149e4681ef242c
+- alias: Slack edge 6
   trigger:
     platform: event
     event_type: html5_notification.clicked
     event_data:
       action: leaving-during-the-day
   action:
-    - service: rest_command.slack_status
-      data:
-        status: "Returning tomorrow"
-        emoji: ":wave:"
-
+  - service: rest_command.slack_status
+    data:
+      status: Returning tomorrow
+      emoji: ':wave:'
+  id: 29dcc27102044d4381b511d269bd1706
 - alias: Turn Automations Back On weekday
   trigger:
     platform: time
-    at: '00:00:00'
+    at: 00:00:00
   condition:
     condition: time
     weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-  action: 
-    - service: automation.turn_on
-      entity_id: automation.slack_status_1
-    - service: automation.turn_on
-      entity_id: automation.slack_status_2
-    - service: automation.turn_on
-      entity_id: automation.slack_status_3
-    - service: automation.turn_on
-      entity_id: automation.slack_status_4
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: automation.turn_on
+    entity_id: automation.slack_status_1
+  - service: automation.turn_on
+    entity_id: automation.slack_status_2
+  - service: automation.turn_on
+    entity_id: automation.slack_status_3
+  - service: automation.turn_on
+    entity_id: automation.slack_status_4
+  id: 12a9f64c67cc4d9b886033dcdcf240f1
+- id: '1537318020901'
+  alias: Arriving Home
+  trigger:
+  - entity_id: group.all_devices
+    from: not_home
+    platform: state
+    to: home
+  condition:
+  - condition: state
+    entity_id: switch.night_mode_active
+    state: 'off'
+  - condition: state
+    entity_id: switch.away_mode_active
+    state: 'on'
+  action:
+  - data:
+      entity_id: switch.vd_routine_im_home
+    service: switch.turn_on
+  - data:
+      entity_id: switch.home_mode_active
+    service: switch.turn_on
+  - data:
+      entity_id: switch.away_mode_active
+    service: switch.turn_off
+
+
+
 

@@ -34,7 +34,7 @@ awesome_people:
   entities:
     - sensor.mode
     - device_tracker.google_maps_101082361685415510767
-    # - device_tracker.404e369280ff #Adam Pixel 2 Wifi
+    - device_tracker.404e369280ff #Adam Pixel 2 Wifi
     - device_tracker.404e368f3c4e #Laura Pixel 2 Wifi
     - script.goodnight_switch
 kitchen:
