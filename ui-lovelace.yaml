@@ -8,14 +8,17 @@ views:
     icon: mdi:home
     cards:
       - type: entities
-        title: Awesome People
+        title: Home
         show_header_toggle: true
         entities:
           - sensor.mode
           - device_tracker.google_maps_101082361685415510767
           - device_tracker.404e369280ff #Adam Wifi
           - device_tracker.404e368f3c4e #Laura Wifi
-          - script.goodnight_switch
+          - script.1537732830602 #goodnight
+          - script.1537733730525 #Goodbye
+          - script.1537733751300 #I'm back
+          - script.1537797311402 #Goodmorning
       - type: picture-glance
         title: Living room
         entities:
@@ -50,7 +53,6 @@ views:
         title: Office
         entities:
           - switch.wemo_switch_3
-          - sensor.office_temperature
           - sensor.office_door
           - switch.wemo_switch_6
           - light.square_lamp
@@ -62,29 +64,22 @@ views:
         title: Kitchen
         show_header_toggle: true
         entities:
-          - sensor.back_door
-          - sensor.back_door_temperature
           - light.kitchen_lights
           - switch.wemo_switch_2
+          - sensor.back_door
           - sensor.water_leak_sensor
-          - sensor.water_leak_temperature
-          - sensor.kitchen_temperature
       - type: entities
         title: Living Room
         show_header_toggle: true
         entities:
+          - light.living_room_ceiling_fan
+          - light.hanging_light
+          - light.brown_lamp
           - switch.downstairs_chromecast
           - switch.play_xbox_one
-          - light.living_room_ceiling_fan
-          - sensor.front_door_temperature
-          - sensor.downstairs_motion_sensor
-          - sensor.front_door
-          - light.hanging_light
           - sensor.living_room_temperature
-          - sensor.harmony_status
-          - switch.downstairs_tv
-          - remote.harmony_hub
-          - light.brown_lamp
+          - sensor.front_door
+          - sensor.downstairs_motion_sensor
       - type: media-control
         entity: media_player.soundbar
       - type: media-control
@@ -94,38 +89,28 @@ views:
   - title: upstairs
     cards:
       - type: entities
-        title: Office
-        show_header_toggle: true
-        entities:
-          - switch.wemo_switch_3
-          - sensor.office_temperature
-          - sensor.office_door
-          - switch.wemo_switch_6
-          - light.square_lamp
-          - switch.desk_lamp_2
-      - type: media-control
-        entity: media_player.office_mini
-      - type: entities
         title: Bedroom
         show_header_toggle: true
         entities:
           - switch.wemo_switch_1
-          - sensor.bedroom_temp
+          - light.adams_bed_lamp
           - switch.adams_fan
           - switch.chandelier
-          - switch.upstairs_tv
-          - sensor.harmony2_status
-          - light.adams_bed_lamp
-          - switch.christmas_tree
           - light.extra_bedroom_light
-          - remote.harmony_hub_2
           - switch.wemo_switch_5
-      - type: media-control
-        entity: media_player.bedroom
-      - type: media-control
-        entity: media_player.upstairs_speaker
-      - type: media-control
-        entity: media_player.bedroom_mini
+          - switch.christmas_tree
+          - switch.upstairs_tv
+          - sensor.bedroom_temp
+      - type: entities
+        title: Office
+        show_header_toggle: true
+        entities:
+          - switch.wemo_switch_3
+          - switch.wemo_switch_6
+          - light.square_lamp
+          - switch.desk_lamp_2
+          - sensor.office_door
+          - sensor.office_temperature
       - type: entities
         title: Stairs
         show_header_toggle: true
@@ -133,12 +118,15 @@ views:
           - light.stairs_light
           - sensor.upstairs_temperature
           - sensor.upstairs_motion_sensor
-      - type: entities
-        title: Upstairs Hallway
-        show_header_toggle: true
-        entities:
-          - light.hallway_light_2
-          - light.hallway_light_1
+          - light.hallway_light
+      - type: media-control
+        entity: media_player.office_mini
+      - type: media-control
+        entity: media_player.bedroom
+      - type: media-control
+        entity: media_player.upstairs_speaker
+      - type: media-control
+        entity: media_player.bedroom_mini
   - title: Sensors
     icon: mdi:graphql
     cards:

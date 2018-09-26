@@ -1,8 +1,8 @@
-default_view:
-  view: yes
-  icon: mdi:home 
-  entities:
-    - group.awesome_people
+# default_view:
+#   view: yes
+#   icon: mdi:home 
+#   entities:
+#     - group.awesome_people
 downstairs:
   view: yes
   entities:
@@ -113,15 +113,6 @@ hallway_lights:
     - light.hallway_light_1
     - light.hallway_light_2
 
-octoprint:
-  name: OctoPrint
-  entities:
-    - sensor.octoprint_actual_bed_temp
-    - sensor.octoprint_actual_tool0_temp
-    - sensor.octoprint_current_state
-    - sensor.octoprint_job_percentage
-    - sensor.octoprint_target_bed_temp
-    - sensor.octoprint_target_tool0_temp
 coldacair:
   name: Air Conditioning
   entities:
@@ -131,17 +122,6 @@ coldacair:
     - sensor.cold_ac_air
     - sensor.outdoor_temperature
 
-# uptimerobot:
-#   name: UptimeRobot
-#   entities:
-#     - binary_sensor.ctop
-#     - binary_sensor.deluge
-#     - binary_sensor.ombi
-#     - binary_sensor.plexpy
-#     - binary_sensor.radarr
-#     - binary_sensor.shield_router
-#     - binary_sensor.sonarr
-#     - binary_sensor.starbuckstech
 batteries:
   name: Batteries
   entities:
@@ -157,131 +137,3 @@ rpi_temps:
   entities:
     - sensor.Pigeon_CPU_Temp
     - sensor.TimelapsePi_CPU_Temp
-
-# everything:
-#   name: Debug
-#   view: yes
-#   entities:
-#     - automation.arriving_home
-#     - automation.back_door_opens
-#     - automation.leaving
-#     - binary_sensor.ctop
-#     - binary_sensor.deluge
-#     - binary_sensor.ombi
-#     - binary_sensor.plexpy
-#     - binary_sensor.radarr
-#     - binary_sensor.shield_router 
-#     - binary_sensor.sonarr
-#     - binary_sensor.starbuckstech 
-#     - camera.ankercam 
-#     - camera.octoprintcam 
-#     - camera.streetcam
-#     - device_tracker.404e368f3c4e 
-#     - device_tracker.404e369280ff 
-#     - device_tracker.google_maps_101082361685415510767
-#     # - group.all_automations 
-#     # - group.all_devices 
-#     # - group.all_lights
-#     # - group.all_remotes 
-#     # - group.all_switches
-#     # - group.awesome_people
-#     # - group.batteries 
-#     # - group.cameras 
-#     # - group.coldacair 
-#     # - group.default_view
-#     # - group.downstairs
-#     # - group.hallway_lights
-#     # - group.kitchen 
-#     # - group.living_room 
-#     # - group.master_bed
-#     # - group.octoprint 
-#     # - group.office
-#     # - group.sensors 
-#     # - group.stairs
-#     # - group.upstairs
-#     # - group.uptimerobot 
-#     - history_graph.air_conditioning
-#     - history_graph.temperatures
-#     - light.adams_bed_lamp
-#     - light.brown_lamp
-#     - light.cooking_room_light_1
-#     - light.cooking_room_light_2
-#     - light.cooking_room_light_3
-#     - light.cooking_room_light_4
-#     - light.downstairs_bathroom_1 
-#     - light.downstairs_bathroom_2 
-#     - light.extra_bedroom_light 
-#     - light.hallway_light_1 
-#     - light.hallway_light_2 
-#     - light.hanging_light 
-#     - light.kitchen_lights
-#     - light.square_lamp 
-#     - light.stairs_light
-#     - media_player.bedroom
-#     - media_player.bedroom_mini 
-#     - media_player.living_room_tv 
-#     - media_player.office_mini
-#     - media_player.soundbar 
-#     - media_player.starbuck_home
-#     - media_player.upstairs_speaker 
-#     - remote.harmony_hub
-#     - remote.harmony_hub_2
-#     - scene.chromecast_playing
-#     - scene.chromecast_stopped
-#     - sensor.ac_on_today
-#     - sensor.back_door
-#     - sensor.back_door_battery
-#     - sensor.back_door_temperature
-#     - sensor.bedroom_temp
-#     - sensor.cold_ac_air
-#     - sensor.downstairs_motion_sensor
-#     - sensor.front_door
-#     - sensor.front_door_battery
-#     - sensor.front_door_temperature
-#     - sensor.harmony2_status
-#     - sensor.harmony_status 
-#     - sensor.kitchen_battery
-#     - sensor.kitchen_temperature
-#     - sensor.living_room_temperature
-#     - sensor.mode
-#     - sensor.octoprint_actual_bed_temp
-#     - sensor.octoprint_actual_tool0_temp
-#     - sensor.octoprint_current_state
-#     - sensor.octoprint_job_percentage
-#     - sensor.octoprint_target_bed_temp
-#     - sensor.octoprint_target_tool0_temp
-#     - sensor.office_battery
-#     - sensor.office_door
-#     - sensor.office_temperature
-#     - sensor.outdoor_humidity
-#     - sensor.outdoor_temperature
-#     - sensor.upstairs_battery
-#     - sensor.upstairs_motion_sensor
-#     - sensor.upstairs_temperature
-#     - sensor.uptime
-#     - sensor.water_leak_battery
-#     - sensor.water_leak_sensor
-#     - sensor.water_leak_temperature
-#     - sun.sun
-#     - switch.adams_fan
-#     - switch.away_mode_active
-#     - switch.chandelier
-#     - switch.christmas_tree
-#     - switch.desk_lamp_2
-#     - switch.downstairs_chromecast
-#     - switch.downstairs_tv
-#     - switch.home_mode_active
-#     - switch.night_mode_active
-#     - switch.play_xbox_one
-#     - switch.upstairs_tv
-#     - switch.vd_routine_door_opens
-#     - switch.vd_routine_empty_home
-#     - switch.vd_routine_goodnight
-#     - switch.vd_routine_im_home
-#     - switch.wemo_switch_1
-#     - switch.wemo_switch_2
-#     - switch.wemo_switch_3
-#     - switch.wemo_switch_5
-#     - weather.dark_sky
-#     - zone.home
-#     - zone.tamu

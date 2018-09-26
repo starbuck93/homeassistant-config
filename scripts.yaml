@@ -1,27 +1,28 @@
-goodnight_switch:
+'1537732830602':
+  alias: Goodnight Script
   sequence:
-  - alias: Bedroom lights dim
-    data:
-      entity_id:
-      - scene.goodnight_brightness
+  - data:
+      entity_id: scene.goodnight_brightness
     service: scene.turn_on
-  - delay:
-      seconds: 1
-  - alias: Goodnight Switch
-    data:
-      entity_id: switch.vd_routine_goodnight
-    service: switch.turn_on
-  - delay: '[object Object]'
-  - alias: Goodnight Switch
-    data:
-      entity_id: switch.vd_routine_goodnight
-    service: switch.turn_off
-  - alias: HangingLight
-    data:
-      entity_id: light.hanging_light
-    service: light.turn_off
-  - alias: LivingRoom
-    data:
-      entity_id: light.living_room_ceiling_fan
-    service: light.turn_off
-  alias: Activate Goodnight
+  - delay: 00:00:05
+  - data:
+      entity_id: scene.goodnight
+    service: scene.turn_on
+'1537733730525':
+  alias: Goodbye
+  sequence:
+  - data:
+      entity_id: scene.leaving_home
+    service: scene.turn_on
+'1537733751300':
+  alias: I'm Back
+  sequence:
+  - data:
+      entity_id: scene.arriving_home
+    service: scene.turn_on
+'1537797311402':
+  alias: Goodmorning
+  sequence:
+  - data:
+      entity_id: scene.goodmorning
+    service: scene.turn_on

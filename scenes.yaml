@@ -1,25 +1,174 @@
-- name: Chromecast Playing
+- name: Arriving Home
   entities:
+    switch.home_mode_active:
+      state: on
+    switch.away_mode_active:
+      state: off
+    switch.nght_mode_active:
+      state: off
+    light.hanging_light:
+      state: on
     light.brown_lamp:
       state: on
-      brightness: 5
-    light.tall_light:
+    light.living_room_ceiling_fan:
       state: on
-      brightness: 30
-    group.kitchen_lights:
+    group.kitchen:
       state: on
-      brightness: 5
-- name: Chromecast Stopped
+    light.square_lamp:
+      state: on
+    switch.desk_lamp_2:
+      state: on
+    light.adams_bed_lamp:
+      state: on
+    light.extra_bedroom_light:
+      state: on
+    switch.wemo_switch_1:
+      state: on
+    switch.christmas_tree:
+      state: on
+    switch.wemo_switch_5:
+      state: on
+    switch.chandelier:
+      state: on
+    switch.adams_fan:
+      state: on
+    light.hallway_light_1:
+      state: on
+    light.hallway_light_2:
+      state: on
+    light.stairs_light:
+      state: on
+
+- name: Leaving Home
   entities:
+    switch.home_mode_active:
+      state: off
+    switch.away_mode_active:
+      state: on
+    switch.nght_mode_active:
+      state: off
+    light.hanging_light:
+      state: off
+    light.brown_lamp:
+      state: off
+    light.living_room_ceiling_fan:
+      state: off
+    group.kitchen:
+      state: off
+    light.square_lamp:
+      state: off
+    switch.desk_lamp_2:
+      state: off
+    light.adams_bed_lamp:
+      state: off
+    light.extra_bedroom_light:
+      state: off
+    switch.wemo_switch_1:
+      state: off
+    switch.christmas_tree:
+      state: off
+    switch.wemo_switch_5:
+      state: off
+    switch.chandelier:
+      state: off
+    switch.adams_fan:
+      state: off
+    light.hallway_light_1:
+      state: off
+    light.hallway_light_2:
+      state: off
+    light.stairs_light:
+      state: off
+
+- name: Goodnight
+  entities:
+    switch.home_mode_active:
+      state: off
+    switch.away_mode_active:
+      state: off
+    switch.nght_mode_active:
+      state: on
+    light.hanging_light:
+      state: off
+    light.brown_lamp:
+      state: off
+    light.living_room_ceiling_fan:
+      state: off
+    group.kitchen:
+      state: off
+    light.square_lamp:
+      state: off
+    switch.desk_lamp_2:
+      state: off
+    light.adams_bed_lamp:
+      state: off
+    light.extra_bedroom_light:
+      state: off
+    switch.wemo_switch_1:
+      state: off
+    switch.christmas_tree:
+      state: off
+    switch.wemo_switch_5:
+      state: off
+    switch.adams_fan:
+      state: off
+    light.hallway_light_1:
+      state: off
+    light.hallway_light_2:
+      state: off
+    light.stairs_light:
+      state: off
+
+- name: Back Door Opens
+  entities:
+    light.hanging_light:
+      state: on
     light.brown_lamp:
       state: on
-      brightness: 255
-    light.tall_light:
+    light.living_room_ceiling_fan:
       state: on
-      brightness: 255
-    group.kitchen_lights:
+    group.kitchen:
       state: on
-      brightness: 255
+
+- name: Goodmorning
+  entities:
+    switch.home_mode_active:
+      state: on
+    switch.away_mode_active:
+      state: off
+    switch.nght_mode_active:
+      state: off
+    light.hanging_light:
+      state: on
+    light.brown_lamp:
+      state: on
+    light.living_room_ceiling_fan:
+      state: on
+    group.kitchen:
+      state: on
+    light.square_lamp:
+      state: on
+    switch.desk_lamp_2:
+      state: on
+    light.adams_bed_lamp:
+      state: on
+    light.extra_bedroom_light:
+      state: on
+    switch.wemo_switch_1:
+      state: on
+    switch.christmas_tree:
+      state: on
+    switch.wemo_switch_5:
+      state: on
+    switch.chandelier:
+      state: on
+    light.hallway_light_1:
+      state: on
+    light.hallway_light_2:
+      state: on
+    light.stairs_light:
+      state: on
+
 - name: Goodnight Brightness
   entities:
     light.adams_bed_lamp:

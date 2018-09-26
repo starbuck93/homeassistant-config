@@ -15,12 +15,8 @@
   action:
   - data:
       entity_id:
-      - switch.vd_routine_empty_home
-      - switch.away_mode_active
-    service: switch.turn_on
-  - data:
-      entity_id: switch.home_mode_active
-    service: switch.turn_off
+      - scene.leaving_home
+    service: scene.turn_on
 - id: e4ddf14d5ddd462ea12239920684a54f
   alias: Back Door Opens
   trigger:
@@ -37,12 +33,12 @@
     state: 'off'
   action:
   - data:
-      entity_id: switch.VD_Routine_Door_Opens
-    service: switch.turn_on
+      entity_id: scene.back_door_opens
+    service: scene.turn_on
   - data:
-      message: Back door intrusion detected at {{ now() }}
-      title: Intrusion Detected
-    service: persistent_notification.create
+      message: Someone opened the back door!
+      title: Back Door Opened
+    service: notify.browser_adam_pixel
 - id: 91a45426c40f4c0dbe8dea8ec53f8363
   alias: Goodnight Switch
   trigger:
@@ -96,7 +92,7 @@
       message: Check it out
       data:
         tag: send-picture-when-changing-from-home-to-away
-        image: https://home.starbuckstech.com:8123/api/camera_proxy/camera.streetcam?api_password=StarbucksTech1
+        image: !secret camera_api_url
   id: 74f41fb4858f4f7998eb4af7d19a7be2
 - alias: Slack status 1
   trigger:
@@ -296,24 +292,24 @@
     zone: zone.tamu
     event: leave
   condition:
-    - condition: time
-      after: '8:30:00'
-      before: '11:30:00'
-      weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-    - condition: time
-      after: '13:10:00'
-      before: '16:15:00'
-      weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+  - condition: time
+    after: '8:30:00'
+    before: '11:30:00'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  - condition: time
+    after: '13:10:00'
+    before: '16:15:00'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
   action:
   - service: notify.browser_adam_pixel
     data:
@@ -391,11 +387,22 @@
     state: 'on'
   action:
   - data:
-      entity_id: switch.vd_routine_im_home
-    service: switch.turn_on
+      entity_id: scene.arriving_home
+    service: scene.turn_on
+- id: '1537791645207'
+  alias: Good morning
+  trigger:
+  - at: 07:00:00
+    platform: time
+  condition:
+    condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
   - data:
-      entity_id: switch.home_mode_active
-    service: switch.turn_on
-  - data:
-      entity_id: switch.away_mode_active
-    service: switch.turn_off
+      entity_id: scene.goodmorning
+    service: scene.turn_on

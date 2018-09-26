@@ -123,3 +123,78 @@ light.tradfri_group:
   name:
   platform: tradfri
   unique_id: group-7e1c115204400041-131074
+light.hallway_light_2:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65542
+light.hallway_light_1:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65543
+light.downstairs_bathroom_1:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65549
+light.brown_lamp:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65544
+light.cooking_room_light_1:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65545
+light.cooking_room_light_3:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65547
+light.extra_bedroom_light:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65553
+light.adams_bed_lamp:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65552
+light.square_lamp:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65554
+light.downstairs_bathroom_2:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65551
+light.stairs_light:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65555
+light.cooking_room_light_4:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65548
+light.cooking_room_light_2:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: light-7e1c115204400041-65546
+light.bedroom:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: group-7e1c115204400041-131076
+light.kitchen:
+  config_entry_id:
+  name:
+  platform: tradfri
+  unique_id: group-7e1c115204400041-131075

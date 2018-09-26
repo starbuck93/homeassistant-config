@@ -49,6 +49,7 @@ http:
   ssl_key: !secret ssl_key
   login_attempts_threshold: 3
   #trusted_networks: '10.0.0.1/24'
+websocket_api:
 
 updater:
   include_used_components: true
@@ -71,6 +72,10 @@ recorder:
 
 sun:
 
+cast:
+
+python_script:
+
 tts:
   platform: google
 
@@ -80,9 +85,9 @@ automation: !include automations.yaml
 
 scene: !include scenes.yaml
 
+script: !include scripts.yaml
+
 mqtt: #using cloudmqtt.com with a one-way bridge from there https://community.home-assistant.io/t/mqtt-working-mosquitto-cloudmqtt-bridge/1830/52 https://github.com/bastshoes/hass_config
-  #broker:
-  #username: pi
   password: !secret http_password
   discovery: true
   discovery_prefix: smartthings
@@ -102,6 +107,9 @@ binary_sensor:
 device_tracker:
   !include device_tracker.yaml
 
+zone:
+  !include zones.yaml
+
 camera:
   - platform: mjpeg
     mjpeg_url: !secret streetcamurl
@@ -119,22 +127,6 @@ camera:
     mjpeg_url: http://10.0.0.69/html/cam_pic_new.php
     still_image_url: http://10.0.0.69/html/cam_pic.php
     name: Kitchen
-
-
-zone:
-  !include zones.yaml
-
-#climate:
-#  - platform: generic_thermostat
-#    name: Bedroom
-#    heater: switch.upstairs_tv #yes I know
-#    target_sensor: sensor.bedroom_temp
-
-octoprint:
-  host: 10.0.0.70
-  api_key: !secret octoprint_key
-  bed: true
-  number_of_tools: 1
 
 
 weather:
@@ -158,22 +150,6 @@ history_graph:
       - binary_sensor.ac_boolean
     hours_to_show: 12
     refresh: 60
-
-cast:
-  # media_player:
-  # - host: 10.0.0.100 #Soundbar
-  # - host: 10.0.0.101 #BedroomMini
-  # - host: 10.0.0.102 #StarbuckHome
-  # - host: 10.0.0.103 #Office Mini
-  # - host: 10.0.0.104 #ChromecastBR
-  # - host: 10.0.0.105 #Chromecast-Audio
-  # - host: 10.0.0.107 #ChromecastUltra
-
-# apcupsd:
-
-script: !include scripts.yaml
-
-python_script:
 
 notify:
   - name: Slack
