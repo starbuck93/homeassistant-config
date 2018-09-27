@@ -7,57 +7,36 @@ views:
   - title: default_view
     icon: mdi:home
     cards:
-      - type: entities
-        title: Home
-        show_header_toggle: true
+      - type: glance
+        title: Lovely People
+        column_width: calc(100% / 3)
         entities:
-          - sensor.mode
           - device_tracker.google_maps_101082361685415510767
           - device_tracker.404e369280ff #Adam Wifi
           - device_tracker.404e368f3c4e #Laura Wifi
-          - script.1537732830602 #goodnight
-          - script.1537733730525 #Goodbye
-          - script.1537733751300 #I'm back
-          - script.1537797311402 #Goodmorning
-      - type: picture-glance
-        title: Living room
+      - type: entities
+        title: Mode
+        show_header_toggle: true
         entities:
-          - light.brown_lamp
-          - light.hanging_light
-          - light.living_room_ceiling_fan
-          # - switch.downstairs_chromecast
-          # - sensor.living_room_temperature
-        image: /local/living_room.jpg
-      - type: picture-glance
-        title: Kitchen
+          - sensor.mode
+          - input_select.mode
+      - type: glance
+        title: Change Modes
+        column_width: calc(100% / 4)
+        show_state: false
         entities:
-          - sensor.back_door
-          - light.kitchen_lights
-          - switch.wemo_switch_2
-          - sensor.water_leak_sensor
-        image: https://i.imgur.com/2ZMmzVn.jpg
-      - type: picture-glance
-        title: Bedroom
-        entities:
-          - light.adams_bed_lamp
-          - switch.wemo_switch_1
-          - switch.adams_fan
-          - switch.chandelier
-          - light.extra_bedroom_light
-          - switch.christmas_tree
-          - switch.wemo_switch_5
-          - sensor.bedroom_temp
-          - switch.upstairs_tv
-        image: /local/bedroom.jpg
-      - type: picture-glance
-        title: Office
-        entities:
-          - switch.wemo_switch_3
-          - sensor.office_door
-          - switch.wemo_switch_6
-          - light.square_lamp
-          - switch.desk_lamp_2
-        image: https://www.forevergeek.com/wp-content/media/2017/05/pc-gaming-battlestation-13.jpg
+          - entity: script.1537732830602 #goodnight
+            tap_action: call-service
+            service: script.turn_on
+          - entity: script.1537733730525 #Goodbye
+            tap_action: call-service
+            service: script.turn_on
+          - entity: script.1537733751300 #I'm back
+            tap_action: call-service
+            service: script.turn_on
+          - entity: script.1537797311402 #Goodmorning
+            tap_action: call-service
+            service: script.turn_on
   - title: downstairs
     cards:
       - type: entities
@@ -66,8 +45,8 @@ views:
         entities:
           - light.kitchen_lights
           - switch.wemo_switch_2
-          - sensor.back_door
-          - sensor.water_leak_sensor
+          # - sensor.back_door
+          # - sensor.water_leak_sensor
       - type: entities
         title: Living Room
         show_header_toggle: true
@@ -80,12 +59,23 @@ views:
           - sensor.living_room_temperature
           # - sensor.front_door
           # - sensor.downstairs_motion_sensor
-      - type: media-control
-        entity: media_player.soundbar
-      - type: media-control
-        entity: media_player.living_room_tv
-      - type: media-control
-        entity: media_player.starbuck_home
+      - type: entities
+        entities:
+          - entity: media_player.living_room_tv
+            name: Living Room TV
+          - entity: media_player.starbuck_home
+            name: Starbuck Home
+          - entity: media_player.soundbar
+            name: Soundbar
+      - type: entities
+        entities:
+          - type: call-service
+            icon: mdi:cast
+            name: Downstairs Chromecast
+            action_name: Toggle
+            service: remote.toggle
+            service_data:
+              entity_id: remote.harmony_hub
   - title: upstairs
     cards:
       - type: entities
@@ -119,14 +109,26 @@ views:
           # - sensor.upstairs_temperature
           # - sensor.upstairs_motion_sensor
           - light.hallway_light
-      - type: media-control
-        entity: media_player.office_mini
-      - type: media-control
-        entity: media_player.bedroom
-      - type: media-control
-        entity: media_player.upstairs_speaker
-      - type: media-control
-        entity: media_player.bedroom_mini
+      - type: entities
+        entities:
+          - entity: media_player.bedroom
+            name: Bedroom CC
+          - entity: media_player.bedroom_mini
+            name: Bedroom Mini
+          - entity: media_player.upstairs_speaker
+            name: Bedroom Soundbar
+          - entity: media_player.office_mini
+            name: Office Mini
+      - type: entities
+        entities:
+          - type: call-service
+            icon: mdi:cast
+            name: Upstairs Chromecast
+            action_name: Toggle
+            service: remote.toggle
+            service_data:
+              entity_id: remote.harmony_hub_2
+
   - title: Sensors
     icon: mdi:graphql
     cards:

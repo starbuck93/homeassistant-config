@@ -110,8 +110,8 @@ group.stairs:
 group.upstairs:
   google_assistant: false
 script.1537732830602:
+  friendly_name: Goodnight
   icon: mdi:weather-night
-  friendly_name: Activate Goodnight
 script.1537733730525:
   friendly_name: Goodbye
   icon: mdi:security-home
@@ -121,3 +121,5 @@ script.1537733751300:
 script.1537797311402:
   friendly_name: Goodmorning
   icon: mdi:weather-sunset-up
+input_select.mode:
+  friendly_name: Manual Mode Change

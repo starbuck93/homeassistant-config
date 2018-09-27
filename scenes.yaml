@@ -1,11 +1,5 @@
 - name: Arriving Home
   entities:
-    switch.home_mode_active:
-      state: on
-    switch.away_mode_active:
-      state: off
-    switch.nght_mode_active:
-      state: off
     light.hanging_light:
       state: on
     light.brown_lamp:
@@ -41,12 +35,6 @@
 
 - name: Leaving Home
   entities:
-    switch.home_mode_active:
-      state: off
-    switch.away_mode_active:
-      state: on
-    switch.nght_mode_active:
-      state: off
     light.hanging_light:
       state: off
     light.brown_lamp:
@@ -82,12 +70,6 @@
 
 - name: Goodnight
   entities:
-    switch.home_mode_active:
-      state: off
-    switch.away_mode_active:
-      state: off
-    switch.nght_mode_active:
-      state: on
     light.hanging_light:
       state: off
     light.brown_lamp:
@@ -132,12 +114,6 @@
 
 - name: Goodmorning
   entities:
-    switch.home_mode_active:
-      state: on
-    switch.away_mode_active:
-      state: off
-    switch.nght_mode_active:
-      state: off
     light.hanging_light:
       state: on
     light.brown_lamp:

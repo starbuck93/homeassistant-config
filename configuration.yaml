@@ -111,6 +111,9 @@ device_tracker:
 zone:
   !include zones.yaml
 
+input_select:
+  !include input_select.yaml
+
 camera:
   - platform: mjpeg
     mjpeg_url: !secret streetcamurl
@@ -184,3 +187,11 @@ cloudflare:
   zone: starbuckstech.com
   records:
     - home
+
+remote:
+  - platform: harmony
+    name: Harmony Hub
+    activity: Watch Downstairs Chromecast
+  - platform: harmony
+    name: Harmony Hub 2
+    activity: Watch Upstairs Chromecast

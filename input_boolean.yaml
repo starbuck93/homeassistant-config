@@ -1,0 +1,12 @@
+night:
+  name: Night Mode
+  icon: mdi:weather-night
+  # initial: off
+home:
+  name: Home Mode
+  icon: mdi:home-lock-open
+  # initial: off
+away:
+  name: Away Mode
+  icon: mdi:security-home
+  # initial: off

@@ -4,25 +4,40 @@
   - data:
       entity_id: scene.goodnight_brightness
     service: scene.turn_on
-  - delay: 00:00:05
   - data:
       entity_id: scene.goodnight
     service: scene.turn_on
+  - data:
+      entity_id: input_select.mode
+      option: Night Mode
+    service: input_select.select_option
 '1537733730525':
   alias: Goodbye
   sequence:
   - data:
       entity_id: scene.leaving_home
     service: scene.turn_on
+  - data:
+      entity_id: input_select.mode
+      option: Away Mode
+    service: input_select.select_option
 '1537733751300':
   alias: I'm Back
   sequence:
   - data:
       entity_id: scene.arriving_home
     service: scene.turn_on
+  - data:
+      entity_id: input_select.mode
+      option: Home Mode
+    service: input_select.select_option
 '1537797311402':
   alias: Goodmorning
   sequence:
   - data:
       entity_id: scene.goodmorning
     service: scene.turn_on
+  - data:
+      entity_id: input_select.mode
+      option: Home Mode
+    service: input_select.select_option

@@ -1,0 +1,6 @@
+mode:
+  options: 
+   - Night Mode
+   - Home Mode
+   - Away Mode
+  icon: mdi:security-home

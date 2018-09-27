@@ -7,16 +7,11 @@
     to: not_home
   condition:
   - condition: state
-    entity_id: switch.night_mode_active
-    state: 'off'
-  - condition: state
-    entity_id: switch.away_mode_active
-    state: 'off'
+    entity_id: sensor.mode
+    state: home
   action:
-  - data:
-      entity_id:
-      - scene.leaving_home
-    service: scene.turn_on
+  - data: {}
+    service: script.1537733730525
 - id: e4ddf14d5ddd462ea12239920684a54f
   alias: Back Door Opens
   trigger:
@@ -26,11 +21,8 @@
     to: open
   condition:
   - condition: state
-    entity_id: switch.away_mode_active
-    state: 'on'
-  - condition: state
-    entity_id: switch.night_mode_active
-    state: 'off'
+    entity_id: sensor.mode
+    state: away
   action:
   - data:
       entity_id: scene.back_door_opens
@@ -39,21 +31,6 @@
       message: Someone opened the back door!
       title: Back Door Opened
     service: notify.browser_adam_pixel
-- id: 91a45426c40f4c0dbe8dea8ec53f8363
-  alias: Goodnight Switch
-  trigger:
-  - entity_id: switch.vd_routine_goodnight
-    from: 'off'
-    platform: state
-    to: 'on'
-  condition:
-  - condition: state
-    entity_id: switch.home_mode_active
-    state: 'on'
-  action:
-  - data:
-      entity_id: script.goodnight_switch
-    service: script.turn_on
 - alias: Wake Up Light Slowly at 630AM
   trigger:
     platform: time
@@ -380,22 +357,18 @@
     to: home
   condition:
   - condition: state
-    entity_id: switch.night_mode_active
-    state: 'off'
-  - condition: state
-    entity_id: switch.away_mode_active
-    state: 'on'
+    entity_id: sensor.mode
+    state: away
   action:
-  - data:
-      entity_id: scene.arriving_home
-    service: scene.turn_on
+  - data: {}
+    service: script.1537733751300
 - id: '1537791645207'
   alias: Good morning
   trigger:
   - at: 07:00:00
     platform: time
   condition:
-    condition: time
+  - condition: time
     weekday:
     - mon
     - tue
@@ -403,6 +376,5 @@
     - thu
     - fri
   action:
-  - data:
-      entity_id: scene.goodmorning
-    service: scene.turn_on
+  - data: {}
+    service: script.1537797311402
