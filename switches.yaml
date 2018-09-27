@@ -18,97 +18,97 @@
 #   qos: 0
 #   icon: mdi:ceiling-light
 
-- platform: mqtt
-  name: "Upstairs TV"
-  state_topic: "smartthings/Upstairs TV/switch"
-  command_topic: "smartthings/Upstairs TV/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-  icon: mdi:cast-connected
+# - platform: mqtt
+#   name: "Upstairs TV"
+#   state_topic: "smartthings/Upstairs TV/switch"
+#   command_topic: "smartthings/Upstairs TV/switch"
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
+#   icon: mdi:cast-connected
 
-- platform: mqtt
-  name: "VD Routine Door Opens"
-  state_topic: "smartthings/VD Routine Door Opens/switch"
-  command_topic: "smartthings/VD Routine Door Opens/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
+# - platform: mqtt
+#   name: "VD Routine Door Opens"
+#   state_topic: "smartthings/VD Routine Door Opens/switch"
+#   command_topic: "smartthings/VD Routine Door Opens/switch"
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
 
-- platform: mqtt
-  name: "VD Routine Empty Home"
-  state_topic: "smartthings/VD Routine Empty Home/switch"
-  command_topic: "smartthings/VD Routine Empty Home/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
+# - platform: mqtt
+#   name: "VD Routine Empty Home"
+#   state_topic: "smartthings/VD Routine Empty Home/switch"
+#   command_topic: "smartthings/VD Routine Empty Home/switch"
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
 
-- platform: mqtt
-  name: "VD Routine Im Home"
-  state_topic: "smartthings/VD Routine Im Home/switch"
-  command_topic: "smartthings/VD Routine Im Home/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-- platform: mqtt
-  name: "VD Routine Goodnight"
-  state_topic: "smartthings/VD Routine Goodnight/switch"
-  command_topic: "smartthings/VD Routine Goodnight/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
+# - platform: mqtt
+#   name: "VD Routine Im Home"
+#   state_topic: "smartthings/VD Routine Im Home/switch"
+#   command_topic: "smartthings/VD Routine Im Home/switch"
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
+# - platform: mqtt
+#   name: "VD Routine Goodnight"
+#   state_topic: "smartthings/VD Routine Goodnight/switch"
+#   command_topic: "smartthings/VD Routine Goodnight/switch"
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
 
-- platform: mqtt
-  name: "night_mode_active"
-  state_topic: "smartthings/night_mode_active/switch"
-  command_topic: "smartthings/night_mode_active/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
+# - platform: mqtt
+#   name: "night_mode_active"
+#   state_topic: "smartthings/night_mode_active/switch"
+#   command_topic: "smartthings/night_mode_active/switch"
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
 
-- platform: mqtt
-  name: "away_mode_active"
-  state_topic: "smartthings/away_mode_active/switch"
-  command_topic: "smartthings/away_mode_active/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
+# - platform: mqtt
+#   name: "away_mode_active"
+#   state_topic: "smartthings/away_mode_active/switch"
+#   command_topic: "smartthings/away_mode_active/switch"
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
 
-- platform: mqtt
-  name: "home_mode_active"
-  state_topic: "smartthings/home_mode_active/switch"
-  command_topic: "smartthings/home_mode_active/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
+# - platform: mqtt
+#   name: "home_mode_active"
+#   state_topic: "smartthings/home_mode_active/switch"
+#   command_topic: "smartthings/home_mode_active/switch"
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
 
-- platform: mqtt
-  name: "Downstairs Chromecast"
-  state_topic: "smartthings/Downstairs Chromecast/switch"
-  command_topic: "smartthings/Downstairs Chromecast/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-  icon: mdi:cast-connected
+# - platform: mqtt
+#   name: "Downstairs Chromecast"
+#   state_topic: "smartthings/Downstairs Chromecast/switch"
+#   command_topic: "smartthings/Downstairs Chromecast/switch"
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
+#   icon: mdi:cast-connected
 
-- platform: mqtt
-  name: "Downstairs TV"
-  state_topic: "smartthings/Downstairs TV/switch"
-  command_topic: "smartthings/Downstairs TV/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-  icon: mdi:television-classic
+# - platform: mqtt
+#   name: "Downstairs TV"
+#   state_topic: "smartthings/Downstairs TV/switch"
+#   command_topic: "smartthings/Downstairs TV/switch"
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
+#   icon: mdi:television-classic
 
 # - platform: mqtt
 #   name: "Play Xbox 360"
@@ -119,14 +119,14 @@
 #   optimistic: false
 #   qos: 0
 
-- platform: mqtt
-  name: "Play Xbox One"
-  state_topic: "smartthings/Play Xbox One/switch"
-  command_topic: "smartthings/Play Xbox One/switch"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-  icon: mdi:gamepad-variant
+# - platform: mqtt
+#   name: "Play Xbox One"
+#   state_topic: "smartthings/Play Xbox One/switch"
+#   command_topic: "smartthings/Play Xbox One/switch"
+#   payload_on: "on"
+#   payload_off: "off"
+#   optimistic: false
+#   qos: 0
+#   icon: mdi:gamepad-variant
 
 

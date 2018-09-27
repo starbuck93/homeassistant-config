@@ -1,86 +1,86 @@
-- platform: mqtt
-  name: "Back Door Temperature"
-  state_topic: "smartthings/Back Door/temperature"
-  unit_of_measurement: '°F'
-  device_class: 'temperature' 
+# - platform: mqtt
+#   name: "Back Door Temperature"
+#   state_topic: "smartthings/Back Door/temperature"
+#   unit_of_measurement: '°F'
+#   device_class: 'temperature' 
 
-- platform: mqtt
-  name: "Front Door Temperature"
-  state_topic: "smartthings/Front Door/temperature"
-  unit_of_measurement: '°F'
-  device_class: 'temperature' 
+# - platform: mqtt
+#   name: "Front Door Temperature"
+#   state_topic: "smartthings/Front Door/temperature"
+#   unit_of_measurement: '°F'
+#   device_class: 'temperature' 
 
-- platform: mqtt
-  name: "Kitchen Temperature"
-  state_topic: "smartthings/Motion Sensor/temperature"
-  unit_of_measurement: '°F'
-  device_class: 'temperature' 
+# - platform: mqtt
+#   name: "Kitchen Temperature"
+#   state_topic: "smartthings/Motion Sensor/temperature"
+#   unit_of_measurement: '°F'
+#   device_class: 'temperature' 
 
-- platform: mqtt
-  name: "Upstairs Temperature"
-  state_topic: "smartthings/Upstairs Motion Sensor/temperature"
-  unit_of_measurement: '°F'
-  device_class: 'temperature' 
+# - platform: mqtt
+#   name: "Upstairs Temperature"
+#   state_topic: "smartthings/Upstairs Motion Sensor/temperature"
+#   unit_of_measurement: '°F'
+#   device_class: 'temperature' 
 
-- platform: mqtt
-  name: "Water Leak Temperature"
-  state_topic: "smartthings/Water Leak Sensor/temperature"
-  unit_of_measurement: '°F'
-  device_class: 'temperature' 
+# - platform: mqtt
+#   name: "Water Leak Temperature"
+#   state_topic: "smartthings/Water Leak Sensor/temperature"
+#   unit_of_measurement: '°F'
+#   device_class: 'temperature' 
 
-- platform: mqtt
-  name: "Office Temperature"
-  state_topic: "smartthings/Office Bedroom Door/temperature"
-  unit_of_measurement: '°F'
-  device_class: 'temperature' 
+# - platform: mqtt
+#   name: "Office Temperature"
+#   state_topic: "smartthings/Office Bedroom Door/temperature"
+#   unit_of_measurement: '°F'
+#   device_class: 'temperature' 
 
-- platform: mqtt
-  name: "Back Door Battery"
-  state_topic: "smartthings/Back Door/Battery"
-  unit_of_measurement: '%'
-  device_class: 'battery'
+# - platform: mqtt
+#   name: "Back Door Battery"
+#   state_topic: "smartthings/Back Door/Battery"
+#   unit_of_measurement: '%'
+#   device_class: 'battery'
 
-- platform: mqtt
-  name: "Front Door Battery"
-  state_topic: "smartthings/Front Door/Battery"
-  unit_of_measurement: '%'
-  device_class: 'battery'
+# - platform: mqtt
+#   name: "Front Door Battery"
+#   state_topic: "smartthings/Front Door/Battery"
+#   unit_of_measurement: '%'
+#   device_class: 'battery'
 
-- platform: mqtt
-  name: "Kitchen Battery"
-  state_topic: "smartthings/Motion Sensor/Battery"
-  unit_of_measurement: '%'
-  device_class: 'battery'
+# - platform: mqtt
+#   name: "Kitchen Battery"
+#   state_topic: "smartthings/Motion Sensor/Battery"
+#   unit_of_measurement: '%'
+#   device_class: 'battery'
 
-- platform: mqtt
-  name: "Upstairs Battery"
-  state_topic: "smartthings/Upstairs Motion Sensor/Battery"
-  unit_of_measurement: '%'
-  device_class: 'battery'
+# - platform: mqtt
+#   name: "Upstairs Battery"
+#   state_topic: "smartthings/Upstairs Motion Sensor/Battery"
+#   unit_of_measurement: '%'
+#   device_class: 'battery'
 
-- platform: mqtt
-  name: "Water Leak Battery"
-  state_topic: "smartthings/Water Leak Sensor/Battery"
-  unit_of_measurement: '%'
-  device_class: 'battery'
+# - platform: mqtt
+#   name: "Water Leak Battery"
+#   state_topic: "smartthings/Water Leak Sensor/Battery"
+#   unit_of_measurement: '%'
+#   device_class: 'battery'
 
-- platform: mqtt
-  name: "Office Battery"
-  state_topic: "smartthings/Office Bedroom Door/Battery"
-  unit_of_measurement: '%'
-  device_class: 'battery'
+# - platform: mqtt
+#   name: "Office Battery"
+#   state_topic: "smartthings/Office Bedroom Door/Battery"
+#   unit_of_measurement: '%'
+#   device_class: 'battery'
 
-- platform: mqtt
-  name: "Outdoor Temperature"
-  state_topic: "smartthings/Outdoor Temperature/temperature"
-  unit_of_measurement: '°F'
-  device_class: 'temperature' 
+# - platform: mqtt
+#   name: "Outdoor Temperature"
+#   state_topic: "smartthings/Outdoor Temperature/temperature"
+#   unit_of_measurement: '°F'
+#   device_class: 'temperature' 
 
-- platform: mqtt
-  name: "Outdoor Humidity"
-  state_topic: "smartthings/Outdoor Temperature/humidity"
-  unit_of_measurement: '%'
-  device_class: 'humidity'
+# - platform: mqtt
+#   name: "Outdoor Humidity"
+#   state_topic: "smartthings/Outdoor Temperature/humidity"
+#   unit_of_measurement: '%'
+#   device_class: 'humidity'
 
 - platform: rest
   name: Living Room Temperature
@@ -103,20 +103,20 @@
   unit_of_measurement: "°F"
   device_class: 'temperature' 
 
-- platform: mqtt
-  name: "Harmony Status"
-  state_topic: "smartthings/Harmony Hub/currentActivity"
+# - platform: mqtt
+#   name: "Harmony Status"
+#   state_topic: "smartthings/Harmony Hub/currentActivity"
 
-- platform: mqtt
-  name: "Harmony2 Status"
-  state_topic: "smartthings/Harmony Hub 2/currentActivity"
+# - platform: mqtt
+#   name: "Harmony2 Status"
+#   state_topic: "smartthings/Harmony Hub 2/currentActivity"
 
-- platform: octoprint
-  name: OctoPrint
-  monitored_conditions:
-    - Current State
-    - Temperatures
-    - Job Percentage
+# - platform: octoprint
+#   name: OctoPrint
+#   monitored_conditions:
+#     - Current State
+#     - Temperatures
+#     - Job Percentage
 
 # - platform: uptime
 
@@ -129,41 +129,41 @@
   end: '{{ now() }}'
 
 
-- platform: mqtt
-  name: "Back Door"
-  state_topic: "smartthings/Back Door/contact"
-  icon: mdi:door 
-  # device_class: 'door' 
+# - platform: mqtt
+#   name: "Back Door"
+#   state_topic: "smartthings/Back Door/contact"
+#   icon: mdi:door 
+#   # device_class: 'door' 
 
-- platform: mqtt
-  name: "Front Door"
-  state_topic: "smartthings/Front Door/contact"
-  icon: mdi:door 
-  # device_class: 'door' 
+# - platform: mqtt
+#   name: "Front Door"
+#   state_topic: "smartthings/Front Door/contact"
+#   icon: mdi:door 
+#   # device_class: 'door' 
 
-- platform: mqtt
-  name: "Downstairs Motion Sensor"
-  state_topic: "smartthings/Motion Sensor/motion"
-  icon: mdi:walk
-  # device_class: 'motion' 
+# - platform: mqtt
+#   name: "Downstairs Motion Sensor"
+#   state_topic: "smartthings/Motion Sensor/motion"
+#   icon: mdi:walk
+#   # device_class: 'motion' 
 
-- platform: mqtt
-  name: "Upstairs Motion Sensor"
-  state_topic: "smartthings/Upstairs Motion Sensor/motion"
-  icon: mdi:walk
-  # device_class: 'motion' 
+# - platform: mqtt
+#   name: "Upstairs Motion Sensor"
+#   state_topic: "smartthings/Upstairs Motion Sensor/motion"
+#   icon: mdi:walk
+#   # device_class: 'motion' 
 
-- platform: mqtt
-  name: "Water Leak Sensor"
-  state_topic: "smartthings/Water Leak Sensor/water"
-  icon: mdi:water-off
-  # device_class: 'moisture' 
+# - platform: mqtt
+#   name: "Water Leak Sensor"
+#   state_topic: "smartthings/Water Leak Sensor/water"
+#   icon: mdi:water-off
+#   # device_class: 'moisture' 
 
-- platform: mqtt
-  name: "Office Door"
-  state_topic: "smartthings/Office Bedroom Door/contact"
-  icon: mdi:door 
-  # device_class: 'door' 
+# - platform: mqtt
+#   name: "Office Door"
+#   state_topic: "smartthings/Office Bedroom Door/contact"
+#   icon: mdi:door 
+#   # device_class: 'door' 
 
 
 - platform: template

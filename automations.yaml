@@ -75,25 +75,25 @@
       end_level_pct: 25
       step_in_level_pct: 1
   id: 4e0b8e2a66a141cbb08a6c2c1f88f70a
-- alias: Send picture when all devices change state
+- id: 74f41fb4858f4f7998eb4af7d19a7be2
+  alias: Send picture when all devices change state
   trigger:
-  - platform: state
-    entity_id: group.all_devices
+  - entity_id: group.all_devices
     from: home
+    platform: state
     to: not_home
-  - platform: state
-    entity_id: group.all_devices
+  - entity_id: group.all_devices
     from: not_home
+    platform: state
     to: home
   action:
-  - service: notify.browser_adam_pixel
-    data:
-      title: Look Outside
-      message: Check it out
+  - data:
       data:
+        image: ''
         tag: send-picture-when-changing-from-home-to-away
-        image: !secret camera_api_url
-  id: 74f41fb4858f4f7998eb4af7d19a7be2
+      message: Check it out
+      title: Look Outside
+    service: notify.browser_adam_pixel
 - alias: Slack status 1
   trigger:
     platform: zone

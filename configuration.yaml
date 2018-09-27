@@ -7,6 +7,10 @@ homeassistant:
   time_zone: America/Chicago
   customize:
     !include customize.yaml
+  auth_providers: 
+   - type: homeassistant
+   - type: legacy_api_password
+   - type: trusted_networks
 
 frontend:
   themes: !include themes.yaml
@@ -36,7 +40,6 @@ cloud:
       exclude_domains:
         group
 
-
 map:
 
 config:
@@ -48,7 +51,10 @@ http:
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
   login_attempts_threshold: 3
-  #trusted_networks: '10.0.0.1/24'
+  trusted_networks:
+    - 127.0.0.1
+    - '10.0.0.0/24'
+
 websocket_api:
 
 updater:
@@ -59,11 +65,6 @@ discovery:
 conversation:
 
 history:
-#  exclude:
-#    domains:
-#      - automation
-#    entities:
-#      - sensor.date
 
 logbook:
 
@@ -87,10 +88,10 @@ scene: !include scenes.yaml
 
 script: !include scripts.yaml
 
-mqtt: #using cloudmqtt.com with a one-way bridge from there https://community.home-assistant.io/t/mqtt-working-mosquitto-cloudmqtt-bridge/1830/52 https://github.com/bastshoes/hass_config
-  password: !secret http_password
-  discovery: true
-  discovery_prefix: smartthings
+# mqtt: #using cloudmqtt.com with a one-way bridge from there https://community.home-assistant.io/t/mqtt-working-mosquitto-cloudmqtt-bridge/1830/52 https://github.com/bastshoes/hass_config
+#   password: !secret http_password
+#   discovery: true
+#   discovery_prefix: smartthings
 
 light:
   !include lights.yaml
