@@ -3,31 +3,31 @@
 #   icon: mdi:home 
 #   entities:
 #     - group.awesome_people
-downstairs:
-  view: yes
-  entities:
-    - group.kitchen
-    - group.living_room
-upstairs:
-  view: yes
-  entities:
-    - group.master_bed
-    - group.office
-    - group.stairs
-sensors:
-  name: Sensors
-  view: yes
-  icon: mdi:graphql
-  entities:
-    - group.cameras
-    - sensor.outdoor_humidity
-    - sensor.outside
-    - sun.sun
-    - group.octoprint
-    - group.coldacair
-    # - group.uptimerobot
-    - group.batteries
-    - group.rpi_temps
+# downstairs:
+#   view: yes
+#   entities:
+#     - group.kitchen
+#     - group.living_room
+# upstairs:
+#   view: yes
+#   entities:
+#     - group.master_bed
+#     - group.office
+#     - group.stairs
+# sensors:
+#   name: Sensors
+#   view: yes
+#   icon: mdi:graphql
+#   entities:
+#     - group.cameras
+#     - sensor.outdoor_humidity
+#     - sensor.outside
+#     - sun.sun
+#     - group.octoprint
+#     - group.coldacair
+#     # - group.uptimerobot
+#     - group.batteries
+#     - group.rpi_temps
 
 awesome_people:
   name: Awesome People
@@ -42,12 +42,12 @@ kitchen:
   entities:
     - light.kitchen_lights
     - switch.wemo_switch_2
-    - sensor.back_door
-    - sensor.motion_sensor
-    - sensor.kitchen_temperature
-    - sensor.back_door_temperature
-    - sensor.water_leak_sensor
-    - sensor.water_leak_temperature
+    # - sensor.back_door
+    # - sensor.motion_sensor
+    # - sensor.kitchen_temperature
+    # - sensor.back_door_temperature
+    # - sensor.water_leak_sensor
+    # - sensor.water_leak_temperature
 living_room:
   name: Living Room
   entities:
@@ -55,17 +55,17 @@ living_room:
     - light.Living_Room_Ceiling_Fan
     - light.hanging_light
     - sensor.living_room_temperature
-    - sensor.front_door_temperature
-    - sensor.front_door
-    - sensor.downstairs_motion_sensor
+    # - sensor.front_door_temperature
+    # - sensor.front_door
+    # - sensor.downstairs_motion_sensor
     - remote.harmony_hub
-    - sensor.harmony_status
-    - switch.play_xbox_one
-    - switch.downstairs_tv
-    - switch.downstairs_chromecast
-    - media_player.living_room_tv
-    - media_player.starbuck_home
-    - media_player.soundbar
+    # - sensor.harmony_status
+    # - switch.play_xbox_one
+    # - switch.downstairs_tv
+    # - switch.downstairs_chromecast
+    # - media_player.living_room_tv
+    # - media_player.starbuck_home
+    # - media_player.soundbar
 master_bed:
   name: Bedroom
   entities:
@@ -76,13 +76,13 @@ master_bed:
     - light.extra_bedroom_light
     - switch.christmas_tree
     - switch.wemo_switch_5
-    - switch.upstairs_tv
+    # - switch.upstairs_tv
     - sensor.bedroom_temp
-    - media_player.upstairs_speaker
-    - media_player.bedroom
-    - media_player.bedroom_mini
+    # - media_player.upstairs_speaker
+    # - media_player.bedroom
+    # - media_player.bedroom_mini
     - remote.harmony_hub_2
-    - sensor.harmony2_status
+    # - sensor.harmony2_status
 office:
   name: Office
   entities:
@@ -90,28 +90,17 @@ office:
     - light.square_lamp
     - switch.wemo_switch_3
     - switch.wemo_switch_6 # speakers
-    - media_player.office_mini
-    - sensor.office_temperature
-    - sensor.office_door
+    # - media_player.office_mini
+    # - sensor.office_temperature
+    # - sensor.office_door
 stairs:
   name: Stairs
   entities:
-    - group.hallway_lights
+    - light.hallway_light
     - light.stairs_light
-    - sensor.upstairs_motion_sensor
-    - sensor.upstairs_temperature
-cameras:
-  name: Cameras
-  entities:
-    - camera.streetcam
-    - camera.ankercam
-    - camera.kitchen
-hallway_lights:
-  name: Upstairs Hallway
-  view: no
-  entities:
-    - light.hallway_light_1
-    - light.hallway_light_2
+    # - sensor.upstairs_motion_sensor
+    # - sensor.upstairs_temperature
+
 
 coldacair:
   name: Air Conditioning
@@ -120,17 +109,17 @@ coldacair:
     - binary_sensor.ac_boolean
     - sensor.ac_on_today
     - sensor.cold_ac_air
-    - sensor.outdoor_temperature
+    # - sensor.outdoor_temperature
 
-batteries:
-  name: Batteries
-  entities:
-    - sensor.back_door_battery
-    - sensor.front_door_battery
-    - sensor.kitchen_battery
-    - sensor.office_battery
-    - sensor.upstairs_battery
-    - sensor.water_leak_battery
+# batteries:
+#   name: Batteries
+#   entities:
+#     - sensor.back_door_battery
+#     - sensor.front_door_battery
+#     - sensor.kitchen_battery
+#     - sensor.office_battery
+#     - sensor.upstairs_battery
+#     - sensor.water_leak_battery
 
 rpi_temps:
   name: Raspberry Pi CPU Temperatures

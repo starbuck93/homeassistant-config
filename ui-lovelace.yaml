@@ -25,8 +25,8 @@ views:
           - light.brown_lamp
           - light.hanging_light
           - light.living_room_ceiling_fan
-          - switch.downstairs_chromecast
-          - sensor.living_room_temperature
+          # - switch.downstairs_chromecast
+          # - sensor.living_room_temperature
         image: /local/living_room.jpg
       - type: picture-glance
         title: Kitchen
@@ -75,11 +75,11 @@ views:
           - light.living_room_ceiling_fan
           - light.hanging_light
           - light.brown_lamp
-          - switch.downstairs_chromecast
-          - switch.play_xbox_one
+          # - switch.downstairs_chromecast
+          # - switch.play_xbox_one
           - sensor.living_room_temperature
-          - sensor.front_door
-          - sensor.downstairs_motion_sensor
+          # - sensor.front_door
+          # - sensor.downstairs_motion_sensor
       - type: media-control
         entity: media_player.soundbar
       - type: media-control
@@ -99,7 +99,7 @@ views:
           - light.extra_bedroom_light
           - switch.wemo_switch_5
           - switch.christmas_tree
-          - switch.upstairs_tv
+          # - switch.upstairs_tv
           - sensor.bedroom_temp
       - type: entities
         title: Office
@@ -109,15 +109,15 @@ views:
           - switch.wemo_switch_6
           - light.square_lamp
           - switch.desk_lamp_2
-          - sensor.office_door
-          - sensor.office_temperature
+          # - sensor.office_door
+          # - sensor.office_temperature
       - type: entities
         title: Stairs
         show_header_toggle: true
         entities:
           - light.stairs_light
-          - sensor.upstairs_temperature
-          - sensor.upstairs_motion_sensor
+          # - sensor.upstairs_temperature
+          # - sensor.upstairs_motion_sensor
           - light.hallway_light
       - type: media-control
         entity: media_player.office_mini
@@ -138,7 +138,7 @@ views:
         title: Air Conditioning
         show_header_toggle: true
         entities:
-          - sensor.outdoor_temperature
+          # - sensor.outdoor_temperature
           - sensor.ac_on_today
           - sensor.cold_ac_air
           - binary_sensor.ac_boolean
@@ -150,31 +150,21 @@ views:
           - sensor.cold_ac_air
           - binary_sensor.ac_boolean
       - type: entities
-        title: OctoPrint
-        show_header_toggle: true
-        entities:
-          - sensor.octoprint_actual_tool0_temp
-          - sensor.octoprint_target_tool0_temp
-          - sensor.octoprint_job_percentage
-          - sensor.octoprint_actual_bed_temp
-          - sensor.octoprint_current_state
-          - sensor.octoprint_target_bed_temp
-      - type: entities
         title: Raspberry Pi CPU Temperatures
         show_header_toggle: true
         entities:
           - sensor.pigeon_cpu_temp
           - sensor.timelapsepi_cpu_temp
-      - type: entities
-        title: Batteries
-        show_header_toggle: true
-        entities:
-          - sensor.kitchen_battery
-          - sensor.upstairs_battery
-          - sensor.back_door_battery
-          - sensor.water_leak_battery
-          - sensor.front_door_battery
-          - sensor.office_battery
+      # - type: entities
+      #   title: Batteries
+      #   show_header_toggle: true
+      #   entities:
+      #     - sensor.kitchen_battery
+      #     - sensor.upstairs_battery
+      #     - sensor.back_door_battery
+      #     - sensor.water_leak_battery
+      #     - sensor.front_door_battery
+      #     - sensor.office_battery
       - type: picture-entity
         title: StreetCam
         entity: camera.streetcam
