@@ -84,6 +84,7 @@ views:
         entities:
           - switch.wemo_switch_1
           - light.adams_bed_lamp
+          - light.bedroom_ceiling_light
           - switch.adams_fan
           - switch.chandelier
           - light.extra_bedroom_light
@@ -95,6 +96,7 @@ views:
         title: Office
         show_header_toggle: true
         entities:
+          - light.office_ceiling_light
           - switch.wemo_switch_3
           - switch.wemo_switch_6
           - light.square_lamp
