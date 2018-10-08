@@ -191,3 +191,18 @@
     - light.hallway_light_1
     - light.hallway_light_2
 
+- platform: group
+  name: Office Ceiling Light
+  entities:
+    - light.office_ceiling_light_1
+    - light.office_ceiling_light_2
+    - light.office_ceiling_light_3
+    - light.office_ceiling_light_4
+
+- platform: group
+  name: Bedroom Ceiling Light
+  entities:
+    - light.Bedroom_ceiling_light_1
+    - light.Bedroom_ceiling_light_2
+    - light.Bedroom_ceiling_light_3
+    - light.Bedroom_ceiling_light_4

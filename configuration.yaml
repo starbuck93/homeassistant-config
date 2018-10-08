@@ -119,18 +119,18 @@ camera:
     mjpeg_url: !secret streetcamurl
     still_image_url: !secret streetcamurlstill
     name: StreetCam
-  - platform: generic
-    mjpeg_url: !secret ankercamurl
-    still_image_url: !secret ankercamstill
-    name: AnkerCam
-  - platform: generic
-    mjpeg_url: !secret octoprintcamurl
-    still_image_url: !secret octoprintcamurl
-    name: OctoPrintCam
-  - platform: mjpeg
-    mjpeg_url: http://10.0.0.69/html/cam_pic_new.php
-    still_image_url: http://10.0.0.69/html/cam_pic.php
-    name: Kitchen
+  # - platform: generic
+  #   mjpeg_url: !secret ankercamurl
+  #   still_image_url: !secret ankercamstill
+  #   name: AnkerCam
+  # - platform: generic
+  #   mjpeg_url: !secret octoprintcamurl
+  #   still_image_url: !secret octoprintcamurl
+  #   name: OctoPrintCam
+  # - platform: mjpeg
+  #   mjpeg_url: http://10.0.0.69/html/cam_pic_new.php
+  #   still_image_url: http://10.0.0.69/html/cam_pic.php
+  #   name: Kitchen
 
 
 weather:
