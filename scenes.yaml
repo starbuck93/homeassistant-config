@@ -4,8 +4,8 @@
       state: on
     light.brown_lamp:
       state: on
-    light.living_room_ceiling_fan:
-      state: on
+    # light.living_room_ceiling_fan:
+    #   state: on
     group.kitchen:
       state: on
     light.square_lamp:
@@ -24,7 +24,7 @@
       state: on
     switch.chandelier:
       state: on
-    switch.adams_fan:
+    light.bedroom_ceiling_light:
       state: on
     light.hallway_light_1:
       state: on
@@ -47,6 +47,8 @@
       state: off
     switch.desk_lamp_2:
       state: off
+    light.bedroom_ceiling_light:
+      state: off
     light.adams_bed_lamp:
       state: off
     light.extra_bedroom_light:
@@ -58,8 +60,6 @@
     switch.wemo_switch_5:
       state: off
     switch.chandelier:
-      state: off
-    switch.adams_fan:
       state: off
     light.hallway_light_1:
       state: off
@@ -92,7 +92,7 @@
       state: off
     switch.wemo_switch_5:
       state: off
-    switch.adams_fan:
+    light.bedroom_ceiling_light:
       state: off
     light.hallway_light_1:
       state: off
