@@ -9,10 +9,10 @@ views:
     cards:
       - type: glance
         title: Lovely People
-        column_width: calc(100% / 3)
+        column_width: calc(100% / 2)
         entities:
           - device_tracker.google_maps_101082361685415510767
-          - device_tracker.404e369280ff #Adam Wifi
+          # - device_tracker.404e369280ff #Adam Wifi
           - device_tracker.404e368f3c4e #Laura Wifi
       - type: entities
         title: Mode
