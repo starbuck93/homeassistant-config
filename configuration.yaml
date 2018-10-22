@@ -115,10 +115,10 @@ input_select:
   !include input_select.yaml
 
 camera:
-  - platform: mjpeg
-    mjpeg_url: !secret streetcamurl
-    still_image_url: !secret streetcamurlstill
-    name: StreetCam
+  # - platform: mjpeg
+  #   mjpeg_url: !secret streetcamurl
+  #   still_image_url: !secret streetcamurlstill
+  #   name: StreetCam
   # - platform: generic
   #   mjpeg_url: !secret ankercamurl
   #   still_image_url: !secret ankercamstill
@@ -127,10 +127,10 @@ camera:
   #   mjpeg_url: !secret octoprintcamurl
   #   still_image_url: !secret octoprintcamurl
   #   name: OctoPrintCam
-  # - platform: mjpeg
-  #   mjpeg_url: http://10.0.0.69/html/cam_pic_new.php
-  #   still_image_url: http://10.0.0.69/html/cam_pic.php
-  #   name: Kitchen
+  - platform: mjpeg
+    mjpeg_url: http://10.0.0.69/html/cam_pic_new.php
+    # still_image_url: http://10.0.0.69/html/cam_pic.php
+    name: PigeonCam
 
 
 weather:
@@ -144,7 +144,7 @@ history_graph:
       - sensor.back_door_temperature
       - sensor.bedroom_temp
       - sensor.living_room_temperature
-      - sensor.outdoor_temperature
+      - sensor.office_temp
     hours_to_show: 24
     refresh: 60
   gr2:

@@ -37,6 +37,22 @@ views:
           - entity: script.1537797311402 #Goodmorning
             tap_action: call-service
             service: script.turn_on
+      - type: entities
+        entities:
+          - type: call-service
+            icon: mdi:cast
+            name: Living Room Chromecast
+            action_name: Toggle
+            service: remote.toggle
+            service_data:
+              entity_id: remote.harmony_hub
+          - type: call-service
+            icon: mdi:cast
+            name: Bedroom Chromecast
+            action_name: Toggle
+            service: remote.toggle
+            service_data:
+              entity_id: remote.harmony_hub_2
   - title: downstairs
     cards:
       - type: entities
@@ -52,6 +68,7 @@ views:
         show_header_toggle: true
         entities:
           - light.living_room_ceiling_fan
+          - switch.adams_fan
           - light.hanging_light
           - light.brown_lamp
           # - switch.downstairs_chromecast
@@ -85,7 +102,6 @@ views:
           - switch.wemo_switch_1
           - light.adams_bed_lamp
           - light.bedroom_ceiling_light
-          - switch.adams_fan
           - switch.chandelier
           - light.extra_bedroom_light
           - switch.wemo_switch_5
@@ -102,7 +118,9 @@ views:
           - light.square_lamp
           - switch.desk_lamp_2
           # - sensor.office_door
-          # - sensor.office_temperature
+          - sensor.office_temp
+          - sensor.office_humidity
+          - sensor.office_pressure
       - type: entities
         title: Stairs
         show_header_toggle: true
@@ -136,7 +154,7 @@ views:
     cards:
       - type: entities
         entities:
-          - sensor.outdoor_humidity
+          # - sensor.outdoor_humidity
           - sun.sun
       - type: entities
         title: Air Conditioning
@@ -159,31 +177,20 @@ views:
         entities:
           - sensor.pigeon_cpu_temp
           - sensor.timelapsepi_cpu_temp
-      # - type: entities
-      #   title: Batteries
-      #   show_header_toggle: true
-      #   entities:
-      #     - sensor.kitchen_battery
-      #     - sensor.upstairs_battery
-      #     - sensor.back_door_battery
-      #     - sensor.water_leak_battery
-      #     - sensor.front_door_battery
-      #     - sensor.office_battery
+      # - type: picture-entity
+      #   title: StreetCam
+      #   entity: camera.streetcam
+      #   camera_image: camera.streetcam
+      #   show_info: true
+      #   tap_action: dialog
+      # - type: picture-entity
+      #   title: AnkerCam
+      #   entity: camera.ankercam
+      #   camera_image: camera.ankercam
+      #   show_info: true
+      #   tap_action: dialog
       - type: picture-entity
-        title: StreetCam
-        entity: camera.streetcam
-        camera_image: camera.streetcam
-        show_info: true
-        tap_action: dialog
-      - type: picture-entity
-        title: AnkerCam
-        entity: camera.ankercam
-        camera_image: camera.ankercam
-        show_info: true
-        tap_action: dialog
-      - type: picture-entity
-        title: Kitchen
-        entity: camera.kitchen
-        camera_image: camera.kitchen
-        show_info: true
-        tap_action: dialog
+        entity: camera.pigeoncam
+        show_state: false
+        show_name: false
+
