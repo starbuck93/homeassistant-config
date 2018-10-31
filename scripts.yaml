@@ -31,6 +31,14 @@
       entity_id: input_select.mode
       option: Home Mode
     service: input_select.select_option
+  - data:
+      entity_id: automation.arriving_home
+    service: automation.turn_off
+  - delay:
+      minutes: 10
+  - data:
+      entity_id: automation.arriving_home
+    service: automation.turn_on
 '1537797311402':
   alias: Goodmorning
   sequence:
@@ -41,3 +49,13 @@
       entity_id: input_select.mode
       option: Home Mode
     service: input_select.select_option
+'1540332544483':
+  alias: Home Delay Script
+  sequence:
+  - data:
+      entity_id: script.1537733751300
+    service: script.turn_off
+  - delay: 00:10
+  - data:
+      entity_id: script.1537733751300
+    service: script.turn_on

@@ -53,6 +53,12 @@ views:
             service: remote.toggle
             service_data:
               entity_id: remote.harmony_hub_2
+      #dark sky
+      - type: weather-forecast
+        entity: weather.dark_sky
+      - type: iframe
+        url: https://embed.windy.com/embed2.html
+  
   - title: downstairs
     cards:
       - type: entities
@@ -61,6 +67,7 @@ views:
         entities:
           - light.kitchen_lights
           - switch.wemo_switch_2
+          - switch.wax_warmer
           # - sensor.back_door
           # - sensor.water_leak_sensor
       - type: entities
@@ -121,6 +128,12 @@ views:
           - sensor.office_temp
           - sensor.office_humidity
           - sensor.office_pressure
+      - type: history-graph
+        title: Air Pressure
+        hours_to_show: 48
+        refresh_interval: 60
+        entities:
+          - sensor.office_pressure
       - type: entities
         title: Stairs
         show_header_toggle: true
@@ -153,10 +166,6 @@ views:
     icon: mdi:graphql
     cards:
       - type: entities
-        entities:
-          # - sensor.outdoor_humidity
-          - sun.sun
-      - type: entities
         title: Air Conditioning
         show_header_toggle: true
         entities:
@@ -176,7 +185,7 @@ views:
         show_header_toggle: true
         entities:
           - sensor.pigeon_cpu_temp
-          - sensor.timelapsepi_cpu_temp
+          # - sensor.timelapsepi_cpu_temp
       # - type: picture-entity
       #   title: StreetCam
       #   entity: camera.streetcam

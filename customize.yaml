@@ -8,6 +8,7 @@ device_tracker.404e369280ff:
   friendly_name: Adam
   hidden: true
 device_tracker.404e368f3c4e:
+  entity_picture: https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/34118619_10156380937895747_4733289612162629632_n.jpg?_nc_cat=103&oh=2298f6f674a82f2240c84f915d44e519&oe=5C5BEDC6
   friendly_name: Laura
 binary_sensor.ac_boolean:
   device_class: cold
@@ -44,7 +45,7 @@ switch.wemo_switch_5:
 switch.chandelier:
   icon: mdi:fan
 switch.adams_fan:
-  icon: mdi:ceiling-light
+  friendly_name: Living Room Ceiling Fan
 switch.christmas_tree:
   icon: mdi:led-on
 switch.wemo_switch_2:
@@ -123,3 +124,13 @@ script.1537797311402:
   icon: mdi:weather-sunset-up
 input_select.mode:
   friendly_name: Manual Mode Change
+light.living_room_ceiling_fan:
+  friendly_name: Living Room Ceiling Light
+  icon: mdi:ceiling-light
+sensor.office_pressure:
+  icon: mdi:gauge
+sensor.office_temp:
+  icon: mdi:oil-temperature
+sensor.office_humidity:
+  icon: mdi:water-percent
+switch.wax_warmer: {}

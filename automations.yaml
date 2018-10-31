@@ -2,6 +2,8 @@
   alias: Leaving
   trigger:
   - entity_id: group.all_devices
+    for: 
+      minutes: 1
     from: home
     platform: state
     to: not_home
@@ -378,3 +380,34 @@
   action:
   - data: {}
     service: script.1537797311402
+- id: '1540233472294'
+  alias: New Automation
+  trigger:
+  - below: '40'
+    entity_id: sensor.tradfri_remote_control
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      message: Tradfri Remote low power. Replace Battery ASAP
+    service: persistent_notification.create
+- id: '1540236521564'
+  alias: Halloween Lights On at sunset
+  trigger:
+  - event: sunset
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: switch.wax_warmer
+    service: switch.turn_on
+- id: '1540236579176'
+  alias: Halloween Lights off
+  trigger:
+  - at: 00:00
+    platform: time
+  condition: []
+  action:
+  - data:
+      entity_id: switch.wax_warmer
+    service: switch.turn_on
