@@ -21,6 +21,14 @@
       entity_id: input_select.mode
       option: Away Mode
     service: input_select.select_option
+  - data:
+      data:
+        badge: /local/home-lock.png
+        icon: /local/home-lock.png
+        tag: left_home
+      message: Left Home
+      title: Mode
+    service: notify.browser_adam_pixel
 '1537733751300':
   alias: I'm Back
   sequence:
@@ -28,14 +36,21 @@
       entity_id: scene.arriving_home
     service: scene.turn_on
   - data:
+      title: Mode
+      message: Arrived Home
+      data:
+        tag: arrived_home
+        icon: /local/home-heart96.png
+        badge: /local/home-heart96.png
+    service: notify.browser_adam_pixel
+  - data:
       entity_id: input_select.mode
       option: Home Mode
     service: input_select.select_option
   - data:
       entity_id: automation.arriving_home
     service: automation.turn_off
-  - delay:
-      minutes: 10
+  - delay: '[object Object]'
   - data:
       entity_id: automation.arriving_home
     service: automation.turn_on

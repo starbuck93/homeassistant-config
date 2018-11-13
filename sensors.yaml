@@ -13,20 +13,20 @@
   device_class: 'temperature' 
 
 - platform: rest
-  name: Cold AC Air
+  name: AC Air Temp
   resource: http://10.0.0.67/
   value_template: '{{ value_json.temperature }}'
   unit_of_measurement: "°F"
   device_class: 'temperature' 
 
 
-- platform: history_stats
-  name: AC On Today
-  entity_id: binary_sensor.ac_boolean
-  state: True
-  type: time
-  start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
-  end: '{{ now() }}'
+# - platform: history_stats
+#   name: AC On Today
+#   entity_id: binary_sensor.ac_boolean
+#   state: True
+#   type: time
+#   start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+#   end: '{{ now() }}'
 
 
 

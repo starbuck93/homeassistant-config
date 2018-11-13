@@ -46,6 +46,7 @@ switch.chandelier:
   icon: mdi:fan
 switch.adams_fan:
   friendly_name: Living Room Ceiling Fan
+  icon: mdi:fan
 switch.christmas_tree:
   icon: mdi:led-on
 switch.wemo_switch_2:
@@ -133,4 +134,7 @@ sensor.office_temp:
   icon: mdi:oil-temperature
 sensor.office_humidity:
   icon: mdi:water-percent
-switch.wax_warmer: {}
+switch.wax_warmer:
+  friendly_name: Wax Warmer
+light.fastled_ws2811_light:
+  icon: mdi:led-on

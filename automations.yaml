@@ -2,7 +2,7 @@
   alias: Leaving
   trigger:
   - entity_id: group.all_devices
-    for: 
+    for:
       minutes: 1
     from: home
     platform: state
@@ -54,25 +54,6 @@
       end_level_pct: 25
       step_in_level_pct: 1
   id: 4e0b8e2a66a141cbb08a6c2c1f88f70a
-- id: 74f41fb4858f4f7998eb4af7d19a7be2
-  alias: Send picture when all devices change state
-  trigger:
-  - entity_id: group.all_devices
-    from: home
-    platform: state
-    to: not_home
-  - entity_id: group.all_devices
-    from: not_home
-    platform: state
-    to: home
-  action:
-  - data:
-      data:
-        image: ''
-        tag: send-picture-when-changing-from-home-to-away
-      message: Check it out
-      title: Look Outside
-    service: notify.browser_adam_pixel
 - alias: Slack status 1
   trigger:
     platform: zone
@@ -381,7 +362,7 @@
   - data: {}
     service: script.1537797311402
 - id: '1540233472294'
-  alias: New Automation
+  alias: Tradfri Remote Battery
   trigger:
   - below: '40'
     entity_id: sensor.tradfri_remote_control
@@ -391,23 +372,71 @@
   - data:
       message: Tradfri Remote low power. Replace Battery ASAP
     service: persistent_notification.create
-- id: '1540236521564'
-  alias: Halloween Lights On at sunset
+- id: '1542078433871'
+  alias: Motion Detected
   trigger:
-  - event: sunset
-    platform: sun
+  - entity_id: binary_sensor.pir_sensor
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: sensor.mode
+    state: away
+  action:
+  - data:
+      data:
+        badge: /local/alert-decagram96.png
+        icon: /local/alert-decagram96.png
+        tag: motion
+      message: There is motion detected!
+      title: Motion
+    service: notify.browser_adam_pixel
+- id: '1542078666506'
+  alias: Button Press 1
+  trigger:
+  - entity_id: binary_sensor.button
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: sensor.mode
+    state: home
+  - condition: state
+    entity_id: sensor.mode
+    state: night
+  action:
+  - data:
+      entity_id: light.fastled_ws2811_light
+    service: light.toggle
+- id: '1542079506478'
+  alias: Button Press 2 Home Mode
+  trigger:
+  - entity_id: binary_sensor.button
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: sensor.mode
+    state: away
+  action:
+  - data:
+      entity_id: script.1537733751300
+    service: script.turn_on
+- id: '1542082852483'
+  alias: Motion Detected 2
+  trigger:
+  - entity_id: binary_sensor.pir_sensor
+    platform: state
+    to: 'on'
   condition: []
   action:
   - data:
-      entity_id: switch.wax_warmer
-    service: switch.turn_on
-- id: '1540236579176'
-  alias: Halloween Lights off
-  trigger:
-  - at: 00:00
-    platform: time
-  condition: []
-  action:
+      entity_id: light.fastled_ws2811_light
+      transition: '4'
+    service: light.turn_on
+  - delay: '5'
   - data:
-      entity_id: switch.wax_warmer
-    service: switch.turn_on
+      entity_id: light.fastled_ws2811_light
+      transition: '4'
+    service: light.turn_off

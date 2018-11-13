@@ -19,24 +19,16 @@ cloud:
   google_actions:
     filter:
       exclude_entities:
-        - script.activate_goodnight
-        - switch.away_mode_active
         - light.cooking_room_1
         - light.cooking_room_2
         - light.cooking_room_3
         - light.cooking_room_4
-        - scene.goodnight_brightness
         - light.hallway_light_1
         - light.hallway_light_2
-        - switch.home_mode_active
         - light.living_room_fan_1
         - light.living_room_fan_2
         - light.living_room_fan_3
         - light.living_room_fan_4
-        - switch.night_mode_active
-        - switch.VD_routine_door_opens
-        - switch.VD_routine_empty_home
-        - switch.VD_routine_im_home
       exclude_domains:
         group
 
@@ -67,6 +59,15 @@ conversation:
 history:
 
 logbook:
+ exclude:
+    domains:
+      - light
+      - switch
+      - weather
+    entities:
+      - automation.motion_detected_2
+      - automation.button_press_1
+      - sensor.pir_sensor
 
 recorder: 
   purge_keep_days: 7
@@ -88,9 +89,10 @@ scene: !include scenes.yaml
 
 script: !include scripts.yaml
 
-# mqtt: #using cloudmqtt.com with a one-way bridge from there https://community.home-assistant.io/t/mqtt-working-mosquitto-cloudmqtt-bridge/1830/52 https://github.com/bastshoes/hass_config
-#   password: !secret http_password
-#   discovery: true
+ # previously using cloudmqtt.com with a one-way bridge from there https://community.home-assistant.io/t/mqtt-working-mosquitto-cloudmqtt-bridge/1830/52 https://github.com/bastshoes/hass_config
+mqtt:
+  password: !secret mqtt_password
+  discovery: true
 #   discovery_prefix: smartthings
 
 light:
@@ -154,6 +156,12 @@ history_graph:
       - binary_sensor.ac_boolean
     hours_to_show: 12
     refresh: 60
+  gr3:
+    name: Pressure
+    entities:
+      - sensor.office_pressure
+    hours_to_show: 48
+    refresh: 60
 
 notify:
   - name: Slack
@@ -195,3 +203,9 @@ remote:
   - platform: harmony
     name: Harmony Hub 2
     activity: Watch Upstairs Chromecast
+
+climate:
+  - platform: generic_thermostat
+    name: Bedroom Heat
+    heater: switch.wemo_switch_3
+    target_sensor: sensor.bedroom_temp
