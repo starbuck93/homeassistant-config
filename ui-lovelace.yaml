@@ -5,6 +5,8 @@
 resources:
   - url: /local/custom-lovelace/thermostat-card/thermostat-card.js?v=1
     type: module
+  - url: /local/custom-lovelace/monster-card/monster-card.js?v=1
+    type: module
 
 title: Home
 views:
@@ -171,18 +173,51 @@ views:
         refresh_interval: 60
         entities:
           - sensor.ac_air_temp
+      - type: history-graph
+        title: Humidity
+        hours_to_show: 24
+        refresh_interval: 60
+        entities:
+          - sensor.outdoor_humidity
+          - sensor.office_humidity
+          - sensor.bme280_humidity
+      - type: history-graph
+        title: Temperature
+        hours_to_show: 24
+        refresh_interval: 60
+        entities:
+          - sensor.outdoor_temperature
+          - sensor.office_temp
+          - sensor.bme280_temperature
+          - sensor.ac_air_temp
+          - sensor.living_room_temperature
+          - sensor.bedroom_temp
+      - type: history-graph
+        title: Pressure
+        hours_to_show: 24
+        refresh_interval: 60
+        entities:
+          - sensor.outdoor_pressure
+          - sensor.office_pressure
+          - sensor.bme280_pressure
+      - type: entities
+        title: Outdoor Sensors
+        entities:
+          - sensor.outdoor_humidity
+          - sensor.outdoor_pressure
+          - sensor.outdoor_temperature
       - type: entities
         title: Raspberry Pi CPU Temperatures
         show_header_toggle: true
         entities:
           - sensor.pigeon_cpu_temp
-          # - sensor.timelapsepi_cpu_temp
-      # - type: picture-entity
-      #   title: StreetCam
-      #   entity: camera.streetcam
-      #   camera_image: camera.streetcam
-      #   show_info: true
-      #   tap_action: dialog
+          - sensor.timelapsepi_cpu_temp
+      - type: picture-entity
+        title: Backyard
+        entity: camera.backyard
+        camera_image: camera.backyard
+        show_info: true
+        tap_action: dialog
       # - type: picture-entity
       #   title: AnkerCam
       #   entity: camera.ankercam
@@ -193,4 +228,42 @@ views:
         entity: camera.pigeoncam
         show_state: false
         show_name: false
+      - type: custom:monster-card
+        card:
+          type: entities
+          title: Things that are broken
+        filter:
+          include:
+            - state: "unknown"
+            - state: "unavailable"
+          exclude:
+            - entity_id: group.*
+      - type: custom:monster-card
+        card:
+          type: entities
+          title: All Scenes
+        filter:
+          include:
+            - entity_id: scene.*
+      # - type: custom:monster-card
+      #   card:
+      #     type: entities
+      #     title: All Lights On
+      #   filter:
+      #     include:
+      #       - entity_id: light.*
+      #       - state: "on"
+  - title: Debugging
+    # icon: mdi:graphql
+    cards:
+      - type: custom:monster-card
+        card:
+          type: entities
+          title: All
+        filter:
+          include:
+            - entity_id: "*"
 
+
+
+            

@@ -28,7 +28,7 @@
         tag: left_home
       message: Left Home
       title: Mode
-    service: notify.browser_adam_pixel
+    service: notify.browser
 '1537733751300':
   alias: I'm Back
   sequence:
@@ -36,13 +36,13 @@
       entity_id: scene.arriving_home
     service: scene.turn_on
   - data:
-      title: Mode
-      message: Arrived Home
       data:
-        tag: arrived_home
-        icon: /local/home-heart96.png
         badge: /local/home-heart96.png
-    service: notify.browser_adam_pixel
+        icon: /local/home-heart96.png
+        tag: arrived_home
+      message: Arrived Home
+      title: Mode
+    service: notify.browser
   - data:
       entity_id: input_select.mode
       option: Home Mode
@@ -50,7 +50,7 @@
   - data:
       entity_id: automation.arriving_home
     service: automation.turn_off
-  - delay: '[object Object]'
+  - delay: 00:10
   - data:
       entity_id: automation.arriving_home
     service: automation.turn_on

@@ -351,13 +351,9 @@
   - at: 07:00:00
     platform: time
   condition:
-  - condition: time
-    weekday:
-    - mon
-    - tue
-    - wed
-    - thu
-    - fri
+  - condition: state
+    entity_id: sensor.mode
+    state: night
   action:
   - data: {}
     service: script.1537797311402
@@ -391,7 +387,7 @@
         tag: motion
       message: There is motion detected!
       title: Motion
-    service: notify.browser_adam_pixel
+    service: notify.browser
 - id: '1542078666506'
   alias: Button Press 1
   trigger:

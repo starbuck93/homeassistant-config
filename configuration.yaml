@@ -117,10 +117,10 @@ input_select:
   !include input_select.yaml
 
 camera:
-  # - platform: mjpeg
-  #   mjpeg_url: !secret streetcamurl
-  #   still_image_url: !secret streetcamurlstill
-  #   name: StreetCam
+  - platform: mjpeg
+    mjpeg_url: !secret streetcamurl
+    still_image_url: !secret streetcamurlstill
+    name: Backyard
   # - platform: generic
   #   mjpeg_url: !secret ankercamurl
   #   still_image_url: !secret ankercamstill
