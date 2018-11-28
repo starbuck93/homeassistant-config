@@ -73,6 +73,7 @@ views:
         entities:
           - light.kitchen_lights
           - switch.wemo_switch_2
+          - switch.dog_water_fountain
           - switch.wax_warmer
           - light.fastled_ws2811_light
           - binary_sensor.pir_sensor
@@ -87,6 +88,7 @@ views:
           - switch.adams_fan
           - light.hanging_light
           - light.brown_lamp
+          - switch.christmas_tree_2
           # - switch.downstairs_chromecast
           # - switch.play_xbox_one
           - sensor.living_room_temperature

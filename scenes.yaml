@@ -22,8 +22,8 @@
       state: on
     switch.wemo_switch_5:
       state: on
-    switch.chandelier:
-      state: on
+    # switch.chandelier: #bedroom ceiling fan
+    #   state: on
     light.bedroom_ceiling_light:
       state: on
     light.hallway_light_1:
@@ -33,6 +33,12 @@
     light.stairs_light:
       state: on
     switch.adams_fan:
+      state: on
+    switch.dog_water_fountain:
+      state: on
+    switch.christmas_tree_2:
+      state: on
+    switch.wax_warmer:
       state: on
 
 - name: Leaving Home
@@ -71,6 +77,12 @@
       state: off
     switch.adams_fan:
       state: off
+    switch.dog_water_fountain:
+      state: off
+    switch.christmas_tree_2:
+      state: off
+    switch.wax_warmer:
+      state: off
 
 
 - name: Goodnight
@@ -107,18 +119,13 @@
       state: off
     switch.adams_fan:
       state: off
+    switch.dog_water_fountain:
+      state: off
+    switch.christmas_tree_2:
+      state: off
+    switch.wax_warmer:
+      state: off
 
-
-- name: Back Door Opens
-  entities:
-    light.hanging_light:
-      state: on
-    light.brown_lamp:
-      state: on
-    light.living_room_ceiling_fan:
-      state: on
-    group.kitchen:
-      state: on
 
 - name: Goodmorning
   entities:
@@ -153,6 +160,12 @@
     light.stairs_light:
       state: on
     switch.adams_fan:
+      state: on
+    switch.dog_water_fountain:
+      state: on
+    switch.christmas_tree_2:
+      state: on
+    switch.wax_warmer:
       state: on
 
 
