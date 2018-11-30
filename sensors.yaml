@@ -51,27 +51,6 @@
   unit_of_measurement: "°F"
   device_class: 'temperature' 
 
-- platform: rest
-  name: Office Temp
-  resource: http://10.0.0.200/temperature
-  value_template: '{{ value_json.temperature }}'
-  unit_of_measurement: "°C"
-  # device_class: 'temperature' 
-
-- platform: rest
-  name: Office Humidity
-  resource: http://10.0.0.200/humidity
-  value_template: '{{ value_json.humidity }}'
-  unit_of_measurement: "%"
-  # device_class: 'temperature' 
-
-- platform: rest
-  name: Office Pressure
-  resource: http://10.0.0.200/pressure
-  value_template: '{{ value_json.pressure }}'
-  unit_of_measurement: "hPa"
-  device_class: 'pressure'
-
 - platform: systemmonitor
   resources:
     - type: processor_use

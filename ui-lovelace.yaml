@@ -64,6 +64,9 @@ views:
         entity: weather.dark_sky
       - type: iframe
         url: https://embed.windy.com/embed2.html
+      - type: glance
+        entities: 
+          - light.christmas_star
   
   - title: downstairs
     cards:
