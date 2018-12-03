@@ -145,7 +145,7 @@ views:
           - light.square_lamp
           - switch.desk_lamp_2
           # - sensor.office_door
-          - sensor.office_temp
+          - sensor.office_temperature
           - sensor.office_humidity
           - sensor.office_pressure
       # - type: history-graph
