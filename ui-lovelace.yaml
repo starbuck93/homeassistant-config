@@ -13,6 +13,14 @@ views:
   - title: default_view
     icon: mdi:home
     cards:
+      - type: custom:monster-card
+        card:
+          type: glance
+          title: Update Available
+        filter:
+          include:
+            - entity_id: updater.updater
+        show_empty: false
       - type: glance
         title: Lovely People
         column_width: calc(100% / 2)

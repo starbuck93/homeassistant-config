@@ -72,6 +72,12 @@ logbook:
 recorder: 
   purge_keep_days: 7
 
+logger:
+  default: warning
+  logs:
+    homeassistant.components: info
+    homeassistant.components.weather: critical
+
 sun:
 
 cast:
