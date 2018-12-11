@@ -1,0 +1,22 @@
+  gr1:
+    name: Temperatures
+    entities:
+      - sensor.back_door_temperature
+      - sensor.bedroom_temp
+      - sensor.living_room_temperature
+      - sensor.office_temp
+    hours_to_show: 24
+    refresh: 60
+  gr2:
+    name: Air Conditioning
+    entities:
+      - sensor.cold_ac_air
+      - binary_sensor.ac_boolean
+    hours_to_show: 12
+    refresh: 60
+  gr3:
+    name: Pressure
+    entities:
+      - sensor.office_pressure
+    hours_to_show: 48
+    refresh: 60

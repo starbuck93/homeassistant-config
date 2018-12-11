@@ -138,3 +138,8 @@ switch.wax_warmer:
   friendly_name: Wax Warmer
 light.fastled_ws2811_light:
   icon: mdi:led-on
+switch.kasa_switch_1:
+  friendly_name: Christmas Lights
+  icon: mdi:led-on
+light.christmas_star:
+  icon: mdi:star

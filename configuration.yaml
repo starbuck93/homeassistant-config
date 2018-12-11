@@ -9,28 +9,12 @@ homeassistant:
     !include customize.yaml
   auth_providers: 
    - type: homeassistant
-   - type: legacy_api_password
    - type: trusted_networks
 
 frontend:
   themes: !include themes.yaml
 
-cloud:
-  google_actions:
-    filter:
-      exclude_entities:
-        - light.cooking_room_1
-        - light.cooking_room_2
-        - light.cooking_room_3
-        - light.cooking_room_4
-        - light.hallway_light_1
-        - light.hallway_light_2
-        - light.living_room_fan_1
-        - light.living_room_fan_2
-        - light.living_room_fan_3
-        - light.living_room_fan_4
-      exclude_domains:
-        group
+cloud: !include cloud.yaml
 
 map:
 
@@ -39,7 +23,6 @@ config:
 shopping_list:
 
 http:
-  api_password: !secret http_password
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
   login_attempts_threshold: 3
@@ -58,16 +41,7 @@ conversation:
 
 history:
 
-logbook:
- exclude:
-    domains:
-      - light
-      - switch
-      - weather
-    entities:
-      - automation.motion_detected_2
-      - automation.button_press_1
-      - sensor.pir_sensor
+logbook: !include logbook.yaml
 
 recorder: 
   purge_keep_days: 7
@@ -97,11 +71,9 @@ scene: !include scenes.yaml
 
 script: !include scripts.yaml
 
- # previously using cloudmqtt.com with a one-way bridge from there https://community.home-assistant.io/t/mqtt-working-mosquitto-cloudmqtt-bridge/1830/52 https://github.com/bastshoes/hass_config
 mqtt:
   password: !secret mqtt_password
   discovery: true
-#   discovery_prefix: smartthings
 
 light:
   !include lights.yaml
@@ -124,78 +96,18 @@ zone:
 input_select:
   !include input_select.yaml
 
-camera:
-  - platform: mjpeg
-    mjpeg_url: !secret streetcamurl
-    still_image_url: !secret streetcamurlstill
-    name: Backyard
-  # - platform: generic
-  #   mjpeg_url: !secret ankercamurl
-  #   still_image_url: !secret ankercamstill
-  #   name: AnkerCam
-  # - platform: generic
-  #   mjpeg_url: !secret octoprintcamurl
-  #   still_image_url: !secret octoprintcamurl
-  #   name: OctoPrintCam
-  - platform: mjpeg
-    mjpeg_url: http://10.0.0.69/html/cam_pic_new.php
-    # still_image_url: http://10.0.0.69/html/cam_pic.php
-    name: PigeonCam
-
+camera: !include camera.yaml
 
 weather:
   - platform: darksky
     api_key: !secret darksky_apikey
 
-history_graph:
-  gr1:
-    name: Temperatures
-    entities:
-      - sensor.back_door_temperature
-      - sensor.bedroom_temp
-      - sensor.living_room_temperature
-      - sensor.office_temp
-    hours_to_show: 24
-    refresh: 60
-  gr2:
-    name: Air Conditioning
-    entities:
-      - sensor.cold_ac_air
-      - binary_sensor.ac_boolean
-    hours_to_show: 12
-    refresh: 60
-  gr3:
-    name: Pressure
-    entities:
-      - sensor.office_pressure
-    hours_to_show: 48
-    refresh: 60
+history_graph: !include history_graph.yaml
 
-notify:
-  - name: Slack
-    platform: slack
-    api_key: !secret slack-api-key
-    default_channel: '#general'
-  - name: browser
-    platform: html5
-    gcm_api_key: !secret gcm-server-key
-    gcm_sender_id: !secret gcm-sender-id
 
-rest_command:
-  slack_status:
-    url: https://slack.com/api/users.profile.set
-    method: POST
-    headers:
-      authorization: !secret rest_headers_secret
-    payload: '{"profile":{"status_text": "{{ status }}","status_emoji": "{{ emoji }}"}}'
-    content_type: 'application/json; charset=utf-8'
-  slack_availability:
-    url: https://slack.com/api/chat.postMessage
-    method: POST
-    headers:
-      authorization: !secret rest_headers_secret
-    payload: '{"channel": "GBVREKVU4","text": "{{ message_text }}","as_user": "true","link_names": "true"}'
-    content_type: 'application/json; charset=utf-8'
+notify: !include notify.yaml
+
+rest_command: !include rest_command.yaml
 
 cloudflare:
   email: !secret cloudflare_email
@@ -208,9 +120,6 @@ remote:
   - platform: harmony
     name: Harmony Hub
     activity: Watch Downstairs Chromecast
-  - platform: harmony
-    name: Harmony Hub 2
-    activity: Watch Upstairs Chromecast
 
 climate:
   - platform: generic_thermostat

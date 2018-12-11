@@ -33,12 +33,13 @@
       message: Someone opened the back door!
       title: Back Door Opened
     service: notify.browser_adam_pixel
-- alias: Wake Up Light Slowly at 630AM
+- id: 4e0b8e2a66a141cbb08a6c2c1f88f70a
+  alias: Wake Up Light Slowly at 630AM
   trigger:
+  - at: 06:30:00
     platform: time
-    at: 06:30:00
   condition:
-    condition: time
+  - condition: time
     weekday:
     - mon
     - tue
@@ -46,14 +47,13 @@
     - thu
     - fri
   action:
-  - service: python_script.fade_in_light
-    data:
-      entity_id: group.master_bed
-      delay_in_sec: 50
+  - data:
+      delay_in_sec: 60
+      end_level_pct: 100
+      entity_id: light.adams_bed_lamp
       start_level_pct: 1
-      end_level_pct: 25
       step_in_level_pct: 1
-  id: 4e0b8e2a66a141cbb08a6c2c1f88f70a
+    service: python_script.fade_in_light
 - alias: Slack status 1
   trigger:
     platform: zone
@@ -436,3 +436,13 @@
       entity_id: light.fastled_ws2811_light
       transition: '4'
     service: light.turn_off
+- id: '1544291648675'
+  alias: Christmas Lights On
+  trigger:
+  - event: sunset
+    platform: sun
+  condition: []
+  action:
+  - data:
+      entity_id: scene.christmas_lights_on
+    service: scene.turn_on

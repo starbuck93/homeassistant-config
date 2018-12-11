@@ -75,6 +75,7 @@ views:
       - type: glance
         entities: 
           - light.christmas_star
+          - switch.kasa_switch_1
   
   - title: downstairs
     cards:

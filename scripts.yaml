@@ -29,6 +29,10 @@
       message: Left Home
       title: Mode
     service: notify.browser
+  - data:
+      away_mode: 'true'
+      entity_id: climate.bedroom_heat
+    service: climate.set_away_mode
 '1537733751300':
   alias: I'm Back
   sequence:
@@ -48,12 +52,9 @@
       option: Home Mode
     service: input_select.select_option
   - data:
-      entity_id: automation.arriving_home
-    service: automation.turn_off
-  - delay: 00:10
-  - data:
-      entity_id: automation.arriving_home
-    service: automation.turn_on
+      away_mode: 'false'
+      entity_id: climate.bedroom_heat
+    service: climate.set_away_mode
 '1537797311402':
   alias: Goodmorning
   sequence:
