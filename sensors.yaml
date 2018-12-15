@@ -1,9 +1,9 @@
-- platform: rest
-  name: Living Room Temperature
-  resource: http://localhost/temp/
-  value_template: '{{ value_json.temperature }}'
-  unit_of_measurement: "°F"
-  device_class: 'temperature' 
+# - platform: rest
+#   name: Living Room Temperature
+#   resource: http://localhost/temp/
+#   value_template: '{{ value_json.temperature }}'
+#   unit_of_measurement: "°F"
+#   device_class: 'temperature' 
 
 - platform: rest
   name: Bedroom Temp

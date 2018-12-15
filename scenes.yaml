@@ -184,7 +184,7 @@
       state: on
     light.christmas_star:
       state: on
-      color_name: "green"
+      color_name: green
 
 - name: Christmas Lights off
   entities:
