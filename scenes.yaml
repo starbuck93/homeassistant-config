@@ -8,6 +8,7 @@
     #   state: on
     group.kitchen:
       state: on
+      brightness_pct: 100
     light.square_lamp:
       state: on
     switch.desk_lamp_2:
@@ -192,3 +193,14 @@
       state: off
     light.christmas_star:
       state: off
+
+- name: Kitchen Dim
+  entities:
+    light.kitchen_lights:
+      brightness_pct: 10
+      state: on
+- name: Kitchen Regular
+  entities:
+    light.kitchen_lights:
+      brightness_pct: 100
+      state: on

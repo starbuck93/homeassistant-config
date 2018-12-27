@@ -45,6 +45,7 @@ logbook: !include logbook.yaml
 
 recorder: 
   purge_keep_days: 7
+  db_url: !secret my_db
 
 logger:
   default: warning
@@ -116,10 +117,10 @@ cloudflare:
   records:
     - home
 
-remote:
-  - platform: harmony
-    name: Harmony Hub
-    activity: Watch Downstairs Chromecast
+# remote:
+#   - platform: harmony
+#     name: Harmony Hub
+#     activity: Watch Downstairs Chromecast
 
 climate:
   - platform: generic_thermostat

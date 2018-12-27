@@ -51,22 +51,22 @@ views:
           - entity: script.1537797311402 #Goodmorning
             tap_action: call-service
             service: script.turn_on
-      - type: entities
-        entities:
-          - type: call-service
-            icon: mdi:cast
-            name: Living Room Chromecast
-            action_name: Toggle
-            service: remote.toggle
-            service_data:
-              entity_id: remote.harmony_hub
-          - type: call-service
-            icon: mdi:cast
-            name: Bedroom Chromecast
-            action_name: Toggle
-            service: remote.toggle
-            service_data:
-              entity_id: remote.harmony_hub_2
+      # - type: entities
+      #   entities:
+      #     - type: call-service
+      #       icon: mdi:cast
+      #       name: Living Room Chromecast
+      #       action_name: Toggle
+      #       service: remote.toggle
+      #       service_data:
+      #         entity_id: remote.harmony_hub
+      #     - type: call-service
+      #       icon: mdi:cast
+      #       name: Bedroom Chromecast
+      #       action_name: Toggle
+      #       service: remote.toggle
+      #       service_data:
+      #         entity_id: remote.harmony_hub_2
       #dark sky
       - type: weather-forecast
         entity: weather.dark_sky
@@ -103,7 +103,7 @@ views:
           - switch.christmas_tree_2
           # - switch.downstairs_chromecast
           # - switch.play_xbox_one
-          - sensor.living_room_temperature
+          - sensor.LR_temp
           # - sensor.front_door
           # - sensor.downstairs_motion_sensor
       - type: entities
@@ -114,15 +114,15 @@ views:
             name: Starbuck Home
           - entity: media_player.soundbar
             name: Soundbar
-      - type: entities
-        entities:
-          - type: call-service
-            icon: mdi:cast
-            name: Downstairs Chromecast
-            action_name: Toggle
-            service: remote.toggle
-            service_data:
-              entity_id: remote.harmony_hub
+      # - type: entities
+      #   entities:
+      #     - type: call-service
+      #       icon: mdi:cast
+      #       name: Downstairs Chromecast
+      #       action_name: Toggle
+      #       service: remote.toggle
+      #       service_data:
+      #         entity_id: remote.harmony_hub
   - title: upstairs
     cards:
       - type: entities
@@ -204,7 +204,7 @@ views:
           - sensor.office_temp
           - sensor.bme280_temperature
           - sensor.ac_air_temp
-          - sensor.living_room_temperature
+          - sensor.LR_temp
           - sensor.bedroom_temp
       - type: history-graph
         title: Pressure

@@ -446,3 +446,52 @@
   - data:
       entity_id: scene.christmas_lights_on
     service: scene.turn_on
+  - delay: 04:30:00
+  - data:
+      entity_id: scene.christmas_lights_off
+    service: scene.turn_on
+- id: '1545278037098'
+  alias: Bother Laura
+  trigger:
+  - entity_id: switch.chandelier
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: switch.chandelier
+    service: switch.turn_off
+- id: '1545935795147'
+  alias: Dim Kitchen Lights When No Motion
+  trigger:
+  - entity_id: binary_sensor.pir_sensor
+    for: 00:15:00
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition:
+  - condition: state
+    entity_id: sensor.mode
+    state: home
+  action:
+  - data:
+      entity_id: scene.kitchen_dim
+    service: scene.turn_on
+- id: '1545936005433'
+  alias: Brighten Kitchen Lights When Motion
+  trigger:
+  - entity_id: binary_sensor.pir_sensor
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: sensor.mode
+    state: home
+  - condition: template
+    value_template: "{{ state_attr('light.kitchen_lights', 'brightness_pct') == 10 }}"
+  action:
+  - data:
+      entity_id: scene.kitchen_regular
+    service: scene.turn_on

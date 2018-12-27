@@ -143,3 +143,5 @@ switch.kasa_switch_1:
   icon: mdi:led-on
 light.christmas_star:
   icon: mdi:star
+sensor.LR_temp:
+  friendly_name: Living Room Temperature

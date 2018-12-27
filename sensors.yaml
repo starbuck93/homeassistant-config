@@ -1,9 +1,17 @@
-# - platform: rest
-#   name: Living Room Temperature
-#   resource: http://localhost/temp/
-#   value_template: '{{ value_json.temperature }}'
-#   unit_of_measurement: "°F"
-#   device_class: 'temperature' 
+- platform: mqtt
+  unit_of_measurement: "°C"
+  expire_after: 675
+  name: LR Temp
+  state_topic: living_room/sensor/lr_temp/state
+  availability_topic: living_room/status
+  unique_id: dallas-B30000071CE85128
+  device:
+    identifiers: 600194b11cad
+    name: living_room
+    sw_version: esphomelib v1.9.3 Dec 21 2018, 15:47:31
+    model: PLATFORMIO_D1_MINI_LITE
+    manufacturer: espressif
+
 
 - platform: rest
   name: Bedroom Temp
@@ -51,11 +59,3 @@
   unit_of_measurement: "°F"
   device_class: 'temperature' 
 
-- platform: systemmonitor
-  resources:
-    - type: processor_use
-    - type: memory_use_percent
-    - type: network_in
-      arg: eth0
-    - type: network_out
-      arg: eth0

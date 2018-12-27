@@ -19,3 +19,26 @@
   password: !secret maps_password
   consider_home: 180
 
+# - platform: googlehome
+#   host: 10.0.0.101 #BedroomMini
+#   rssi_threshold: -100
+#   interval_seconds: 5
+#   consider_home: 10
+#   new_device_defaults:
+#     track_new_devices: true
+
+# - platform: googlehome
+#   host: 10.0.0.102 #StarbuckHome
+#   rssi_threshold: -100
+#   interval_seconds: 5
+#   consider_home: 10
+#   new_device_defaults:
+#     track_new_devices: true
+
+# - platform: googlehome
+#   host: 10.0.0.103 #Office Mini 
+#   rssi_threshold: -100
+#   interval_seconds: 5
+#   consider_home: 10
+#   new_device_defaults:
+#     track_new_devices: false
