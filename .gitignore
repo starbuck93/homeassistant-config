@@ -24,3 +24,4 @@ custom_components/
 ip_bans.yaml
 .cloud/
 .storage/
+.shopping_list.json

@@ -1,7 +1,7 @@
  exclude:
     domains:
-      - light
-      - switch
+      # - light
+      # - switch
       - weather
     entities:
       - automation.motion_detected_2

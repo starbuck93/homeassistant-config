@@ -2,9 +2,6 @@
   alias: Goodnight Script
   sequence:
   - data:
-      entity_id: scene.goodnight_brightness
-    service: scene.turn_on
-  - data:
       entity_id: scene.goodnight
     service: scene.turn_on
   - data:
@@ -67,11 +64,14 @@
     service: input_select.select_option
 '1540332544483':
   alias: Home Delay Script
+  sequence: []
+'1546036735190':
+  alias: Kitchen Motion Brightness
   sequence:
   - data:
-      entity_id: script.1537733751300
-    service: script.turn_off
-  - delay: 00:10
+      entity_id: scene.kitchen_dim
+    service: scene.turn_on
+  - wait_template: '{{ is_state(''binary_sensor.pir_sensor'',''on'') }}'
   - data:
-      entity_id: script.1537733751300
-    service: script.turn_on
+      entity_id: scene.kitchen_regular
+    service: scene.turn_on

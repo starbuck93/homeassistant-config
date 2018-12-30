@@ -466,32 +466,40 @@
   alias: Dim Kitchen Lights When No Motion
   trigger:
   - entity_id: binary_sensor.pir_sensor
-    for: 00:15:00
-    from: 'on'
+    for: 00:05:00
     platform: state
     to: 'off'
   condition:
   - condition: state
     entity_id: sensor.mode
     state: home
+  - condition: state
+    entity_id: light.kitchen_lights
+    state: 'on'
   action:
   - data:
-      entity_id: scene.kitchen_dim
-    service: scene.turn_on
-- id: '1545936005433'
-  alias: Brighten Kitchen Lights When Motion
+      entity_id: script.1546036735190
+    service: script.turn_on
+- id: '1546147039696'
+  alias: Kitchen Dim Automation Off
   trigger:
-  - entity_id: binary_sensor.pir_sensor
+  - entity_id: light.kitchen_lights
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - data:
+      entity_id: automation.dim_kitchen_lights_when_no_motion
+    service: automation.turn_off
+- id: '1546147178956'
+  alias: Kitchen Dim Automation On
+  trigger:
+  - entity_id: light.kitchen_lights
     from: 'off'
     platform: state
     to: 'on'
-  condition:
-  - condition: state
-    entity_id: sensor.mode
-    state: home
-  - condition: template
-    value_template: "{{ state_attr('light.kitchen_lights', 'brightness_pct') == 10 }}"
+  condition: []
   action:
   - data:
-      entity_id: scene.kitchen_regular
-    service: scene.turn_on
+      entity_id: automation.dim_kitchen_lights_when_no_motion
+    service: automation.turn_on

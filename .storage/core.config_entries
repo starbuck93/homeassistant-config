@@ -2,11 +2,45 @@
     "data": {
         "entries": [
             {
+                "connection_class": "unknown",
                 "data": {},
                 "domain": "cast",
                 "entry_id": "82a60008f654452b86dc5b4aeaa10c65",
                 "source": "user",
                 "title": "Google Cast",
+                "version": 1
+            },
+            {
+                "connection_class": "unknown",
+                "data": {
+                    "gateway_id": "7e1c115204400041",
+                    "host": "10.0.0.5",
+                    "identity": "081a8f562dc94d0fad388a6947e2153c",
+                    "import_groups": false,
+                    "key": "zZbcoevVbWLU7Udb"
+                },
+                "domain": "tradfri",
+                "entry_id": "130332dfae834a45a035b0eae80d8d16",
+                "source": "discovery",
+                "title": "10.0.0.5",
+                "version": 1
+            },
+            {
+                "connection_class": "local_poll",
+                "data": {},
+                "domain": "lifx",
+                "entry_id": "e7f6fff19de34953aa80ea799f912967",
+                "source": "user",
+                "title": "LIFX",
+                "version": 1
+            },
+            {
+                "connection_class": "local_push",
+                "data": {},
+                "domain": "mqtt",
+                "entry_id": "c69528a4049e4a5197572228af1e8271",
+                "source": "import",
+                "title": "configuration.yaml",
                 "version": 1
             }
         ]
