@@ -369,7 +369,7 @@
       message: Tradfri Remote low power. Replace Battery ASAP
     service: persistent_notification.create
 - id: '1542078433871'
-  alias: Motion Detected
+  alias: Motion Detected Away
   trigger:
   - entity_id: binary_sensor.pir_sensor
     from: 'off'
@@ -420,22 +420,10 @@
       entity_id: script.1537733751300
     service: script.turn_on
 - id: '1542082852483'
-  alias: Motion Detected 2
-  trigger:
-  - entity_id: binary_sensor.pir_sensor
-    platform: state
-    to: 'on'
+  alias: delete_me
+  trigger: []
   condition: []
-  action:
-  - data:
-      entity_id: light.fastled_ws2811_light
-      transition: '4'
-    service: light.turn_on
-  - delay: '5'
-  - data:
-      entity_id: light.fastled_ws2811_light
-      transition: '4'
-    service: light.turn_off
+  action: []
 - id: '1544291648675'
   alias: Christmas Lights On
   trigger:

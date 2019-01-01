@@ -1,9 +1,5 @@
  exclude:
     domains:
-      # - light
-      # - switch
       - weather
     entities:
-      - automation.motion_detected_2
-      - automation.button_press_1
-      - sensor.pir_sensor
+      - binary_sensor.pir_sensor

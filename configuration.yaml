@@ -48,10 +48,8 @@ recorder:
   db_url: !secret my_db
 
 logger:
-  default: warning
-  logs:
-    homeassistant.components: info
-    homeassistant.components.weather: critical
+  default: info
+
 
 sun:
 
