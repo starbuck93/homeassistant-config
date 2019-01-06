@@ -34,9 +34,9 @@
       title: Back Door Opened
     service: notify.browser_adam_pixel
 - id: 4e0b8e2a66a141cbb08a6c2c1f88f70a
-  alias: Wake Up Light Slowly at 630AM
+  alias: Wake Up Light Slowly at 645AM
   trigger:
-  - at: 06:30:00
+  - at: 06:45:00
     platform: time
   condition:
   - condition: time
@@ -48,8 +48,8 @@
     - fri
   action:
   - data:
-      delay_in_sec: 60
-      end_level_pct: 100
+      delay_in_sec: 45
+      end_level_pct: 50
       entity_id: light.adams_bed_lamp
       start_level_pct: 1
       step_in_level_pct: 1

@@ -36,7 +36,7 @@ switch.desk_lamp_2:
 light.square_lamp:
   icon: mdi:floor-lamp
 switch.wemo_switch_3:
-  icon: mdi:printer-3d
+  icon: mdi:radiator
 switch.vd_routine_goodnight:
   icon: mdi:weather-night
   friendly_name: Activate Goodnight
