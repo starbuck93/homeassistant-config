@@ -1,0 +1,277 @@
+- alias: Slack status 1
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_101082361685415510767
+    zone: zone.tamu
+    event: enter
+  condition:
+    condition: time
+    after: 07:45:00
+    before: 08:10:00
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: rest_command.slack_status
+    data:
+      status: MakerPlace
+      emoji: ':makerplace:'
+  - service: notify.browser_adam_pixel
+    data:
+      title: Slack Status
+      message: Arrived at work
+      data:
+        tag: arrived_morning_weekday
+        icon: /local/maker-mark-maroon-96x96.png
+        badge: /local/maker-mark-maroon-96x96.png
+  - service: automation.turn_off
+    entity_id: automation.slack_status_1
+  id: 5b1e6152c1b94137bc8f780aafc1453d
+- alias: Slack status 2
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_101082361685415510767
+    zone: zone.tamu
+    event: leave
+  condition:
+    condition: time
+    after: '11:30:00'
+    before: '12:10:00'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: rest_command.slack_status
+    data:
+      status: At Lunch
+      emoji: ':sandwich:'
+  - service: notify.browser_adam_pixel
+    data:
+      title: Slack Status
+      message: Left for Lunch
+      data:
+        tag: left_for_lunch_weekday
+        icon: /local/maker-mark-maroon-96x96.png
+        badge: /local/maker-mark-maroon-96x96.png
+  - service: automation.turn_off
+    entity_id: automation.slack_status_2
+  id: 18d5930fd025477ca6a3f073824e41b5
+- alias: Slack status 3
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_101082361685415510767
+    zone: zone.tamu
+    event: enter
+  condition:
+    condition: time
+    after: '12:40:00'
+    before: '13:10:00'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: rest_command.slack_status
+    data:
+      status: MakerPlace
+      emoji: ':makerplace:'
+  - service: notify.browser_adam_pixel
+    data:
+      title: Slack Status
+      message: Arrived From Lunch
+      data:
+        tag: arrived_from_lunch_weekday
+        icon: /local/maker-mark-maroon-96x96.png
+        badge: /local/maker-mark-maroon-96x96.png
+  - service: automation.turn_off
+    entity_id: automation.slack_status_3
+  id: aae478ee1c2e425c9ac27aea39d7abd7
+- alias: Slack status 4
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_101082361685415510767
+    zone: zone.tamu
+    event: leave
+  condition:
+    condition: time
+    after: '16:15:00'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: rest_command.slack_status
+    data:
+      status: Not at work
+      emoji: ':clock5:'
+  - service: notify.browser_adam_pixel
+    data:
+      title: Slack Status
+      message: Left Work
+      data:
+        tag: left_work_weekday
+        icon: /local/maker-mark-maroon-96x96.png
+        badge: /local/maker-mark-maroon-96x96.png
+  - service: automation.turn_off
+    entity_id: automation.slack_status_4
+  id: f1df6656a59341ebb6899f05131552ed
+- id: 49b3692f9fc04ea5a6f3e55715a2603d
+  alias: Slack edge 1
+  trigger:
+  - at: 08:15:00
+    platform: time
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  - condition: state
+    entity_id: device_tracker.google_maps_101082361685415510767
+    state: home
+  action:
+  - data:
+      data:
+        actions:
+        - action: staying-home-yes
+          title: Yes, staying home
+        - action: going-in-late
+          title: No, running late
+        badge: /local/home-map-marker.png
+        icon: /local/home-map-marker.png
+        tag: staying-home-morning
+      message: Are you staying home today?
+      title: Slack Status
+    service: notify.browser_adam_pixel
+- alias: Slack edge 2
+  trigger:
+    platform: event
+    event_type: html5_notification.clicked
+    event_data:
+      action: staying-home-yes
+  action:
+  - service: rest_command.slack_status
+    data:
+      status: Out of the office
+      emoji: ':unknown:'
+  - service: automation.turn_off
+    entity_id: automation.slack_status_1
+  - service: automation.turn_off
+    entity_id: automation.slack_status_2
+  - service: automation.turn_off
+    entity_id: automation.slack_status_3
+  - service: automation.turn_off
+    entity_id: automation.slack_status_4
+  - service: automation.turn_off
+    entity_id: automation.slack_edge_4
+  id: 4f93cb8c9bd14387a2b0b8f3d7f93c1a
+- alias: Slack edge 3
+  trigger:
+    platform: event
+    event_type: html5_notification.clicked
+    event_data:
+      action: going-in-late
+  action:
+  - service: rest_command.slack_status
+    data:
+      status: Delayed
+      emoji: ':racing_car:'
+  id: 6e45f95c84cc44a8bcb79699bf957d99
+- alias: Slack edge 4
+  trigger:
+    platform: zone
+    entity_id: device_tracker.google_maps_101082361685415510767
+    zone: zone.tamu
+    event: leave
+  condition:
+  - condition: time
+    after: '8:30:00'
+    before: '11:30:00'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  - condition: time
+    after: '13:10:00'
+    before: '16:15:00'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: notify.browser_adam_pixel
+    data:
+      title: Slack Status
+      message: Running Errands
+      data:
+        tag: running-errands
+        icon: /local/car.png
+        badge: /local/car.png
+        actions:
+        - action: only-running-errands
+          title: Will return
+        - action: leaving-during-the-day
+          title: Leaving for the day
+  id: 9fecbffc489145f08014c5f81a0318ed
+- alias: Slack edge 5
+  trigger:
+    platform: event
+    event_type: html5_notification.clicked
+    event_data:
+      action: only-running-errands
+  action:
+  - service: rest_command.slack_status
+    data:
+      status: Running errands
+      emoji: ':car:'
+  id: 8e988199a09e4a9294149e4681ef242c
+- alias: Slack edge 6
+  trigger:
+    platform: event
+    event_type: html5_notification.clicked
+    event_data:
+      action: leaving-during-the-day
+  action:
+  - service: rest_command.slack_status
+    data:
+      status: Returning tomorrow
+      emoji: ':wave:'
+  id: 29dcc27102044d4381b511d269bd1706
+- alias: Turn Automations Back On weekday
+  trigger:
+    platform: time
+    at: 00:00:00
+  condition:
+    condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: automation.turn_on
+    entity_id: automation.slack_status_1
+  - service: automation.turn_on
+    entity_id: automation.slack_status_2
+  - service: automation.turn_on
+    entity_id: automation.slack_status_3
+  - service: automation.turn_on
+    entity_id: automation.slack_status_4
+  id: 12a9f64c67cc4d9b886033dcdcf240f1

@@ -145,3 +145,9 @@ light.christmas_star:
   icon: mdi:star
 sensor.LR_temp:
   friendly_name: Living Room Temperature
+sensor.bedroom_temp:
+  hidden: true
+sensor.bme280_temperature:
+  hidden: true
+sensor.bedroom_temperature_offset:
+  unit_of_measurement: °F
