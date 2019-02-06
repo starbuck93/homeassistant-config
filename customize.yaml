@@ -116,7 +116,7 @@ script.1537732830602:
   icon: mdi:weather-night
 script.1537733730525:
   friendly_name: Goodbye
-  icon: mdi:security-home
+  icon: mdi:home-lock
 script.1537733751300:
   friendly_name: I'm Home
   icon: mdi:home-lock-open
@@ -139,7 +139,7 @@ switch.wax_warmer:
 light.fastled_ws2811_light:
   icon: mdi:led-on
 switch.kasa_switch_1:
-  friendly_name: Christmas Lights
+  friendly_name: Kitchen LEDs
   icon: mdi:led-on
 light.christmas_star:
   icon: mdi:star
@@ -151,3 +151,7 @@ sensor.bme280_temperature:
   hidden: true
 sensor.bedroom_temperature_offset:
   unit_of_measurement: °F
+switch.sonoff_s31_02:
+  hidden: true
+switch.sonoff_s31_01:
+  hidden: true

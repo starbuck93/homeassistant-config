@@ -50,7 +50,7 @@
   - data:
       delay_in_sec: 45
       end_level_pct: 50
-      entity_id: light.adams_bed_lamp
+      entity_id: light.tradfri_bulb_13
       start_level_pct: 1
       step_in_level_pct: 1
     service: python_script.fade_in_light
@@ -71,7 +71,7 @@
 - id: '1537791645207'
   alias: Good morning
   trigger:
-  - at: 07:00:00
+  - at: 07:05:00
     platform: time
   condition:
   - condition: state
@@ -190,3 +190,32 @@
   - data:
       entity_id: automation.dim_kitchen_lights_when_no_motion
     service: automation.turn_on
+- id: '1547524769396'
+  alias: Heat on in the morning
+  trigger:
+  - at: 06:30:00
+    platform: time
+  condition:
+  - condition: state
+    entity_id: sensor.mode
+    state: home
+  action:
+  - data:
+      entity_id: climate.bedroom_heat
+      operation_mode: heat
+      temperature: '71'
+    service: climate.set_temperature
+- id: '1548346551787'
+  alias: Setup Sonoff on HASS Start
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - data:
+      payload: '1'
+      topic: sonoffs/cmnd/SetOption19
+    service: mqtt.publish
+  - data:
+      topic: sonoffs/cmnd/state
+    service: mqtt.publish

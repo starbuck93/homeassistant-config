@@ -1,5 +1,7 @@
 - name: Arriving Home
   entities:
+    light.office_ceiling_light:
+      state: on
     light.hanging_light:
       state: on
     light.brown_lamp:
@@ -13,7 +15,7 @@
       state: on
     switch.desk_lamp_2:
       state: on
-    light.adams_bed_lamp:
+    light.tradfri_bulb_13:
       state: on
     light.extra_bedroom_light:
       state: on
@@ -44,6 +46,8 @@
 
 - name: Leaving Home
   entities:
+    light.office_ceiling_light:
+      state: off
     light.hanging_light:
       state: off
     light.brown_lamp:
@@ -58,7 +62,7 @@
       state: off
     light.bedroom_ceiling_light:
       state: off
-    light.adams_bed_lamp:
+    light.tradfri_bulb_13:
       state: off
     light.extra_bedroom_light:
       state: off
@@ -88,6 +92,8 @@
 
 - name: Goodnight
   entities:
+    light.office_ceiling_light:
+      state: off
     light.hanging_light:
       state: off
     light.brown_lamp:
@@ -100,7 +106,7 @@
       state: off
     switch.desk_lamp_2:
       state: off
-    light.adams_bed_lamp:
+    light.tradfri_bulb_13:
       state: off
     light.extra_bedroom_light:
       state: off
@@ -142,7 +148,7 @@
       state: on
     switch.desk_lamp_2:
       state: on
-    light.adams_bed_lamp:
+    light.tradfri_bulb_13:
       state: on
     light.extra_bedroom_light:
       state: on
@@ -169,30 +175,29 @@
     switch.wax_warmer:
       state: on
 
-
 - name: Goodnight Brightness
   entities:
-    light.adams_bed_lamp:
+    light.tradfri_bulb_13:
       state: on
       brightness_pct: 2
     light.extra_bedroom_light:
       state: on
       brightness_pct: 2
 
-- name: Christmas Lights on
-  entities:
-    switch.kasa_switch_1:
-      state: on
-    light.christmas_star:
-      state: on
-      color_name: green
+# - name: Christmas Lights on
+#   entities:
+#     switch.kasa_switch_1:
+#       state: on
+#     light.christmas_star:
+#       state: on
+#       color_name: green
 
-- name: Christmas Lights off
-  entities:
-    switch.kasa_switch_1:
-      state: off
-    light.christmas_star:
-      state: off
+# - name: Christmas Lights off
+#   entities:
+#     switch.kasa_switch_1:
+#       state: off
+#     light.christmas_star:
+#       state: off
 
 - name: Kitchen Dim
   entities:

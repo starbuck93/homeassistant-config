@@ -1,2 +1,14 @@
-# - platform: uptimerobot
-#   api_key: !secret uptimerobot-apikey
+- platform: mqtt
+  name: "Upstairs Motion"
+  state_topic: "zigbee2mqtt/Upstairs Motion"
+  value_template: "{{ value_json.occupancy }}"
+  payload_on: "true"
+  payload_off: "false"
+  device_class: motion
+- platform: mqtt
+  name: "Downstairs Motion"
+  state_topic: "zigbee2mqtt/Downstairs Motion"
+  value_template: "{{ value_json.occupancy }}"
+  payload_on: "true"
+  payload_off: "false"
+  device_class: motion
