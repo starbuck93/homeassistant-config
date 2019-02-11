@@ -54,7 +54,6 @@ logger:
   logs:
     homeassistant.components.http.view: error
 
-
 sun:
 
 cast:
@@ -124,8 +123,8 @@ cloudflare:
 #     name: Harmony Hub
 #     activity: Watch Downstairs Chromecast
 
-climate:
-  - platform: generic_thermostat
-    name: Bedroom Heat
-    heater: switch.wemo_switch_3
-    target_sensor: sensor.bedroom_temperature2
+# climate:
+#   - platform: generic_thermostat
+#     name: Bedroom Heat
+#     heater: switch.wemo_switch_3
+#     target_sensor: sensor.bedroom_temperature2

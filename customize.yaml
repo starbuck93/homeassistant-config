@@ -155,3 +155,5 @@ switch.sonoff_s31_02:
   hidden: true
 switch.sonoff_s31_01:
   hidden: true
+light.0x7ce524000001b73d_light:
+  hidden: true
