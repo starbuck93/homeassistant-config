@@ -6,3 +6,8 @@
     mjpeg_url: http://10.0.0.69/html/cam_pic_new.php
     still_image_url: http://10.0.0.69/html/cam_pic.php
     name: PigeonCam
+  - platform: mjpeg
+    mjpeg_url: http://10.0.0.70/webcam/?action=stream
+    still_image_url: http://10.0.0.70/webcam/?action=snapshot
+    name: OctoPrint
+    

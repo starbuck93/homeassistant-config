@@ -9,7 +9,6 @@ homeassistant:
     !include customize.yaml
   auth_providers: 
    - type: homeassistant
-   - type: trusted_networks
 
 frontend:
   themes: !include themes.yaml
@@ -22,15 +21,16 @@ config:
 
 shopping_list:
 
+person:
+
+default_config:
+
 system_health:
 
 http:
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
-  login_attempts_threshold: 3
-  trusted_networks:
-    - 127.0.0.1
-    - '10.0.0.0/24'
+  login_attempts_threshold: 5
 
 websocket_api:
 
@@ -61,6 +61,8 @@ cast:
 wemo:
 
 python_script:
+
+mobile_app:
 
 tts:
   platform: google
@@ -105,7 +107,6 @@ weather:
     api_key: !secret darksky_apikey
 
 history_graph: !include history_graph.yaml
-
 
 notify: !include notify.yaml
 

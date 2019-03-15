@@ -8,7 +8,7 @@ device_tracker.404e369280ff:
   friendly_name: Adam
   hidden: true
 device_tracker.404e368f3c4e:
-  entity_picture: https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/34118619_10156380937895747_4733289612162629632_n.jpg?_nc_cat=103&oh=2298f6f674a82f2240c84f915d44e519&oe=5C5BEDC6
+  entity_picture: /local/laura.jpg
   friendly_name: Laura
 binary_sensor.ac_boolean:
   device_class: cold
@@ -157,3 +157,9 @@ switch.sonoff_s31_01:
   hidden: true
 light.0x7ce524000001b73d_light:
   hidden: true
+device_tracker.google_maps_101082361685415510767:
+  entity_picture: /local/adam.jpg
+light.0x7ce52400001229d0_light:
+  friendly_name: Hanging Bedroom Light
+light.0x7ce524000007ca47_light:
+  friendly_name: Stairs Light

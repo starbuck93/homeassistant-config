@@ -17,11 +17,9 @@
       state: on
     light.tradfri_bulb_13:
       state: on
-    light.extra_bedroom_light:
+    light.0x7ce52400001229d0_light: #extra bedroom light
       state: on
     switch.wemo_switch_1:
-      state: on
-    switch.christmas_tree:
       state: on
     switch.wemo_switch_5:
       state: on
@@ -33,13 +31,11 @@
       state: on
     light.hallway_light_2:
       state: on
-    light.stairs_light:
+    light.0x7ce524000007ca47_light: #stairs light
       state: on
     switch.adams_fan:
       state: on
     switch.dog_water_fountain:
-      state: on
-    switch.christmas_tree_2:
       state: on
     switch.wax_warmer:
       state: on
@@ -64,11 +60,9 @@
       state: off
     light.tradfri_bulb_13:
       state: off
-    light.extra_bedroom_light:
+    light.0x7ce52400001229d0_light: #extra bedroom light
       state: off
     switch.wemo_switch_1:
-      state: off
-    switch.christmas_tree:
       state: off
     switch.wemo_switch_5:
       state: off
@@ -78,13 +72,11 @@
       state: off
     light.hallway_light_2:
       state: off
-    light.stairs_light:
+    light.0x7ce524000007ca47_light: #stairs light
       state: off
     switch.adams_fan:
       state: off
     switch.dog_water_fountain:
-      state: off
-    switch.christmas_tree_2:
       state: off
     switch.wax_warmer:
       state: off
@@ -108,11 +100,9 @@
       state: off
     light.tradfri_bulb_13:
       state: off
-    light.extra_bedroom_light:
+    light.0x7ce52400001229d0_light: #extra bedroom light
       state: off
     switch.wemo_switch_1:
-      state: off
-    switch.christmas_tree:
       state: off
     switch.wemo_switch_5:
       state: off
@@ -122,13 +112,11 @@
       state: off
     light.hallway_light_2:
       state: off
-    light.stairs_light:
+    light.0x7ce524000007ca47_light: #stairs light
       state: off
     switch.adams_fan:
       state: off
     switch.dog_water_fountain:
-      state: off
-    switch.christmas_tree_2:
       state: off
     switch.wax_warmer:
       state: off
@@ -150,11 +138,9 @@
       state: on
     light.tradfri_bulb_13:
       state: on
-    light.extra_bedroom_light:
+    light.0x7ce52400001229d0_light: #extra bedroom light
       state: on
     switch.wemo_switch_1:
-      state: on
-    switch.christmas_tree:
       state: on
     switch.wemo_switch_5:
       state: on
@@ -164,13 +150,11 @@
       state: on
     light.hallway_light_2:
       state: on
-    light.stairs_light:
+    light.0x7ce524000007ca47_light: #stairs light
       state: on
     switch.adams_fan:
       state: on
     switch.dog_water_fountain:
-      state: on
-    switch.christmas_tree_2:
       state: on
     switch.wax_warmer:
       state: on
@@ -180,7 +164,7 @@
     light.tradfri_bulb_13:
       state: on
       brightness_pct: 2
-    light.extra_bedroom_light:
+    light.0x7ce52400001229d0_light: #extra bedroom light
       state: on
       brightness_pct: 2
 

@@ -13,7 +13,7 @@
     manufacturer: espressif
 
 - platform: rest
-  name: Office Temp
+  name: Bedroom Temp
   resource: http://10.0.0.63/
   value_template: '{{ value_json.temperature }}'
   unit_of_measurement: "°F"

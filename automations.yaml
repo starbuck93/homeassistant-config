@@ -1,7 +1,7 @@
 - id: 3f3200c407194a77858a438854771435
   alias: Leaving
   trigger:
-  - entity_id: group.all_devices
+  - entity_id: group.adam_and_laura
     for:
       minutes: 1
     from: home
@@ -57,7 +57,7 @@
 - id: '1537318020901'
   alias: Arriving Home
   trigger:
-  - entity_id: group.all_devices
+  - entity_id: group.adam_and_laura
     from: not_home
     platform: state
     to: home
@@ -71,7 +71,7 @@
 - id: '1537791645207'
   alias: Good morning
   trigger:
-  - at: 07:05:00
+  - at: 07:00:00
     platform: time
   condition:
   - condition: state

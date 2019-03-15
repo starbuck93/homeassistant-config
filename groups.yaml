@@ -36,3 +36,8 @@ stairs:
   entities:
     - light.hallway_light
     - light.stairs_light
+adam_and_laura:
+  name: Couple
+  entities:
+    - person.adam
+    - person.laura
