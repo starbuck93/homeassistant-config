@@ -1,0 +1,35 @@
+purge_keep_days: 7
+db_url: !secret my_db
+exclude:
+  domains:
+    - automation
+    - camera
+    - group
+    - media_player
+    - scene
+    - updater
+    - weather
+  entities:
+    - sensor.0x7ce5240000019975_linkquality
+    - sensor.0x7ce524000001a438_linkquality
+    - sensor.0x7ce524000004c617_linkquality
+    - sensor.0x7ce524000007ca47_linkquality
+    - sensor.0x7ce52400001229d0_linkquality
+    - sensor.0x90fd9ffffed7043c_linkquality
+    - sensor.downstairs_motion_linkquality
+    - sensor.kitchen_ceiling_light_4_linkquality
+    - sensor.lumi_weather_linkquality
+    - sensor.sonoff_s31_01_energy_apparentpow
+    - sensor.sonoff_s31_01_energy_factor
+    - sensor.sonoff_s31_01_energy_reactivepow
+    - sensor.sonoff_s31_01_energy_totalstartt
+    - sensor.sonoff_s31_01_energy_voltage
+    - sensor.sonoff_s31_02_energy_apparentpow
+    - sensor.sonoff_s31_02_energy_factor
+    - sensor.sonoff_s31_02_energy_reactivepow
+    - sensor.sonoff_s31_02_energy_totalstartt
+    - sensor.sonoff_s31_02_energy_voltage
+    - sensor.tradfri_switch_2_linkquality
+    - sensor.upstairs_motion_linkquality
+    - sensor.vibration_linkquality
+    - sun.sun # Don't record sun data

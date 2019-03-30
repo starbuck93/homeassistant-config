@@ -2,7 +2,7 @@ kitchen:
   name: Kitchen
   entities:
     - light.kitchen_lights
-    - switch.wemo_switch_2
+    # - switch.wemo_switch_2
     - switch.dog_water_fountain
     - switch.wax_warmer
 living_room:

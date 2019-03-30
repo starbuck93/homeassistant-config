@@ -13,104 +13,95 @@ homeassistant:
 frontend:
   themes: !include themes.yaml
 
-cloud: !include cloud.yaml
+automation: !include automations.yaml
 
-map:
+binary_sensor: !include binary_sensors.yaml
+
+camera: !include camera.yaml
+
+cast:
+
+cloud: !include cloud.yaml
 
 config:
 
-shopping_list:
-
-person:
+conversation:
 
 default_config:
 
-system_health:
-
-http:
-  ssl_certificate: !secret ssl_certificate
-  ssl_key: !secret ssl_key
-  login_attempts_threshold: 5
-
-websocket_api:
-
-updater:
-  include_used_components: true
+device_tracker: !include device_tracker.yaml
 
 discovery:
 
-conversation:
+group: !include groups.yaml
 
 history:
 
+history_graph: !include history_graph.yaml
+
+input_select: !include input_select.yaml
+
+light: !include lights.yaml
+
 logbook: !include logbook.yaml
 
-recorder: 
-  purge_keep_days: 7
-  db_url: !secret my_db
+map:
+
+mobile_app:
+
+notify: !include notify.yaml
+
+person:
+
+python_script:
+
+recorder: !include recorder.yaml
+
+rest_command: !include rest_command.yaml
+
+scene: !include scenes.yaml
+
+script: !include scripts.yaml 
+
+sensor: !include sensors.yaml
+
+shopping_list:
+
+sun:
+
+switch: !include switches.yaml
+
+system_health:
+
+websocket_api:
+
+wemo:
+
+zone: !include zones.yaml
 
 logger:
   default: warn
   logs:
     homeassistant.components.http.view: error
 
-sun:
+updater:
+  include_used_components: true
 
-cast:
-
-wemo:
-
-python_script:
-
-mobile_app:
+http:
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+  login_attempts_threshold: 5
 
 tts:
   platform: google
-
-group: !include groups.yaml
-
-automation: !include automations.yaml
-
-scene: !include scenes.yaml
-
-script: !include scripts.yaml
 
 mqtt:
   password: !secret mqtt_password
   discovery: true
 
-light:
-  !include lights.yaml
-
-switch:
-  !include switches.yaml
-
-sensor:
-  !include sensors.yaml
-
-binary_sensor:
-  !include binary_sensors.yaml
-
-device_tracker:
-  !include device_tracker.yaml
-
-zone:
-  !include zones.yaml
-
-input_select:
-  !include input_select.yaml
-
-camera: !include camera.yaml
-
 weather:
   - platform: darksky
     api_key: !secret darksky_apikey
-
-history_graph: !include history_graph.yaml
-
-notify: !include notify.yaml
-
-rest_command: !include rest_command.yaml
 
 cloudflare:
   email: !secret cloudflare_email

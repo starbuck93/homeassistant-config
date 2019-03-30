@@ -75,3 +75,46 @@
   - data:
       entity_id: scene.kitchen_regular
     service: scene.turn_on
+'1553910197321':
+  alias: Reset Wink Bulb
+  sequence:
+  - data:
+      entity_id: switch.wemo_switch_3
+    service: switch.toggle
+  - delay: 00:00:03
+  - data:
+      entity_id: switch.wemo_switch_3
+    service: switch.toggle
+  - delay: 00:00:03
+  - data:
+      entity_id: switch.wemo_switch_3
+    service: switch.toggle
+  - delay: 00:00:03
+  - data:
+      entity_id: switch.wemo_switch_3
+    service: switch.toggle
+  - delay: 00:00:03
+  - data:
+      entity_id: switch.wemo_switch_3
+    service: switch.toggle
+  - delay: 00:00:03
+  - data:
+      entity_id: switch.wemo_switch_3
+    service: switch.toggle
+  - delay: 00:00:03
+  - data:
+      entity_id: switch.wemo_switch_3
+    service: switch.toggle
+  - delay: 00:00:03
+  - data:
+      entity_id: switch.wemo_switch_3
+    service: switch.toggle
+  - delay: 00:00:03
+  - data:
+      entity_id: switch.wemo_switch_3
+    service: switch.toggle
+  - delay: 00:00:03
+  - data:
+      entity_id: switch.wemo_switch_3
+    service: switch.toggle
+  - delay: 00:00:03

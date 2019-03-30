@@ -50,6 +50,7 @@ switch.adams_fan:
 switch.christmas_tree:
   icon: mdi:led-on
 switch.wemo_switch_2:
+  friendly_name: Dehydrator
   icon: mdi:led-on
 switch.away_mode_active:
   hidden: true
@@ -152,8 +153,10 @@ sensor.bme280_temperature:
 sensor.bedroom_temperature_offset:
   unit_of_measurement: °F
 switch.sonoff_s31_02:
+  friendly_name: Dishwasher
   hidden: true
 switch.sonoff_s31_01:
+  friendly_name: Washing Machine
   hidden: true
 light.0x7ce524000001b73d_light:
   hidden: true

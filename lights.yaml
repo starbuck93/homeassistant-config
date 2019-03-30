@@ -5,6 +5,9 @@
     - light.kitchen_ceiling_light_2
     - light.kitchen_ceiling_light_3
     - light.0x7ce524000001b73d_light
+    - light.0x7ce5240000019975_light
+    - light.0x7ce524000001a438_light
+    - light.0x7ce524000004c617_light
 
 - platform: group
   name: Living Room Ceiling Fan
