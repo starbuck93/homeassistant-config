@@ -118,3 +118,62 @@
       entity_id: switch.wemo_switch_3
     service: switch.toggle
   - delay: 00:00:03
+dishwasher_done:
+  alias: Dishwasher Done
+  sequence:
+  - data:
+      data:
+        badge: https://home.starbuckstech.com:8123/local/dishwasher.png
+        icon: https://home.starbuckstech.com:8123/local/dishwasher.png
+        tag: dishwasher-done
+      message: Go take the dishes out of the dishwasher!
+      title: Dishwasher Done
+    service: notify.browser
+washing_machine_done:
+  alias: Washing machine Done
+  sequence:
+  - data:
+      data:
+        badge: https://home.starbuckstech.com:8123/local/washing-machine.png
+        icon: https://home.starbuckstech.com:8123/local/washing-machine.png
+        tag: washing-machine-done
+      message: Time to move clothes to the dryer. NOW!!!
+      title: Washing Machine Done
+    service: notify.browser
+'1553919961411':
+  alias: Kitchen Brightness Increase Button
+  sequence:
+    service: light.turn_on
+    data_template:
+      entity_id: light.kitchen_lights
+      transition: '1'
+      brightness: >
+       {% if not state_attr('light.kitchen_lights', 'brightness') == None %}
+       {% set n = state_attr('light.kitchen_lights', 'brightness') + 25 %} 
+       {% if n > 255 %}
+         255
+       {% else %}
+         {{ n }}
+       {% endif %}
+       {% else %} 
+       25 
+       {% endif %}
+
+'1553921046412':
+  alias: Kitchen Brightness Decrease Button
+  sequence:
+    service: light.turn_on
+    data_template:
+      entity_id: light.kitchen_lights
+      transition: '1'
+      brightness: >
+       {% if not state_attr('light.kitchen_lights', 'brightness') == None %}
+       {% set n = state_attr('light.kitchen_lights', 'brightness') - 25 %} 
+       {% if n > 255 %}
+         255
+       {% else %}
+         {{ n }}
+       {% endif %}
+       {% else %} 
+       0 
+       {% endif %}

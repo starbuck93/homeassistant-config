@@ -219,3 +219,78 @@
   - data:
       topic: sonoffs/cmnd/state
     service: mqtt.publish
+- id: '1553916356699'
+  alias: Dishwasher Done
+  trigger:
+  - entity_id: sensor.dishwasher
+    for: 00:05:00
+    from: 'false'
+    platform: state
+    to: 'true'
+  condition: []
+  action:
+  - alias: ''
+    data: {}
+    service: script.dishwasher_done
+- id: '1553916539720'
+  alias: Washing Machine Done
+  trigger:
+  - entity_id: sensor.washing_machine
+    for: 00:05:00
+    from: 'false'
+    platform: state
+    to: 'true'
+  condition: []
+  action:
+  - service: script.washing_machine_done
+- id: '1553919221446'
+  alias: Kitchen Tradfri Button Toggle
+  trigger:
+  - entity_id: sensor.0x90fd9ffffed7043c_action
+    platform: state
+    to: toggle
+  condition: []
+  action:
+  - data:
+      entity_id: light.kitchen_lights
+    service: light.toggle
+- id: '1553919561897'
+  alias: Kitchen Tradfri Button Left
+  trigger:
+  - entity_id: sensor.0x90fd9ffffed7043c_action
+    platform: state
+    to: arrow_left_click
+  condition: []
+  action:
+  - data:
+      entity_id: switch.kasa_switch_1
+    service: switch.toggle
+- id: '1553919622715'
+  alias: Kitchen Tradfri Button Right
+  trigger:
+  - entity_id: sensor.0x90fd9ffffed7043c_action
+    platform: state
+    to: arrow_right_click
+  condition: []
+  action:
+  - data:
+      entity_id: switch.wax_warmer
+    service: switch.toggle
+- id: '1553919783516'
+  alias: Kitchen Tradfri Button Up
+  trigger:
+  - entity_id: sensor.0x90fd9ffffed7043c_action
+    platform: state
+    to: brightness_up_click
+  condition: []
+  action:
+  - service: script.1553919961411
+- id: '1553921331332'
+  alias: Kitchen Tradfri Button Up
+  trigger:
+  - entity_id: sensor.0x90fd9ffffed7043c_action
+    platform: state
+    to: brightness_down_click
+  condition: []
+  action:
+  - service: script.1553921046412

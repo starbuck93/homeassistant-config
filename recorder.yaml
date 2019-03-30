@@ -5,17 +5,24 @@ exclude:
     - automation
     - camera
     - group
+    - history_graph
     - media_player
     - scene
     - updater
     - weather
   entities:
+    - binary_sensor.downstairs_motion_battery_low
+    - binary_sensor.upstairs_motion_battery_low
+    - sensor.0x00158d0002b5f84e_action
+    - sensor.0x00158d0002b5f84e_battery
+    - sensor.0x00158d0002c9cfdf_battery    
     - sensor.0x7ce5240000019975_linkquality
     - sensor.0x7ce524000001a438_linkquality
     - sensor.0x7ce524000004c617_linkquality
     - sensor.0x7ce524000007ca47_linkquality
     - sensor.0x7ce52400001229d0_linkquality
     - sensor.0x90fd9ffffed7043c_linkquality
+    - sensor.downstairs_motion_battery
     - sensor.downstairs_motion_linkquality
     - sensor.kitchen_ceiling_light_4_linkquality
     - sensor.lumi_weather_linkquality
@@ -29,7 +36,12 @@ exclude:
     - sensor.sonoff_s31_02_energy_reactivepow
     - sensor.sonoff_s31_02_energy_totalstartt
     - sensor.sonoff_s31_02_energy_voltage
+    - sensor.tradfri_remote_control
+    - sensor.tradfri_remote_control_2
     - sensor.tradfri_switch_2_linkquality
+    - sensor.tradfri_wireless_dimmer
+    - sensor.tradfri_wireless_dimmer_2
+    - sensor.upstairs_motion_battery
     - sensor.upstairs_motion_linkquality
     - sensor.vibration_linkquality
     - sun.sun # Don't record sun data

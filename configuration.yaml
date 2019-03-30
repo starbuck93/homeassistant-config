@@ -73,6 +73,8 @@ switch: !include switches.yaml
 
 system_health:
 
+tplink: !include tplink.yaml
+
 websocket_api:
 
 wemo:
