@@ -224,9 +224,8 @@
   trigger:
   - entity_id: sensor.dishwasher
     for: 00:05:00
-    from: 'false'
     platform: state
-    to: 'true'
+    to: 'false'
   condition: []
   action:
   - alias: ''
@@ -237,9 +236,8 @@
   trigger:
   - entity_id: sensor.washing_machine
     for: 00:05:00
-    from: 'false'
     platform: state
-    to: 'true'
+    to: 'false'
   condition: []
   action:
   - service: script.washing_machine_done

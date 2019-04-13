@@ -82,9 +82,9 @@ wemo:
 zone: !include zones.yaml
 
 logger:
-  default: warn
-  logs:
-    homeassistant.components.http.view: error
+  default: info
+  # logs:
+    # homeassistant.components.http.view: error
 
 updater:
   include_used_components: true
@@ -98,6 +98,8 @@ tts:
   platform: google
 
 mqtt:
+  broker: 10.0.0.73
+  username: homeassistant
   password: !secret mqtt_password
   discovery: true
 

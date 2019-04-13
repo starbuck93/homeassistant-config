@@ -1,8 +1,9 @@
   - name: Slack
     platform: slack
-    api_key: !secret slack-api-key
+    api_key: !secret slack-bot-key
     default_channel: '#general'
-  - name: browser
-    platform: html5
-    gcm_api_key: !secret gcm-server-key
-    gcm_sender_id: !secret gcm-sender-id
+  - platform: html5
+    name: html5
+    vapid_pub_key: !secret vapid_pub_key
+    vapid_prv_key: !secret vapid_prv_key
+    vapid_email: !secret vapid_email

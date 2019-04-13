@@ -50,8 +50,8 @@
 - platform: template
   sensors:
     dishwasher:
-      friendly_name: Dishwasher Off
-      value_template: "{{ states.sensor.sonoff_s31_01_energy_power.state|int <= 5}}"
+      friendly_name: Dishwasher On
+      value_template: "{{ states.sensor.sonoff_s31_02_energy_power.state|int > 5}}"
     washing_machine:
-      friendly_name: Washing Machine Off
-      value_template: "{{ states.sensor.sonoff_s31_02_energy_power.state|int <= 6}}"
+      friendly_name: Washing Machine On
+      value_template: "{{ states.sensor.sonoff_s31_01_energy_power.state|int > 6}}"

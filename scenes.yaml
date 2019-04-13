@@ -140,8 +140,8 @@
       state: on
     light.0x7ce52400001229d0_light: #extra bedroom light
       state: on
-    switch.wemo_switch_1:
-      state: on
+    # switch.wemo_switch_1:
+    #   state: on
     switch.wemo_switch_5:
       state: on
     switch.chandelier:

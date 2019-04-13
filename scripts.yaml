@@ -25,7 +25,7 @@
         tag: left_home
       message: Left Home
       title: Mode
-    service: notify.browser
+    service: notify.html5
   - data:
       away_mode: 'true'
       entity_id: climate.bedroom_heat
@@ -43,15 +43,11 @@
         tag: arrived_home
       message: Arrived Home
       title: Mode
-    service: notify.browser
+    service: notify.html5
   - data:
       entity_id: input_select.mode
       option: Home Mode
     service: input_select.select_option
-  - data:
-      away_mode: 'false'
-      entity_id: climate.bedroom_heat
-    service: climate.set_away_mode
 '1537797311402':
   alias: Goodmorning
   sequence:
@@ -147,18 +143,10 @@ washing_machine_done:
     data_template:
       entity_id: light.kitchen_lights
       transition: '1'
-      brightness: >
-       {% if not state_attr('light.kitchen_lights', 'brightness') == None %}
-       {% set n = state_attr('light.kitchen_lights', 'brightness') + 25 %} 
-       {% if n > 255 %}
-         255
-       {% else %}
-         {{ n }}
-       {% endif %}
-       {% else %} 
-       25 
-       {% endif %}
-
+      brightness: "{% if not state_attr('light.kitchen_lights', 'brightness') == None\
+        \ %} {% set n = state_attr('light.kitchen_lights', 'brightness') + 25 %} \
+        \ {% if n > 255 %}\n  255\n{% else %}\n  {{ n }}\n{% endif %} {% else %} \
+        \ 25  {% endif %}\n"
 '1553921046412':
   alias: Kitchen Brightness Decrease Button
   sequence:
@@ -166,14 +154,7 @@ washing_machine_done:
     data_template:
       entity_id: light.kitchen_lights
       transition: '1'
-      brightness: >
-       {% if not state_attr('light.kitchen_lights', 'brightness') == None %}
-       {% set n = state_attr('light.kitchen_lights', 'brightness') - 25 %} 
-       {% if n > 255 %}
-         255
-       {% else %}
-         {{ n }}
-       {% endif %}
-       {% else %} 
-       0 
-       {% endif %}
+      brightness: "{% if not state_attr('light.kitchen_lights', 'brightness') == None\
+        \ %} {% set n = state_attr('light.kitchen_lights', 'brightness') - 25 %} \
+        \ {% if n > 255 %}\n  255\n{% else %}\n  {{ n }}\n{% endif %} {% else %} \
+        \ 0  {% endif %}"
