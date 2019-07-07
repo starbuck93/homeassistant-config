@@ -138,10 +138,12 @@
       state: on
     light.tradfri_bulb_13:
       state: on
+      brightness_pct: 100
+      transition: 30
     light.0x7ce52400001229d0_light: #extra bedroom light
       state: on
-    # switch.wemo_switch_1:
-    #   state: on
+    switch.wemo_switch_1: #laura bed lamp
+      state: on
     switch.wemo_switch_5:
       state: on
     switch.chandelier:
@@ -158,6 +160,10 @@
       state: on
     switch.wax_warmer:
       state: on
+    light.bedroom_ceiling_light:
+      state: on
+      brightness_pct: 100
+      transition: 30
 
 - name: Goodnight Brightness
   entities:

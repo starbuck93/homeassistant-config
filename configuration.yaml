@@ -94,8 +94,8 @@ http:
   ssl_key: !secret ssl_key
   login_attempts_threshold: 5
 
-tts:
-  platform: google
+# tts:
+#   platform: google
 
 mqtt:
   broker: 10.0.0.73

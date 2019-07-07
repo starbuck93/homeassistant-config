@@ -19,17 +19,10 @@
       option: Away Mode
     service: input_select.select_option
   - data:
-      data:
-        badge: /local/home-lock.png
-        icon: /local/home-lock.png
-        tag: left_home
-      message: Left Home
-      title: Mode
-    service: notify.html5
-  - data:
-      away_mode: 'true'
-      entity_id: climate.bedroom_heat
-    service: climate.set_away_mode
+      message: We're in away mode now, people.
+      notification_id: '1234'
+      title: Left Home
+    service: persistent_notification.create
 '1537733751300':
   alias: I'm Back
   sequence:
@@ -37,17 +30,14 @@
       entity_id: scene.arriving_home
     service: scene.turn_on
   - data:
-      data:
-        badge: /local/home-heart96.png
-        icon: /local/home-heart96.png
-        tag: arrived_home
-      message: Arrived Home
-      title: Mode
-    service: notify.html5
-  - data:
       entity_id: input_select.mode
       option: Home Mode
     service: input_select.select_option
+  - data:
+      message: Welcome back people.
+      notification_id: '4321'
+      title: Home Mode
+    service: persistent_notification.create
 '1537797311402':
   alias: Goodmorning
   sequence:
@@ -75,65 +65,51 @@
   alias: Reset Wink Bulb
   sequence:
   - data:
-      entity_id: switch.wemo_switch_3
+      entity_id: switch.wemo_switch_6
     service: switch.toggle
   - delay: 00:00:03
   - data:
-      entity_id: switch.wemo_switch_3
+      entity_id: switch.wemo_switch_6
     service: switch.toggle
   - delay: 00:00:03
   - data:
-      entity_id: switch.wemo_switch_3
+      entity_id: switch.wemo_switch_6
     service: switch.toggle
   - delay: 00:00:03
   - data:
-      entity_id: switch.wemo_switch_3
+      entity_id: switch.wemo_switch_6
     service: switch.toggle
   - delay: 00:00:03
   - data:
-      entity_id: switch.wemo_switch_3
+      entity_id: switch.wemo_switch_6
     service: switch.toggle
   - delay: 00:00:03
   - data:
-      entity_id: switch.wemo_switch_3
+      entity_id: switch.wemo_switch_6
     service: switch.toggle
   - delay: 00:00:03
   - data:
-      entity_id: switch.wemo_switch_3
+      entity_id: switch.wemo_switch_6
     service: switch.toggle
   - delay: 00:00:03
   - data:
-      entity_id: switch.wemo_switch_3
+      entity_id: switch.wemo_switch_6
     service: switch.toggle
   - delay: 00:00:03
   - data:
-      entity_id: switch.wemo_switch_3
+      entity_id: switch.wemo_switch_6
     service: switch.toggle
   - delay: 00:00:03
   - data:
-      entity_id: switch.wemo_switch_3
+      entity_id: switch.wemo_switch_6
     service: switch.toggle
   - delay: 00:00:03
-dishwasher_done:
-  alias: Dishwasher Done
-  sequence:
-  - data:
-      data:
-        badge: https://home.starbuckstech.com:8123/local/dishwasher.png
-        icon: https://home.starbuckstech.com:8123/local/dishwasher.png
-        tag: dishwasher-done
-      message: Go take the dishes out of the dishwasher!
-      title: Dishwasher Done
-    service: notify.browser
 washing_machine_done:
   alias: Washing machine Done
   sequence:
   - data:
-      data:
-        badge: https://home.starbuckstech.com:8123/local/washing-machine.png
-        icon: https://home.starbuckstech.com:8123/local/washing-machine.png
-        tag: washing-machine-done
-      message: Time to move clothes to the dryer. NOW!!!
+      message: Move clothing to dryer!
+      notification_id: '3333'
       title: Washing Machine Done
     service: notify.browser
 '1553919961411':

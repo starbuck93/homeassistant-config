@@ -1,41 +1,11 @@
 kitchen:
   name: Kitchen
   entities:
-    - light.kitchen_lights
-    # - switch.wemo_switch_2
     - switch.dog_water_fountain
-    - switch.wax_warmer
-living_room:
-  name: Living Room
-  entities:
-    - light.brown_lamp
-    - light.Living_Room_Ceiling_Fan
-    - light.hanging_light
-    - switch.adams_fan
 master_bed:
   name: Bedroom
   entities:
-    - light.adams_bed_lamp
     - switch.wemo_switch_1
-    - light.bedroom_ceiling_light
-    - switch.chandelier
-    - light.extra_bedroom_light
-    - switch.christmas_tree
-    - switch.wemo_switch_5
-office:
-  name: Office
-  entities:
-    - light.office_ceiling_light
-    - switch.desk_lamp_2
-    - light.square_lamp
-    - switch.wemo_switch_3
-    - switch.wemo_switch_6 # speakers
-    - switch.desk_lamp_2
-stairs:
-  name: Stairs
-  entities:
-    - light.hallway_light
-    - light.stairs_light
 adam_and_laura:
   name: Couple
   entities:

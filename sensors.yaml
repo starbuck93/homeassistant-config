@@ -45,13 +45,11 @@
   resource: http://10.0.0.71/html/cpu.php
   value_template: '{{ value_json.cpu_temperature_F }}'
   unit_of_measurement: "°F"
-  device_class: 'temperature' 
+  device_class: 'temperature'
+
 
 - platform: template
   sensors:
-    dishwasher:
-      friendly_name: Dishwasher On
-      value_template: "{{ states.sensor.sonoff_s31_02_energy_power.state|int > 5}}"
     washing_machine:
       friendly_name: Washing Machine On
       value_template: "{{ states.sensor.sonoff_s31_01_energy_power.state|int > 6}}"
