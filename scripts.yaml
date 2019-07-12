@@ -51,16 +51,6 @@
 '1540332544483':
   alias: Home Delay Script
   sequence: []
-'1546036735190':
-  alias: Kitchen Motion Brightness
-  sequence:
-  - data:
-      entity_id: scene.kitchen_dim
-    service: scene.turn_on
-  - wait_template: '{{ is_state(''binary_sensor.pir_sensor'',''on'') }}'
-  - data:
-      entity_id: scene.kitchen_regular
-    service: scene.turn_on
 '1553910197321':
   alias: Reset Wink Bulb
   sequence:

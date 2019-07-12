@@ -14,30 +14,10 @@
   action:
   - data: {}
     service: script.1537733730525
-# - id: e4ddf14d5ddd462ea12239920684a54f
-#   alias: Back Door Opens
-#   trigger:
-#   - entity_id: binary_sensor.0x24fd5b000101fe32_contact
-#     from: closed
-#     platform: state
-#     to: open
-#   condition:
-#   - condition: state
-#     entity_id: sensor.mode
-#     state: away
-#   action:
-#   - data:
-#       entity_id: scene.back_door_opens
-#     service: scene.turn_on
-#   - data:
-#       message: Back door open
-#       notification_id: '2222'
-#       title: Someone opened the back door!
-#     service: persistent_notification.create
 - id: 4e0b8e2a66a141cbb08a6c2c1f88f70a
   alias: Wake Up Light Slowly at 645AM
   trigger:
-  - at: 06:45:00
+  - at: 06:15:00
     platform: time
   condition:
   - condition: time
@@ -72,7 +52,7 @@
 - id: '1537791645207'
   alias: Good morning
   trigger:
-  - at: 07:15:00
+  - at: 06:30:00
     platform: time
   condition:
   - condition: state
@@ -147,62 +127,6 @@
   - data:
       entity_id: script.1537733751300
     service: script.turn_on
-# - id: '1545935795147'
-#   alias: Dim Kitchen Lights When No Motion
-#   trigger:
-#   - entity_id: binary_sensor.pir_sensor
-#     for: 00:05:00
-#     platform: state
-#     to: 'off'
-#   condition:
-#   - condition: state
-#     entity_id: sensor.mode
-#     state: home
-#   - condition: state
-#     entity_id: light.kitchen_lights
-#     state: 'on'
-#   action:
-#   - data:
-#       entity_id: script.1546036735190
-#     service: script.turn_on
-# - id: '1546147039696'
-#   alias: Kitchen Dim Automation Off
-#   trigger:
-#   - entity_id: light.kitchen_lights
-#     platform: state
-#     to: 'off'
-#   condition: []
-#   action:
-#   - data:
-#       entity_id: automation.dim_kitchen_lights_when_no_motion
-#     service: automation.turn_off
-# - id: '1546147178956'
-#   alias: Kitchen Dim Automation On
-#   trigger:
-#   - entity_id: light.kitchen_lights
-#     from: 'off'
-#     platform: state
-#     to: 'on'
-#   condition: []
-#   action:
-#   - data:
-#       entity_id: automation.dim_kitchen_lights_when_no_motion
-#     service: automation.turn_on
-# - id: '1547524769396'
-#   alias: Heat on in the morning
-#   trigger:
-#   - at: 06:30:00
-#     platform: time
-#   condition:
-#   - condition: state
-#     entity_id: sensor.mode
-#     state: home
-#   action:
-#   - data:
-#       entity_id: climate.bedroom_heat
-#       operation_mode: heat
-#       temperature: '71'
-#     service: climate.set_temperature
 - id: '1548346551787'
   alias: Setup Sonoff on HASS Start
   trigger:
@@ -217,16 +141,6 @@
   - data:
       topic: sonoffs/cmnd/state
     service: mqtt.publish
-# - id: '1553916539720'
-#   alias: Washing Machine Done
-#   trigger:
-#   - entity_id: sensor.washing_machine
-#     for: 00:05:00
-#     platform: state
-#     to: 'false'
-#   condition: []
-#   action:
-#   - service: script.washing_machine_done
 - id: '1553919221446'
   alias: Kitchen Tradfri Button Toggle
   trigger:

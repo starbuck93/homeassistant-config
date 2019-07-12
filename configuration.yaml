@@ -2,7 +2,7 @@ homeassistant:
   name: Home
   latitude: !secret latitude
   longitude: !secret longitude
-  elevation: 91
+  elevation: 1519
   unit_system: imperial
   time_zone: America/Chicago
   customize:
@@ -21,7 +21,7 @@ camera: !include camera.yaml
 
 cast:
 
-cloud: !include cloud.yaml
+# cloud: !include cloud.yaml
 
 config:
 
@@ -37,7 +37,7 @@ group: !include groups.yaml
 
 history:
 
-history_graph: !include history_graph.yaml
+# history_graph: !include history_graph.yaml
 
 input_select: !include input_select.yaml
 
@@ -57,7 +57,7 @@ python_script:
 
 recorder: !include recorder.yaml
 
-rest_command: !include rest_command.yaml
+# rest_command: !include rest_command.yaml
 
 scene: !include scenes.yaml
 

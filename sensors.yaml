@@ -1,55 +1,6 @@
-- platform: mqtt
-  unit_of_measurement: "°C"
-  expire_after: 675
-  name: LR Temp
-  state_topic: living_room/sensor/lr_temp/state
-  availability_topic: living_room/status
-  unique_id: dallas-B30000071CE85128
-  device:
-    identifiers: 600194b11cad
-    name: living_room
-    sw_version: esphomelib v1.9.3 Dec 21 2018, 15:47:31
-    model: PLATFORMIO_D1_MINI_LITE
-    manufacturer: espressif
-
-- platform: rest
-  name: Bedroom Temp
-  resource: http://10.0.0.63/
-  value_template: '{{ value_json.temperature }}'
-  unit_of_measurement: "°F"
-  device_class: 'temperature' 
-
-- platform: rest
-  name: AC Air Temp
-  resource: http://10.0.0.67/
-  value_template: '{{ value_json.temperature }}'
-  unit_of_measurement: "°F"
-  device_class: 'temperature' 
-
 - platform: template
   sensors:
     mode:
       friendly_name: "Mode"
       value_template: "{% if is_state('input_select.mode', 'Home Mode') %} home {% elif is_state('input_select.mode', 'Away Mode') %} away {% elif is_state('input_select.mode', 'Night Mode') %} night {% endif %}"
       icon_template: "{% if is_state('switch.home_mode_active', 'on') %} mdi:home-heart {% elif is_state('input_select.mode', 'Away Mode') %} mdi:home-outline {% elif is_state('input_select.mode', 'Night Mode') %} mdi:power-sleep {% endif %}"
-
-- platform: rest
-  name: Pigeon CPU Temp
-  resource: http://10.0.0.69/html/cpu.php
-  value_template: '{{ value_json.cpu_temperature_C }}'
-  unit_of_measurement: "°C"
-  # device_class: 'temperature' 
-
-- platform: rest
-  name: TimelapsePi CPU Temp
-  resource: http://10.0.0.71/html/cpu.php
-  value_template: '{{ value_json.cpu_temperature_F }}'
-  unit_of_measurement: "°F"
-  device_class: 'temperature'
-
-
-- platform: template
-  sensors:
-    washing_machine:
-      friendly_name: Washing Machine On
-      value_template: "{{ states.sensor.sonoff_s31_01_energy_power.state|int > 6}}"

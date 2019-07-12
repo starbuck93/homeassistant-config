@@ -1,23 +1,4 @@
   google_actions:
     filter:
       exclude_entities:
-        - light.kitchen_ceiling_light_1
-        - light.kitchen_ceiling_light_2
-        - light.kitchen_ceiling_light_3
-        - light.kitchen_ceiling_light_4
-        - light.living_room_fan_1
-        - light.living_room_fan_2
-        - light.living_room_fan_3
-        - light.living_room_fan_4
-        - light.hallway_light_1
-        - light.hallway_light_2
-        - light.office_ceiling_light_1
-        - light.office_ceiling_light_2
-        - light.office_ceiling_light_3
-        - light.office_ceiling_light_4
-        - light.Bedroom_ceiling_light_1
-        - light.Bedroom_ceiling_light_2
-        - light.Bedroom_ceiling_light_3
-        - light.Bedroom_ceiling_light_4
       exclude_domains:
-        group
