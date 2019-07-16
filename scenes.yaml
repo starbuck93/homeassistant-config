@@ -14,6 +14,8 @@
       state: on
     light.tradfri_bulb_13:
       state: on
+    light.hanging_light:
+      state: on
 
 - name: Leaving Home
   entities:
@@ -30,6 +32,8 @@
     light.brown_lamp:
       state: off
     light.tradfri_bulb_13:
+      state: off
+    light.hanging_light:
       state: off
 
 - name: Goodnight
@@ -48,6 +52,8 @@
       state: off
     light.tradfri_bulb_13:
       state: off
+    light.hanging_light:
+      state: off
 
 - name: Goodmorning
   entities:
@@ -64,6 +70,8 @@
     light.brown_lamp:
       state: on
     light.tradfri_bulb_13:
+      state: on
+    light.hanging_light:
       state: on
 
 

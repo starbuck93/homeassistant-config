@@ -1,10 +1,10 @@
 homeassistant:
-  name: Home
+  name: Apartment
   latitude: !secret latitude
   longitude: !secret longitude
-  elevation: 1519
+  elevation: 4892
   unit_system: imperial
-  time_zone: America/Chicago
+  time_zone: America/Denver
   customize:
     !include customize.yaml
   auth_providers: 
